@@ -1,0 +1,990 @@
+<!-- main.html file -> The Homepage -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <!-- ========================================
+         META TAGS & PAGE INFORMATION
+    ======================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmiralAI - Advanced Artificial Intelligence Solutions</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="EmiralAI provides cutting-edge artificial intelligence solutions for businesses. Explore our advanced AI technologies, machine learning tools, and data analytics services.">
+    <meta name="keywords"
+        content="artificial intelligence, AI solutions, machine learning, data analytics, EmiralAI, AI technology">
+    <meta name="author" content="EmiralAI">
+
+    <!-- ========================================
+         STYLESHEETS
+    ======================================== -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth-popups.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- ========================================
+         FONTS
+    ======================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- ========================================
+         FAVICON & APP ICONS
+    ======================================== -->
+    <link rel="icon" href="favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg">
+    <link rel="shortcut icon" href="favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="manifest" href="favicons/site.webmanifest">
+
+    <!-- ========================================
+         EXTERNAL SCRIPTS (HEAD)
+    ======================================== -->
+    <!-- 3D Model Viewer -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+    <!-- Video APIs -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="https://player.vimeo.com/api/player.js" async></script>
+</head>
+
+<body>
+    <!-- ========================================
+         HEADER & NAVIGATION
+    ======================================== -->
+    <header>
+        <div class="container">
+            <nav aria-label="Main navigation">
+                <!-- Logo -->
+                <div class="logo" aria-label="Emiral AI logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-brain" aria-hidden="true"></i>
+                    </div>
+                    <span>Emiral</span>AI
+                </div>
+
+                <!-- Navigation Links -->
+                <ul class="nav-links">
+                    <li>
+                        <a href="#home" aria-label="Go to home section">
+                            <i class="fas fa-home" aria-hidden="true"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" aria-label="Go to about section">
+                            <i class="fas fa-info-circle" aria-hidden="true"></i> About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#services" aria-label="Go to services section">
+                            <i class="fas fa-cogs" aria-hidden="true"></i> Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#pricing" aria-label="Go to pricing section">
+                            <i class="fas fa-tag" aria-hidden="true"></i> Pricing
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#partners" aria-label="Go to partners section">
+                            <i class="fas fa-handshake" aria-hidden="true"></i> Partners
+                        </a>
+                    </li>
+                    <li><a href="#" data-auth-popup="login-popup" class="nav-btn active"><i
+                                class="fas fa-user"></i>Login</a></li>
+                </ul>
+
+                <!-- Mobile Menu Toggle -->
+                <div class="hamburger" role="button" aria-label="Toggle navigation menu" tabindex="0">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========================================
+         HERO SECTION
+    ======================================== -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <!-- Hero Text Content -->
+                <div class="hero-text">
+                    <h1>Advanced <span class="glow-text">AI</span> Solutions for Future Innovation</h1>
+                    <p>Unlock the potential of artificial intelligence with our cutting-edge solutions designed to
+                        transform your business and drive unprecedented growth.</p>
+                    <div class="hero-btns">
+                        <a href="#" data-auth-popup="signup-popup" class="btn">Get Started</a>
+                        <a href="blog.html" class="btn secondary-btn">
+                            <i class="fas fa-blog"></i>
+                            Read Our Blog
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3D Model Display -->
+                <div class="holographic-bg">
+                    <div class="holographic-3d-item">
+                        <model-viewer src="assets/models/head-ai.glb" alt="3D AI Head" camera-controls auto-rotate
+                            touch-action="pan-y" interaction-prompt="none" ar-modes="webxr scene-viewer quick-look">
+                        </model-viewer>
+                        <!-- THE LINES AROUND THE 3D Model -->
+                        <div class="circuit-lines"></div>
+                        <div class="circuit-lines"></div>
+                        <div class="circuit-lines"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="floating-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="circuit-bg"></div>
+    </section>
+
+    <!-- ========================================
+         ABOUT SECTION
+    ======================================== -->
+    <section class="about" id="about" aria-labelledby="about-title">
+        <div class="container">
+            <div class="about-container">
+                <!-- About Content -->
+                <div class="about-content">
+                    <h2 id="about-title" class="glow-border">
+                        About <span class="glow-text">EmiralAI</span>
+                    </h2>
+                    <p>
+                        We are at the forefront of artificial intelligence innovation...
+                    </p>
+
+                    <div class="about-blocks">
+                        <div class="about-block">
+                            <h3>Pioneering AI Technology</h3>
+                            <p>Our team of experts combines cutting-edge research...</p>
+                        </div>
+
+                        <div class="neon-line" aria-hidden="true"></div>
+
+                        <div class="about-block">
+                            <h3>Custom Solutions for Every Challenge</h3>
+                            <p>We understand that every business faces unique challenges...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Grid -->
+                <div class="about-video" aria-label="About section videos">
+                    <div class="video-grid">
+                        <!-- Local Video -->
+                        <div class="video-frame" data-video-type="local"
+                            data-video-src="Video/2759477-uhd_3840_2160_30fps.mp4" data-poster="images/head-ai.png"
+                            role="img" aria-label="Preview of AI head concept video">
+                            <div class="play-btn" role="button" aria-label="Play local video" tabindex="0"></div>
+                        </div>
+
+                        <!-- URL Video -->
+                        <!--  replace the data-video-src="#" with data-video-src="YOUR VIDEO URL HERE" -->
+                        <div class="video-frame" data-video-type="url" data-video-src="#"
+                            data-poster="images/hand&phone.png" role="img"
+                            aria-label="Preview of hand and phone AI concept">
+                            <div class="play-btn" role="button" aria-label="Play video from URL" tabindex="0"></div>
+                        </div>
+
+                        <!-- YouTube Video -->
+                        <!-- replace the id here "data-video-id="YOUR VIDEO ID HERE" -->
+                        <div class="video-frame" data-video-type="youtube" data-video-id="#"
+                            data-poster="images/phone.png" role="img" aria-label="Preview of YouTube demo video">
+                            <div class="play-btn" role="button" aria-label="Play YouTube video" tabindex="0"></div>
+                        </div>
+
+                        <!-- Vimeo Video -->
+                        <!--  replace the id here "data-video-id="YOUR VIDEO ID HERE" -->
+                        <div class="video-frame" data-video-type="vimeo" data-video-id=""
+                            data-poster="images/hand-ai.png" role="img" aria-label="Preview of Vimeo AI interaction">
+                            <div class="play-btn" role="button" aria-label="Play Vimeo video" tabindex="0"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Background Design -->
+        <div class="circuit-bg" aria-hidden="true"></div>
+    </section>
+
+    <!-- ========================================
+         SERVICES SECTION
+    ======================================== -->
+    <section class="services" id="services">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2 class="glow-border">Our <span class="glow-text">Services</span></h2>
+                <p>Discover how our comprehensive AI services can transform your business operations and drive
+                    innovation.</p>
+            </div>
+
+            <!-- service Cards -->
+            <div class="service-cards">
+                <!-- Machine Learning -->
+                <div class="service-card glass-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Machine Learning</h3>
+                    <p>Advanced algorithms that learn from data patterns to make intelligent predictions and decisions,
+                        optimizing processes and uncovering valuable insights.</p>
+                    <a href="portfolio.html" class="btn">Learn More</a>
+                </div>
+
+                <!-- AI Solutions -->
+                <div class="service-card glass-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Solutions</h3>
+                    <p>Custom business applications powered by artificial intelligence to automate processes, enhance
+                        decision-making, and create personalized experiences.</p>
+                    <a href="portfolio.html" class="btn">Learn More</a>
+                </div>
+
+                <!-- Deep Learning -->
+                <div class="service-card glass-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Deep Learning</h3>
+                    <p>Neural networks that mimic human brain functionality to analyze complex data, recognize patterns,
+                        and deliver unprecedented levels of accuracy.</p>
+                    <a href="portfolio.html" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="circuit-bg"></div>
+    </section>
+
+    <!-- ========================================
+         HOLOGRAPHIC COMPUTER SECTION
+    ======================================== -->
+    <div class="holographic-computer">
+        <div class="container">
+            <div class="computer-container">
+                <!-- 3D Laptop Model -->
+                <div class="holographic-3D-comp">
+                    <model-viewer src="assets/models/Futuristic_AI_Laptop.glb" alt="3D Laptop" camera-controls
+                        auto-rotate touch-action="pan-y" interaction-prompt="none"
+                        ar-modes="webxr scene-viewer quick-look">
+                    </model-viewer>
+                </div>
+
+                <!-- 3D Head Model -->
+                <div class="holographic-3D-comp">
+                    <model-viewer src="assets/models/head-ai.glb" alt="3D Laptop" camera-controls auto-rotate
+                        touch-action="pan-y" interaction-prompt="none" ar-modes="webxr scene-viewer quick-look">
+                    </model-viewer>
+                </div>
+
+                <div class="holo-glow"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================
+         CORE TECHNOLOGIES SECTION
+    ======================================== -->
+    <section class="core-tech">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2 class="glow-border">Core <span class="glow-text">Technologies</span></h2>
+                <p>Explore the advanced technologies powering our AI solutions for enterprises and startups alike.</p>
+            </div>
+
+            <!-- Technology Cards -->
+            <div class="tech-cards">
+                <!-- NLP -->
+                <div class="tech-card glass-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
+                    <h3>Natural Language Processing</h3>
+                    <p>Our NLP technology enables machines to understand, interpret, and generate human language with
+                        remarkable accuracy. From sentiment analysis to content generation, our NLP solutions transform
+                        how businesses interact with text data.</p>
+                </div>
+
+                <!-- Computer Vision -->
+                <div class="tech-card glass-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Computer Vision</h3>
+                    <p>Our computer vision systems can analyze, understand, and interpret visual information from the
+                        world, enabling applications such as object detection, facial recognition, and automated visual
+                        inspection.</p>
+                </div>
+
+                <!-- Predictive Analytics -->
+                <div class="tech-card glass-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Predictive Analytics</h3>
+                    <p>Leverage historical data to forecast future trends and outcomes with our predictive analytics
+                        solutions. Make data-driven decisions confidently by anticipating customer behavior, market
+                        changes, and operational needs.</p>
+                </div>
+            </div>
+        </div>
+        <div class="circuit-bg"></div>
+    </section>
+
+    <!-- ========================================
+         TESTIMONIALS SECTION
+    ======================================== -->
+    <section class="testimonials">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2 class="glow-border">Client <span class="glow-text">Testimonials</span></h2>
+                <p>Hear what our clients have to say about their experiences working with EmiralAI.</p>
+            </div>
+
+            <!-- Testimonial Cards Container -->
+            <div class="testimonial-container">
+                <div class="testimonial-cards">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card glass-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">❝</div>
+                            <p>EmiralAI's machine learning solutions transformed our customer service operations. We've
+                                seen a 40% increase in efficiency and significantly improved customer satisfaction
+                                scores.</p>
+                        </div>
+                        <div class="client-info">
+                            <div class="client-avatar">
+                                <img src="images/logo1.jpg" alt="Client Avatar" loading="lazy">
+                            </div>
+                            <div class="client-details">
+                                <h4>Dello Omar</h4>
+                                <p>CTO, GlobalTech Inc.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card glass-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">❝</div>
+                            <p>Implementing EmiralAI's predictive analytics has given us unprecedented insights into
+                                market trends. We're now able to anticipate changes and adapt our strategy proactively.
+                            </p>
+                        </div>
+                        <div class="client-info">
+                            <div class="client-avatar">
+                                <img src="images/person-1.png" alt="Client Avatar" loading="lazy">
+                            </div>
+                            <div class="client-details">
+                                <h4>Dan Xavier</h4>
+                                <p>Data Science Director, FutureFin</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card glass-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">❝</div>
+                            <p>The custom AI solution developed by EmiralAI has revolutionized our manufacturing
+                                process.
+                                We've reduced defects by 35% and optimized our production line beyond expectations.</p>
+                        </div>
+                        <div class="client-info">
+                            <div class="client-avatar">
+                                <img src="images/person-2.png" alt="Client Avatar" loading="lazy">
+                            </div>
+                            <div class="client-details">
+                                <h4>Stefan Stefancik</h4>
+                                <p>Operations Manager, InnoManufacture</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="circuit-bg"></div>
+    </section>
+
+    <!-- ========================================
+         PRICING SECTION
+    ======================================== -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2 class="glow-border">Pricing <span class="glow-text">Plans</span></h2>
+                <p>Choose the perfect plan to accelerate your business with our AI solutions.</p>
+            </div>
+
+            <!-- Pricing Cards -->
+            <div class="pricing-cards">
+                <!-- Basic Plan -->
+                <div class="pricing-card glass-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Basic</h3>
+                        <div class="pricing-price">$499<span>/month</span></div>
+                        <p class="pricing-description">Perfect for startups and small businesses</p>
+                    </div>
+                    <div class="pricing-services">
+                        <div class="pricing-service">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Basic AI implementation</span>
+                        </div>
+                        <div class="pricing-service">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Data analysis dashboard</span>
+                        </div>
+                        <div class="pricing-service">
+                            <i class="fas fa-check-circle"></i>
+                            <span>5 trained AI models</span>
+                        </div>
+                        <div class="pricing-service">
+                            <i class="fas fa-check-circle"></i>
+                            <span>8/5 Technical support</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn pricing-btn">Get Started</a>
+                </div>
+
+                <!-- Pro Plan (Popular) -->
+                <div class="pricing-card glass-card popular">
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Pro</h3>
+                        <div class="pricing-price">$999<span>/month</span></div>
+                        <p class="pricing-description">Ideal for growing companies</p>
+                    </div>
+                    <div class="pricing-services">
+                        <div class="pricing-service">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Advanced AI implementation</span>
+                        </div>
+                        <div class="pricing-service">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Real-time analytics</span>
+                        </div>
+                        <div class="pricing-service">
+                            <i class="fas fa-check-circle"></i>
+                            <span>15 trained AI models</span>
+                        </div>
+                        <div class="pricing-service">
+                            <i class="fas fa-check-circle"></i>
+                            <span>24/7 Technical support</span>
+                        </div>
+                        <div class="pricing-service">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Custom API integration</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn pricing-btn">Get Started</a>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="pricing-card glass-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Enterprise</h3>
+                        <div class="pricing-price">Custom</div>
+                        <p class="pricing-description">For large organizations with unique needs</p>
+                    </div>
+                    <div class="pricing-services">
+                        <div class="pricing-service">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Full-scale AI implementation</span>
+                        </div>
+                        <div class="pricing-service">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Dedicated AI infrastructure</span>
+                        </div>
+                        <div class="pricing-service">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Unlimited AI models</span>
+                        </div>
+                        <div class="pricing-service">
+                            <i class="fas fa-check-circle"></i>
+                            <span>24/7 Priority support</span>
+                        </div>
+                        <div class="pricing-service">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Custom development</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn pricing-btn">Get Started</a>
+                </div>
+            </div>
+        </div>
+        <div class="circuit-bg"></div>
+    </section>
+
+    <!-- ========================================
+         PARTNERS SECTION
+    ======================================== -->
+    <section class="partners-section" id="partners">
+        <div class="container">
+            <!-- Section Title -->
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-title text-center mb-70">
+                        <span class="sub-title">Strategic Alliances</span>
+                        <h2 class="title">Partnering with Visionaries <span>to Shape the Future</span></h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Partners Logos Slider -->
+            <div class="partners-logos">
+                <div class="partners-top-line"></div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="partners-slider">
+                            <!-- Slider Controls -->
+                            <div class="partners-controls">
+                                <button class="partners-prev" aria-label="Previous partners">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="partners-next" aria-label="Next partners">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+
+                            <!-- Partners Marquee -->
+                            <div class="partners-marquee" id="partnersMarquee">
+                                <div class="partners-track" id="partnersTrack">
+                                    <!-- Partner 1 -->
+                                    <div class="partner-item">
+                                        <img src="images/hand-ai.png" alt="AI Research Partner">
+                                        <span class="partner-name">NovaAI</span>
+                                    </div>
+                                    <!-- Partner 2 -->
+                                    <div class="partner-item">
+                                        <img src="images/head-ai.png" alt="Tech Innovation Partner">
+                                        <span class="partner-name">InnovaCore</span>
+                                    </div>
+                                    <!-- Partner 3 -->
+                                    <div class="partner-item">
+                                        <img src="images/teaching-machine.png" alt="Future Computing Partner">
+                                        <span class="partner-name">CyberPulse</span>
+                                    </div>
+                                    <!-- Partner 4 -->
+                                    <div class="partner-item">
+                                        <img src="images/hand&phone.png" alt="Neural Network Partner">
+                                        <span class="partner-name">NeuroShift</span>
+                                    </div>
+                                    <!-- Partner 5 -->
+                                    <div class="partner-item">
+                                        <img src="images/phone.png" alt="Machine Learning Partner">
+                                        <span class="partner-name">SynthMind</span>
+                                    </div>
+                                    <!-- Partner 6 -->
+                                    <div class="partner-item">
+                                        <img src="images/ai-evolution.png" alt="Deep Tech Partner">
+                                        <span class="partner-name">CoreIntellect</span>
+                                    </div>
+                                    <!-- Partner 7 -->
+                                    <div class="partner-item">
+                                        <img src="images/computer-ai.png" alt="Quantum Computing Partner">
+                                        <span class="partner-name">QubitForge</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Analytics Section -->
+            <div class="ai-analytics-section mt-70">
+                <!-- Section Title -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="section-title text-center mb-40">
+                            <span class="sub-title">Intelligent Performance Metrics</span>
+                            <h2 class="title">Quantum Leap in <span>AI Capabilities</span></h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Container -->
+                <div class="row justify-content-center">
+                    <div class="col-xl-10">
+                        <div class="charts-container">
+                            <!-- Chart 1: Data Processing -->
+                            <div class="chart-card" data-aos="fade-up" data-aos-delay="100">
+                                <div class="chart-wrapper">
+                                    <canvas id="aiEfficiencyChart"></canvas>
+                                    <div class="chart-overlay">
+                                        <div class="chart-percent">86<span>%</span></div>
+                                    </div>
+                                </div>
+                                <div class="chart-label">Data Processing Efficiency</div>
+                            </div>
+
+                            <!-- Chart 2: Customer Satisfaction -->
+                            <div class="chart-card" data-aos="fade-up" data-aos-delay="200">
+                                <div class="chart-wrapper">
+                                    <canvas id="customerSatisfactionChart"></canvas>
+                                    <div class="chart-overlay">
+                                        <div class="chart-percent">93<span>%</span></div>
+                                    </div>
+                                </div>
+                                <div class="chart-label">Client Satisfaction Rate</div>
+                            </div>
+
+                            <!-- Chart 3: Decision Accuracy -->
+                            <div class="chart-card" data-aos="fade-up" data-aos-delay="300">
+                                <div class="chart-wrapper">
+                                    <canvas id="decisionAccuracyChart"></canvas>
+                                    <div class="chart-overlay">
+                                        <div class="chart-percent">78<span>%</span></div>
+                                    </div>
+                                </div>
+                                <div class="chart-label">Decision Accuracy</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         AUTHENTICATION POPUP TEMPLATES
+    ======================================== -->
+    <!-- Login Popup Template -->
+    <template id="login-popup">
+        <div class="auth-popup">
+            <div class="auth-close"></div>
+            <div class="auth-logo">
+                <div class="auth-logo-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h2>Welcome Back</h2>
+                <p>Login to access your AI-powered workspace</p>
+            </div>
+
+            <div class="auth-form-content">
+                <form id="login-form" class="auth-form">
+                    <!-- Email Field -->
+                    <div class="form-floating">
+                        <input type="email" id="login-email" placeholder=" " required>
+                        <label for="login-email">Email Address</label>
+                    </div>
+
+                    <!-- Password Field -->
+                    <div class="form-floating">
+                        <input type="password" id="login-password" placeholder=" " required>
+                        <label for="login-password">Password</label>
+                    </div>
+
+                    <!-- Remember Me -->
+                    <div class="form-check">
+                        <input type="checkbox" id="remember-me" class="form-check-input">
+                        <label for="remember-me" class="form-check-label">Remember me</label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="auth-btn">
+                        <span>Login</span>
+                    </button>
+
+                    <!-- Forgot Password Link -->
+                    <div class="auth-links">
+                        <a href="#" data-popup="forgot-popup" class="auth-link">Forgot Password?</a>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="auth-divider">
+                        <span>OR</span>
+                    </div>
+
+                    <!-- Social Login -->
+                    <div class="social-auth">
+                        <a href="#" class="social-auth-btn google">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="social-auth-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-auth-btn apple">
+                            <i class="fab fa-apple"></i>
+                        </a>
+                    </div>
+
+                    <!-- Sign Up Link -->
+                    <div class="auth-links">
+                        Don't have an account? <a href="#" data-popup="signup-popup" class="auth-link">Sign Up</a>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="auth-footer">
+                        By logging in, you agree to our <a href="terms.html" target="_blank">Terms of Service</a> and
+                        <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
+                    </div>
+                </form>
+            </div>
+
+            <div class="ai-graphic"></div>
+        </div>
+    </template>
+
+    <!-- Sign Up Popup Template -->
+    <template id="signup-popup">
+        <div class="auth-popup">
+            <div class="auth-close"></div>
+            <div class="auth-logo">
+                <div class="auth-logo-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h2>Create Account</h2>
+                <p>Join the future of AI technology</p>
+            </div>
+
+            <div class="auth-form-content">
+                <form id="signup-form" class="auth-form">
+                    <!-- Full Name Field -->
+                    <div class="form-floating">
+                        <input type="text" id="signup-name" placeholder=" " required>
+                        <label for="signup-name">Full Name</label>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="form-floating">
+                        <input type="email" id="signup-email" placeholder=" " required>
+                        <label for="signup-email">Email Address</label>
+                    </div>
+
+                    <!-- Password Field -->
+                    <div class="form-floating">
+                        <input type="password" id="signup-password" placeholder=" " required>
+                        <label for="signup-password">Password</label>
+                    </div>
+
+                    <!-- Confirm Password Field -->
+                    <div class="form-floating">
+                        <input type="password" id="signup-confirm-password" placeholder=" " required>
+                        <label for="signup-confirm-password">Confirm Password</label>
+                    </div>
+
+                    <!-- Terms Agreement -->
+                    <div class="form-check">
+                        <input type="checkbox" id="agree-terms" class="form-check-input" required>
+                        <label for="agree-terms" class="form-check-label">
+                            I agree to the <a href="terms.html" target="_blank">Terms of Service</a> and
+                            <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="auth-btn">
+                        <span>Create Account</span>
+                    </button>
+
+                    <!-- Divider -->
+                    <div class="auth-divider">
+                        <span>OR</span>
+                    </div>
+
+                    <!-- Social Sign Up -->
+                    <div class="social-auth">
+                        <a href="#" class="social-auth-btn google">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="social-auth-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-auth-btn apple">
+                            <i class="fab fa-apple"></i>
+                        </a>
+                    </div>
+
+                    <!-- Login Link -->
+                    <div class="auth-links">
+                        Already have an account? <a href="#" data-popup="login-popup" class="auth-link">Login</a>
+                    </div>
+                </form>
+            </div>
+
+            <div class="ai-graphic"></div>
+        </div>
+    </template>
+
+    <!-- Forgot Password Popup Template -->
+    <template id="forgot-popup">
+        <div class="auth-popup">
+            <div class="auth-close"></div>
+            <div class="auth-logo">
+                <div class="auth-logo-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h2>Reset Password</h2>
+                <p>Enter your email to receive password reset instructions</p>
+            </div>
+
+            <!-- Reset Animation -->
+            <div class="reset-animation">
+                <div class="reset-circle"></div>
+                <div class="reset-circle"></div>
+                <div class="reset-circle"></div>
+                <i class="fas fa-key reset-icon"></i>
+            </div>
+
+            <div class="auth-form-content">
+                <form id="forgot-form" class="auth-form">
+                    <!-- Email Field -->
+                    <div class="form-floating">
+                        <input type="email" id="forgot-email" placeholder=" " required>
+                        <label for="forgot-email">Email Address</label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="auth-btn">
+                        <span>Send Reset Link</span>
+                    </button>
+
+                    <!-- Back to Login -->
+                    <div class="auth-links">
+                        <a href="#" data-popup="login-popup" class="auth-link">Back to Login</a>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="auth-footer">
+                        Protected by AI-powered security
+                    </div>
+                </form>
+            </div>
+
+            <div class="ai-graphic"></div>
+        </div>
+    </template>
+
+    <!-- ========================================
+         FOOTER SECTION
+    ======================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Footer Logo & About -->
+                <div class="footer-logo">
+                    <h3><i class="fas fa-brain"></i>Emiral<span class="glow-text"> AI</span></h3>
+                    <p>Transforming businesses through innovative AI solutions. We help organizations harness the power
+                        of artificial intelligence to optimize operations, enhance customer experiences, and drive
+                        growth.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="contact-faq.html"><i class="fas fa-chevron-right"></i>Contact us</a></li>
+                        <li><a href="dashboard.html"><i class="fas fa-chevron-right"></i> Dashboard Overview</a></li>
+                        <li><a href="portfolio.html"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
+                        <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="privacy-policy.html"><i class="fas fa-chevron-right"></i>Privacy Policy</a></li>
+                        <li><a href="terms.html"><i class="fas fa-chevron-right"></i> Terms of use</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services Links -->
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Machine Learning</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Natural Language Processing</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Computer Vision</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Predictive Analytics</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> AI Consulting</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Custom AI Solutions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <p>Stay updated with the latest AI trends, insights, and news from our experts.</p>
+                    <div class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email">
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="copyright">
+                <p>&copy; 2025 EmiralAI. All Rights Reserved.</p>
+            </div>
+        </div>
+
+        <!-- Animated Particles Background -->
+        <div class="particles-container">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         THEME TOGGLE BUTTON
+    ======================================== -->
+    <div id="theme-toggle" class="theme-toggle" aria-label="dark&light">
+        <i class="fas fa-sun"></i>
+    </div>
+
+    <!-- ========================================
+         JAVASCRIPT FILES
+    ======================================== -->
+
+
+
+    <!-- Core Scripts -->
+    <script src="js/console-fix.js"></script>
+    <script src="js/user-data-manager.js"></script>
+    <script src="js/auth-popups.js"></script>
+    <script src="js/payment.js"></script>
+    <script src="js/customize.js"></script>
+
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,531 @@
+/**
+ * Portfolio Page Styles
+ * Version: 1.0.0
+ * Author: Omar Dello
+ * Description: Styles for Portfolio page with modern design and animations
+ * Uses global variables from style.css
+ */
+
+/* ========================================================================== */
+/* 
+==============================================
+PORTFOLIO CSS - EmiralAI TEMPLATE
+==============================================
+
+TABLE OF CONTENTS:
+1. Portfolio Hero Section
+2. Portfolio Filter Section
+3. Portfolio Grid Section
+4. Portfolio Item Styling
+5. Testimonials Section
+6. Call To Action Section
+7. Responsive Adjustments
+==============================================
+*/
+
+/* =============================================
+   1. PORTFOLIO HERO SECTION
+============================================== */
+.portfolio-hero {
+    padding: 180px 0 80px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.portfolio-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.portfolio-hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.portfolio-hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    opacity: 0.9;
+}
+
+/* =============================================
+   2. PORTFOLIO FILTER SECTION
+============================================== */
+.portfolio-filter {
+    padding: 30px 0;
+    position: relative;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--gradient-90deg-btn);
+    border-color: transparent;
+    box-shadow: 0 5px 15px var(--shadow-secondary);
+    transform: translateY(-3px);
+}
+
+/* =============================================
+   3. PORTFOLIO GRID SECTION
+============================================== */
+.portfolio-grid {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 80px;
+}
+
+.portfolio-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 30px;
+}
+
+/* Circuit background effect */
+.portfolio-grid .circuit-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10 H 90 V 90 H 10 Z' fill='none' stroke='rgba(0,162,255,0.1)' stroke-width='1'/%3E%3Cpath d='M30 30 H 70 V 70 H 30 Z' fill='none' stroke='rgba(144,0,255,0.1)' stroke-width='1'/%3E%3Cpath d='M10 30 H 30 M 70 30 H 90 M 10 70 H 30 M 70 70 H 90' fill='none' stroke='rgba(255,0,88,0.1)' stroke-width='1'/%3E%3C/svg%3E");
+    background-position: center;
+    animation: circuit-flow 15s linear infinite;
+    opacity: 0.1;
+}
+
+/* =============================================
+   4. PORTFOLIO ITEM STYLING
+============================================== */
+.portfolio-item {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px var(--shadow-secondary);
+}
+
+.portfolio-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+    height: 220px;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover .portfolio-image img {
+    transform: scale(1.05);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 162, 255, 0.1),
+            rgba(144, 0, 255, 0.3));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-content {
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-category {
+    color: var(--primary-blue);
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.portfolio-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.portfolio-item:hover h3 {
+    color: var(--primary-blue);
+}
+
+.portfolio-item p {
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.portfolio-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.portfolio-tech span {
+    padding: 5px 12px;
+    background: var(--glass-bg-2);
+    border-radius: 15px;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-tech span {
+    background: var(--gradient-90deg-btn);
+    box-shadow: 0 5px 10px var(--shadow-light);
+    color: white;
+}
+
+/* Animation for filtered items */
+.portfolio-item.hide {
+    animation: fadeOut 0.5s forwards;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.portfolio-item.show {
+    animation: fadeIn 0.5s forwards;
+    opacity: 1;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+        display: none;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* =============================================
+   5. TESTIMONIALS SECTION
+============================================== */
+.portfolio-testimonials {
+    padding: 80px 0;
+    position: relative;
+    background: var(--glass-bg);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.testimonial-slider {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.testimonial-slide {
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.testimonial-slide .quote-icon {
+    font-size: 60px;
+    color: var(--primary-blue);
+    opacity: 0.3;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    transition: all 0.3s ease;
+}
+
+.testimonial-slide:hover .quote-icon {
+    transform: scale(1.2);
+    opacity: 0.5;
+}
+
+.testimonial-slide p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.client-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--border-color);
+    margin-right: 15px;
+    transition: all 0.3s ease;
+}
+
+.client-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-slide:hover .client-avatar {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 15px var(--shadow-secondary);
+}
+
+.client-details h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.client-details p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    opacity: 0.7;
+}
+
+.testimonial-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.prev-btn,
+.next-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background: var(--gradient-90deg-btn);
+    border-color: transparent;
+    box-shadow: 0 5px 15px var(--shadow-secondary);
+}
+
+.testimonial-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--glass-bg-2);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: var(--primary-blue);
+    width: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--shadow-secondary);
+}
+
+/* =============================================
+   6. CALL TO ACTION SECTION
+============================================== */
+.portfolio-cta {
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 60px 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center,
+            rgba(0, 162, 255, 0.1) 0%,
+            transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* =============================================
+   7. RESPONSIVE ADJUSTMENTS
+============================================== */
+@media screen and (max-width: 1024px) {
+    .portfolio-items {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    .portfolio-hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .cta-content h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .portfolio-hero {
+        padding: 150px 0 60px;
+    }
+
+    .portfolio-hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .portfolio-hero-content p {
+        font-size: 1rem;
+    }
+
+    .portfolio-items {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    .filter-buttons {
+        gap: 10px;
+    }
+
+    .filter-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .testimonial-slide {
+        padding: 30px 20px;
+    }
+
+    .cta-content {
+        padding: 40px 30px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .portfolio-hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .portfolio-items {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-buttons {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        justify-content: flex-start;
+    }
+
+    .filter-btn {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+}

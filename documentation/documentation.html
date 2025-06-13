@@ -1,0 +1,2771 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmiralAI - Complete Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            color: #00a2ff;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #00a2ff;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .intro {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: #d63384;
+            word-break: break-word;
+        }
+
+        pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 14px;
+            max-width: 100%;
+        }
+
+        /* Screenshot Styles */
+        .screenshot-container {
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .screenshot-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .screenshot-wrapper.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .screenshot-content {
+            flex: 1;
+        }
+
+        .screenshot-image {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .screenshot-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 2px solid #e3e3e3;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .screenshot-image img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .screenshot-caption {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Numbered Screenshots */
+        .screenshot-step {
+            position: relative;
+            margin: 30px 0;
+        }
+
+        .screenshot-step-number {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 40px;
+            height: 40px;
+            background: #00a2ff;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            z-index: 1;
+        }
+
+        /* Gallery Style for Multiple Screenshots */
+        .screenshot-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .screenshot-gallery-item {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .screenshot-gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .screenshot-gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #e3e3e3;
+        }
+
+        /* Before/After Screenshots */
+        .before-after-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .before-after-item {
+            text-align: center;
+        }
+
+        .before-after-item h5 {
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .before-after-item.before h5 {
+            color: #dc3545;
+        }
+
+        .before-after-item.after h5 {
+            color: #28a745;
+        }
+
+        /* Enhanced vertical file tree structure */
+        .file-tree-container {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .file-tree-header {
+            background: #00a2ff;
+            color: white;
+            padding: 15px 20px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .file-tree {
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 2;
+            overflow-x: auto;
+        }
+
+        .file-tree-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 5px 0;
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+            transition: background 0.3s;
+            flex-wrap: wrap;
+        }
+
+        .file-tree-item:hover {
+            background: #f1f3f5;
+        }
+
+        .file-tree-item:last-child {
+            border-bottom: none;
+        }
+
+        .file-tree-indent {
+            display: inline-block;
+            width: 20px;
+            flex-shrink: 0;
+        }
+
+        .file-tree-icon {
+            display: inline-block;
+            width: 20px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .folder {
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .file {
+            color: #333;
+        }
+
+        .file-description {
+            color: #666;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 13px;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .folder-section {
+            background: #f1f3f5;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 4px solid #00a2ff;
+        }
+
+        .folder-title {
+            font-weight: bold;
+            color: #0066cc;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00a2ff;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .info {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .critical-notice {
+            background: #fff;
+            border: 3px solid #ff0058;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(255, 0, 88, 0.1);
+        }
+
+        .critical-notice:before {
+            content: "⚠️ IMPORTANT";
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: #ff0058;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .critical-notice h4 {
+            color: #ff0058;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .critical-notice ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .critical-notice li {
+            margin: 5px 0;
+        }
+
+        a {
+            color: #00a2ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Table Wrapper */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #f8f9fa;
+            font-weight: bold;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        .badge-new {
+            background: #28a745;
+            color: white;
+        }
+
+        .badge-hot {
+            background: #dc3545;
+            color: white;
+        }
+
+        .badge-pro {
+            background: #6f42c1;
+            color: white;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #ddd;
+            color: #666;
+        }
+
+        .quick-start {
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .quick-start h4 {
+            color: #1976d2;
+            margin-bottom: 15px;
+        }
+
+        .api-example {
+            background: #263238;
+            color: #aed581;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            overflow-x: auto;
+        }
+
+        .faq-item {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            color: #00a2ff;
+            margin-bottom: 10px;
+        }
+
+        .package-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .package-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .package-item:hover {
+            border-color: #00a2ff;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 162, 255, 0.2);
+        }
+
+        .package-item i {
+            font-size: 2em;
+            color: #00a2ff;
+            margin-bottom: 10px;
+        }
+
+        .flow-diagram {
+            background: #f8f9fa;
+            border: 2px solid #00a2ff;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .flow-diagram pre {
+            background: transparent;
+            color: #333;
+            padding: 0;
+            font-size: 12px;
+            display: inline-block;
+            text-align: left;
+            overflow-x: auto;
+            max-width: 100%;
+        }
+
+        .flow-step {
+            display: inline-block;
+            background: white;
+            border: 2px solid #00a2ff;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 5px;
+            font-weight: bold;
+            color: #00a2ff;
+        }
+
+        .flow-arrow {
+            display: inline-block;
+            color: #00a2ff;
+            font-size: 1.5em;
+            margin: 0 10px;
+        }
+
+        .interconnected-example {
+            background: #f8f9fa;
+            border-left: 4px solid #00a2ff;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .interconnected-example h5 {
+            color: #00a2ff;
+            margin-bottom: 10px;
+        }
+
+        /* Table of Contents Styles */
+        .toc-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .toc-container h2 {
+            color: #00a2ff;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #00a2ff;
+            padding-bottom: 10px;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc-list li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .toc-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #00a2ff;
+        }
+
+        .toc-list a {
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .toc-list a:hover {
+            color: #00a2ff;
+            text-decoration: none;
+        }
+
+        .toc-subsection {
+            margin-left: 20px;
+            font-size: 0.9em;
+        }
+
+        .toc-subsection li:before {
+            content: "•";
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Add some padding to sections when navigating via anchors */
+        section[id]:target {
+            padding-top: 20px;
+        }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #00a2ff;
+        }
+
+        .feature-card h4 {
+            color: #00a2ff;
+            margin-bottom: 10px;
+        }
+
+        .feature-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-card li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .feature-card li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #00a2ff;
+        }
+
+        /* Mobile Responsive Improvements */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+                margin-top: 30px;
+            }
+
+            h3 {
+                font-size: 1.2em;
+                margin-top: 20px;
+            }
+
+            .intro,
+            .section {
+                padding: 20px 15px;
+            }
+
+            .screenshot-wrapper {
+                flex-direction: column !important;
+            }
+
+            .screenshot-image {
+                max-width: 100%;
+            }
+
+            .screenshot-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .before-after-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .package-box {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .file-tree {
+                padding: 15px 10px;
+                font-size: 12px;
+            }
+
+            .file-tree-item {
+                flex-wrap: wrap;
+            }
+
+            .file-description {
+                width: 100%;
+                margin-left: 40px;
+                margin-top: 5px;
+            }
+
+            pre {
+                padding: 15px 10px;
+                font-size: 12px;
+            }
+
+            .api-example {
+                font-size: 11px;
+                padding: 10px;
+            }
+
+            code {
+                font-size: 12px;
+                padding: 1px 4px;
+            }
+
+            .flow-diagram {
+                padding: 15px;
+            }
+
+            .flow-diagram pre {
+                font-size: 10px;
+            }
+
+            .toc-container {
+                padding: 20px 15px;
+            }
+
+            .toc-list {
+                font-size: 14px;
+            }
+
+            .critical-notice {
+                padding: 20px 15px;
+                padding-top: 30px;
+            }
+
+            .critical-notice:before {
+                font-size: 12px;
+                padding: 3px 10px;
+            }
+
+            .table-wrapper {
+                margin: 15px -15px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+
+            th,
+            td {
+                padding: 8px;
+            }
+
+            .badge {
+                font-size: 10px;
+                padding: 2px 6px;
+            }
+
+            .quick-start {
+                padding: 20px 15px;
+            }
+
+            .faq-item {
+                padding: 15px;
+            }
+
+            .footer {
+                margin-top: 40px;
+                padding-top: 20px;
+                font-size: 14px;
+            }
+
+            /* Mobile specific for lists */
+            ul,
+            ol {
+                padding-left: 20px;
+            }
+
+            .feature-list li {
+                padding-left: 25px;
+            }
+
+            .feature-list li:before {
+                font-size: 16px;
+            }
+
+            /* Fix overflow issues */
+            body {
+                overflow-x: hidden;
+            }
+
+            .container>* {
+                max-width: 100%;
+            }
+
+            /* Details/Summary mobile adjustment */
+            details {
+                margin: 15px 0;
+            }
+
+            details summary {
+                font-size: 14px;
+                padding: 10px 0;
+            }
+
+            /* Screenshot step number position fix */
+            .screenshot-step-number {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+                top: -10px;
+                left: -10px;
+            }
+        }
+
+        /* Tablet specific adjustments */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            .package-box {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Small mobile screens */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            h3 {
+                font-size: 1.1em;
+            }
+
+            .flow-diagram pre {
+                font-size: 8px;
+            }
+
+            .api-example {
+                font-size: 10px;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .screenshot-gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .table-wrapper {
+                overflow: visible;
+            }
+
+            table {
+                min-width: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Introduction -->
+        <div class="intro">
+            <h1>EmiralAI Documentation</h1>
+            <p><strong>Premium AI Dashboard & Multi-Purpose Business Template with AI Integration</strong></p>
+            <p>Thank you for purchasing EmiralAI! This documentation will help you get started quickly and discover all
+                the powerful features included.</p>
+
+            <!-- Demo Credentials -->
+            <div class="info">
+                <strong>Demo Login Credentials:</strong><br>
+                Email: demo@example.com<br>
+                Password: demo123<br>
+                <em>Note: These work with the built-in demo mode only</em>
+            </div>
+
+            <div class="section">
+                <h2>📋 Template Overview</h2>
+                <p>EmiralAI is not just another dashboard template. It's the first admin template that comes with a
+                    fully functional AI assistant integrated right into your user profile. Ask questions, get insights,
+                    and manage your business with AI-powered intelligence.</p>
+                <div class="table-wrapper">
+                    <table>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Details</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Pages</strong></td>
+                            <td>10 HTML Pages + Authentication Popup window</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CSS Files</strong></td>
+                            <td>10 Stylesheets (modular design)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>JavaScript Files</strong></td>
+                            <td>10 JS files (feature-specific + console management)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Special Features</strong></td>
+                            <td>
+                                AI Chat Assistant<span class="badge badge-hot">HOT</span>,
+                                Dark/Light Mode<span class="badge badge-new">NEW</span>,
+                                Simple Offline Support<span class="badge badge-pro">PRO</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>3D Models</strong></td>
+                            <td>Included (GLB format)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Responsive</strong></td>
+                            <td>Yes (Mobile, Tablet, Desktop)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>API Integration</strong></td>
+                            <td>Ready (Configure endpoints)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Contact Form</strong></td>
+                            <td>Formspree Ready (Needs Form ID)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="critical-notice">
+                <h4>Frontend-Only Template - No Backend Included</h4>
+                <p>This template is a <strong>frontend UI kit only</strong> and what it can do:</p>
+                <ul>
+                    <li>✅ Plug and Play – works out-of-the-box with demo data</li>
+                    <li>✅ Connect your own backend APIs for login, payments, and data storage</li>
+                    <li>✅ Integrate with AI services like Together AI and Openrouter</li>
+                    <li>✅ Use with any backend technology (Node.js, PHP, Python, etc.)</li>
+                    <li>✅ Customize all HTML, CSS, and JavaScript code</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>Not included:</strong></p>
+                <ul>
+                    <li>❌ Server-side logic or backend code</li>
+                    <li>❌ Database or data storage (uses localStorage for demo)</li>
+                    <li>❌ Real authentication system</li>
+                    <li>❌ Payment processing capabilities</li>
+                    <li>❌ AI service connections</li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic;">The template provides the complete frontend interface
+                    and is ready to connect to your backend services through the API integration points provided in the
+                    JavaScript files.</p>
+            </div>
+
+            <div class="info" style="margin-top: 20px;">
+                <strong>Template Type:</strong> Frontend HTML Template (API-Ready)<br>
+                <strong>Bootstrap:</strong> No - Custom CSS for better performance<br>
+                <strong>jQuery:</strong> No - Pure JavaScript<br>
+                <strong>Backend:</strong> Not included (Integration-ready)<br>
+                <strong>⚡ Performance Notes:</strong>
+                <ul>
+                    <li>No jQuery dependency (pure JavaScript)</li>
+                    <li>No Bootstrap (custom lightweight CSS)</li>
+                    <li>Modular file structure</li>
+                    <li>3D models use GLB format (optimized)</li>
+                    <li>Console output managed for production performance</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- What You Need to Know Before Buying -->
+        <div class="section" id="before-buying">
+            <h2>📢 What You Need to Know Before Buying</h2>
+            <div class="critical-notice">
+                <h4>This is a Frontend Template</h4>
+                <div class="table-wrapper">
+                    <table>
+                        <tr>
+                            <th>You Get</th>
+                            <th>You Don't Get</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                ✅ 11 HTML pages<br>
+                                ✅ Complete UI/UX<br>
+                                ✅ JavaScript interactions<br>
+                                ✅ Demo functionality<br>
+                                ✅ API integration examples<br>
+                                ✅ Tested authentication on local server
+                            </td>
+                            <td>
+                                ❌ Server/Backend code<br>
+                                ❌ Database<br>
+                                ❌ Real authentication<br>
+                                ❌ Payment processing<br>
+                                ❌ Hosting
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><strong>Who is this for?</strong></p>
+                <ul>
+                    <li>✅ Developers with existing backend</li>
+                    <li>✅ Agencies building client projects</li>
+                    <li>✅ Startups needing professional UI</li>
+                    <li>✅ Anyone comfortable with basic HTML/CSS editing</li>
+                    <li>❌ Non-technical users expecting complete solution</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>Technical Requirements:</strong></p>
+                <ul>
+                    <li>✅ Any modern web browser</li>
+                    <li>✅ Any text editor (for customization)</li>
+                    <li>❌ No special software needed</li>
+                    <li>❌ No build tools or compilation required</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="toc-container">
+            <h2>📑 Table of Contents</h2>
+            <ul class="toc-list">
+                <li><a href="#whats-in-package">📦 What's in the Package</a></li>
+                <li><a href="#api-integration">🔌 API Integration Overview</a></li>
+                <li><a href="#quick-start">🚀 Quick Start for Buyers</a>
+                    <ul class="toc-subsection">
+                        <li><a href="#basic-setup">Step 1: Basic Setup</a></li>
+                        <li><a href="#production-mode">For Production Mode</a>
+                            <ul>
+                                <li><a href="#authentication">Step 2: Make Authentication Real</a></li>
+                                <li><a href="#ai-chat">Step 3: Enable AI Chat</a></li>
+                                <li><a href="#payment-integration">Step 4: Payment Integration</a></li>
+                                <li><a href="#contact-form">Step 5: Enable Contact Form</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#file-structure">📁 Complete File Structure & Architecture</a></li>
+                <li><a href="#key-features">✨ Key Features</a>
+                    <ul class="toc-subsection">
+                        <li><a href="#dark-light-mode">Dark/Light Mode Toggle</a></li>
+                        <li><a href="#ai-assistant">AI Chat Assistant</a></li>
+                        <li><a href="#auth-system">User Authentication System</a></li>
+                        <li><a href="#blog-system">Blog System</a></li>
+                    </ul>
+                </li>
+                <li><a href="#advanced-features">🚀 Advanced Features</a>
+                    <ul class="toc-subsection">
+                        <li><a href="#offline-support">Offline Support</a></li>
+                        <li><a href="#activity-tracking">Activity Tracking</a></li>
+                        <li><a href="#data-encryption">Data Encryption Ready</a></li>
+                        <li><a href="#import-export">Import/Export Data</a></li>
+                        <li><a href="#payment-validation">Advanced Payment Validation</a></li>
+                    </ul>
+                </li>
+                <li><a href="#page-showcase">📸 Template Pages Showcase</a></li>
+                <li><a href="#data-flow">⚡ How Data Flows</a></li>
+                <li><a href="#interconnected-pages">🔗 Interconnected Pages & Dynamic Behavior</a></li>
+                <li><a href="#customization">🎨 Customization Guide</a></li>
+                <li><a href="#browser-compatibility">🌐 Browser Compatibility</a></li>
+                <li><a href="#getting-started">🚀 Getting Started</a></li>
+                <li><a href="#console-management">🖥️ Console & Debug Management</a></li>
+                <li><a href="#troubleshooting">🔧 Troubleshooting</a></li>
+                <li><a href="#faq">❓ Frequently Asked Questions</a></li>
+                <li><a href="#important-notes">⚠️ Important Notes</a></li>
+                <li><a href="#license">📜 License Information</a></li>
+                <li><a href="#support">🤝 Support</a></li>
+                <li><a href="#updates">🔄 Updates & Changelog</a></li>
+            </ul>
+        </div>
+
+        <!-- What's in the Package -->
+        <div class="section" id="whats-in-package">
+            <h2>📦 What's in the Package</h2>
+            <div class="package-box">
+                <div class="package-item">
+                    <i class="fas fa-file-code"></i>
+                    <h4>11 HTML Pages</h4>
+                    <p>10 main pages + 1 authentication popup</p>
+                    <p>Fully responsive and modern design</p>
+                </div>
+                <div class="package-item">
+                    <i class="fas fa-paint-brush"></i>
+                    <h4>Modular CSS</h4>
+                    <p>10 organized stylesheets</p>
+                </div>
+                <div class="package-item">
+                    <i class="fas fa-cogs"></i>
+                    <h4>Smart JavaScript</h4>
+                    <p>10 feature-specific modules</p>
+                    <p>Includes console management</p>
+                </div>
+                <div class="package-item">
+                    <i class="fas fa-robot"></i>
+                    <h4>AI Chat Assistant Ready</h4>
+                    <p>Only need API Key</p>
+                </div>
+                <div class="package-item">
+                    <i class="fas fa-credit-card"></i>
+                    <h4>Payment UI</h4>
+                    <p>Ready for Stripe/PayPal</p>
+                </div>
+                <div class="package-item">
+                    <i class="fas fa-rocket"></i>
+                    <h4>Zero Setup Required</h4>
+                    <p>No npm, no build tools</p>
+                    <p>Works in any browser instantly</p>
+                </div>
+                <div class="package-item">
+                    <i class="fas fa-moon"></i>
+                    <h4>Dark/Light Theme</h4>
+                    <p>Auto-saving preference</p>
+                </div>
+                <div class="package-item">
+                    <i class="fas fa-cloud-download-alt"></i>
+                    <h4>Offline Support</h4>
+                    <p>Works without internet</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- API Integration Overview -->
+        <div class="section" id="api-integration">
+            <h2>🔌 API Integration Overview</h2>
+            <div class="table-wrapper">
+                <table>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Status</th>
+                        <th>Requirements</th>
+                        <th>Tested?</th>
+                    </tr>
+                    <tr>
+                        <td><strong>AI Chat</strong></td>
+                        <td>✅ Ready</td>
+                        <td>API Key only</td>
+                        <td>✅ Yes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Authentication</strong></td>
+                        <td>🔧 UI Ready</td>
+                        <td>Backend API</td>
+                        <td>✅ Yes (Local Server)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Payments</strong></td>
+                        <td>🔧 UI Ready</td>
+                        <td>Backend + Stripe/PayPal</td>
+                        <td>❌ No</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contact Form</strong></td>
+                        <td>✅ Ready</td>
+                        <td>Formspree ID</td>
+                        <td>✅ Yes</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Quick Start Section -->
+        <div class="section" id="quick-start">
+            <h2>🚀 Quick Start for Buyers</h2>
+
+            <div class="quick-start" id="basic-setup">
+                <h4>Step 1: Basic Setup (Works Immediately)</h4>
+                <p>Extract files and open <code>main.html</code> in your browser. The template works with demo data -
+                    no setup required!</p>
+                <div class="success">
+                    <strong>✅ No Installation Needed:</strong> Unlike React/Vue templates, this is pure HTML/CSS/JS.
+                    Just open in any browser - no Node.js, no npm, no build process!
+                </div>
+            </div>
+
+            <!-- Production Mode Section -->
+            <div class="production-section" id="production-mode">
+                <h3>🔧 For Production Mode</h3>
+
+                <div class="quick-start" id="authentication">
+                    <h4>Step 2: Make Authentication Real (Tested & Working)</h4>
+                    <p>Connect to your backend authentication API:</p>
+                    <pre class="api-example">
+// In auth-popups.js file, find and modify:
+const apiConfig = {
+    useRealAPI: true,  // Set to true to use your real API
+    baseURL: 'https://your-api-domain.com/api',
+    endpoints: {
+        login: '/auth/login',
+        signup: '/auth/signup',
+        forgotPassword: '/auth/forgot-password'
+    },
+    headers: {
+        'Content-Type': 'application/json'
+    }
+};</pre>
+                    <p><strong>Note:</strong> Your backend must handle user authentication and return user data in JSON
+                        format.</p>
+                    <div class="success">
+                        <strong>✅ Tested:</strong> This authentication method has been tested on a local server and
+                        works perfectly!
+                    </div>
+                </div>
+
+                <div class="quick-start" id="ai-chat">
+                    <h4>Step 3: Enable AI Chat (Tested & Working)</h4>
+                    <p>Add your AI API key to enable the chat assistant. <strong>Important:</strong> Add this code in
+                        <code>user-profile.html</code> file only, before <code>&lt;/body&gt;</code>
+                    </p>
+                    <p>✅ Tested: Together AI API works perfectly with this template.</p>
+
+                    <pre class="api-example">
+// ⚠️ Add this code in user-profile.html ONLY (not main.html or other files)
+&lt;script&gt;
+    window.addEventListener('load', function () {
+        setTimeout(function () {
+            if (typeof EmiralProfile !== 'undefined') {
+                
+                EmiralProfile.setAIEndpoint(
+                    "https://api.together.xyz/v1/chat/completions",
+                    "YOUR-API-KEY",
+                    "mistralai/Mistral-7B-Instruct-v0.2"
+                );
+                
+                // AI Chat is now activated!
+            }
+        }, 1000);
+    });       
+&lt;/script&gt;</pre>
+
+                    <div class="screenshot-wrapper">
+                        <div class="screenshot-content">
+                            <h4>Visual Guide: Activating AI Chat</h4>
+                            <ol>
+                                <li>Add API key in user-profile.html</li>
+                                <li>Open user profile page</li>
+                                <li>Click "AI Assistant" button</li>
+                                <li>Start chatting! for example after logging write "who am i?"</li>
+                            </ol>
+                        </div>
+                        <div class="screenshot-image">
+                            <div class="screenshot-caption">AI Assistant ready to help</div>
+                        </div>
+                    </div>
+
+                    <div class="warning">
+                        <strong>⚠️ Common Mistake:</strong> Make sure to add this code in
+                        <strong>user-profile.html</strong> only. Adding it to other HTML files will not work!
+                    </div>
+
+                    <div class="info">
+                        <strong>💡 How to verify AI Chat is activated:</strong><br>
+                        • Open the user profile page<br>
+                        • Click on the "AI Assistant" button<br>
+                        • Try sending a message - if it responds, it's working!<br>
+                        • Check browser DevTools Network tab for API calls
+                    </div>
+
+                    <div class="critical-notice">
+                        <h4>🔐 Security Warning for AI API Keys</h4>
+                        <p><strong>Development Only:</strong> The provided method puts API keys in frontend code.</p>
+                        <p><strong>For Production:</strong></p>
+                        <ul>
+                            <li>Create a backend proxy endpoint</li>
+                            <li>Store API keys server-side only</li>
+                            <li>Route AI requests through your backend</li>
+                        </ul>
+                        <pre class="api-example">
+// Production-safe approach:
+fetch('/api/ai-chat', {
+    method: 'POST',
+    headers: { 'Authorization': 'Bearer YOUR_SESSION_TOKEN' },
+    body: JSON.stringify({ message: userMessage })
+})</pre>
+                    </div>
+
+                    <div class="info">
+                        <strong>Get API Keys:</strong><br>
+                        • Together AI (Free $5): <a href="https://api.together.xyz/"
+                            target="_blank">api.together.xyz</a><br>
+                        • Openrouter: <a href="https://openrouter.ai/" target="_blank">platform.openrouter.com</a><br>
+                    </div>
+                </div>
+
+                <div class="quick-start" id="payment-integration">
+                    <h4>Step 4: Payment Integration</h4>
+                    <p>For real payments, you need a backend that handles payment processing:</p>
+                    <pre class="api-example">
+// In payment.js, replace simulatePaymentProcessing function:
+EmiralPayment.simulatePaymentProcessing = async function(paymentData) {
+    const response = await fetch('/api/process-payment', {
+        method: 'POST',
+        headers: { 
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + YOUR_API_KEY
+        },
+        body: JSON.stringify({
+            plan: this.state.selectedPlan,
+            payment: paymentData,
+            user: this.state.currentUser
+        })
+    });
+    
+    const result = await response.json();
+    return result.success;
+};</pre>
+                    <div class="warning">
+                        <strong>⚠️ Security Note:</strong> Never process payments directly in frontend. Always use a
+                        secure backend with proper PCI compliance.
+                    </div>
+
+                </div>
+
+                <div class="quick-start" id="contact-form">
+                    <h4>Step 5: Enable Contact Form (Ready to Use)</h4>
+                    <p>The contact form is pre-configured to work with Formspree. To activate it:</p>
+                    <ol>
+                        <li>Sign up for free at <a href="https://formspree.io" target="_blank">formspree.io</a></li>
+                        <li>Create a new form and copy your Form ID</li>
+                        <li>In <code>contact-faq.html</code>, find this line:<br>
+                            <code>&lt;form action="https://formspree.io/f/YOUR_FORM_ID_HERE"&gt;</code>
+                        </li>
+                        <li>Replace <code>YOUR_FORM_ID_HERE</code> with your actual Form ID</li>
+                    </ol>
+                    <div class="info">
+                        <strong>That's it!</strong> Your contact form will now send emails directly to your inbox. Free
+                        plan includes 50 submissions/month.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- File Structure Section -->
+        <div class="section" id="file-structure">
+            <h2>📁 Complete File Structure & Architecture</h2>
+
+            <div class="file-tree-container">
+                <div class="file-tree-header">
+                    EmiralAI Project Structure
+                </div>
+
+                <div class="file-tree">
+                    <!-- Root Directory -->
+                    <div class="folder-section">
+                        <div class="folder-title">📁 EmiralAI/ (Root Directory)</div>
+
+                        <!-- Assets Folder -->
+                        <div class="folder-section" style="margin-left: 20px;">
+                            <div class="folder-title">📁 assets/</div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">└</span>
+                                <span class="folder">models/</span>
+                                <span class="file-description"># 3D GLB models for visual elements</span>
+                            </div>
+                        </div>
+
+                        <!-- CSS Folder -->
+                        <div class="folder-section" style="margin-left: 20px;">
+                            <div class="folder-title">📁 css/ (10 Stylesheets)</div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">style.css</span>
+                                <span class="file-description"># <strong>Global styles (ALL pages) + main.html &
+                                        404.html
+                                        specific</strong></span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">auth-popups.css</span>
+                                <span class="file-description"># Login/Signup popup styles</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">blog.css</span>
+                                <span class="file-description"># Blog page specific</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">contact-faq.css</span>
+                                <span class="file-description"># Contact & FAQ specific</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">dashboard.css</span>
+                                <span class="file-description"># Dashboard specific</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">payment.css</span>
+                                <span class="file-description"># Payment page specific</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">portfolio.css</span>
+                                <span class="file-description"># Portfolio specific</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">privacy-policy.css</span>
+                                <span class="file-description"># Privacy page specific</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">terms.css</span>
+                                <span class="file-description"># Terms page specific</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">└</span>
+                                <span class="file">user-profile.css</span>
+                                <span class="file-description"># User Profile page specific</span>
+                            </div>
+                        </div>
+
+                        <!-- JavaScript Folder -->
+                        <div class="folder-section" style="margin-left: 20px;">
+                            <div class="folder-title">📁 js/ (10 JavaScript Files)</div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">console-fix.js</span>
+                                <span class="file-description"># <strong>Console management for
+                                        production</strong></span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">customize.js</span>
+                                <span class="file-description"># <strong>Global: Theme toggle (bottom-right), mobile
+                                        nav</strong></span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">user-data-manager.js</span>
+                                <span class="file-description"># <strong>Central data hub (connects auth, payment,
+                                        dashboard, profile)</strong></span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">auth-popups.js</span>
+                                <span class="file-description"># Authentication popups</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">dashboard.js</span>
+                                <span class="file-description"># Dashboard with 7 tabs + date range</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">payment.js</span>
+                                <span class="file-description"># Payment processing simulation</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">user-profile.js</span>
+                                <span class="file-description"># Profile with 5 tabs + AI Chat</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">blog.js</span>
+                                <span class="file-description"># Blog system (creates posts dynamically)</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">contact-faq.js</span>
+                                <span class="file-description"># Contact form & FAQ</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">└</span>
+                                <span class="file">portfolio.js</span>
+                                <span class="file-description"># Portfolio gallery</span>
+                            </div>
+                        </div>
+
+                        <!-- Other Folders -->
+                        <div class="folder-section" style="margin-left: 20px;">
+                            <div class="folder-title">📁 Other Directories</div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="folder">favicons/</span>
+                                <span class="file-description"># Favicon files for browser tabs</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="folder">images/</span>
+                                <span class="file-description"># All project images</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">└</span>
+                                <span class="folder">Video/</span>
+                                <span class="file-description"># Video files for the website</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">└</span>
+                                <span class="folder">documentation/</span>
+                                <span class="file-description"># documentation HTML file and doc-images Folder</span>
+                            </div>
+                        </div>
+
+                        <!-- HTML Files -->
+                        <div class="folder-section" style="margin-left: 20px;">
+                            <div class="folder-title">📄 HTML Pages (10 Files)</div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">main.html</span>
+                                <span class="file-description"># Homepage (includes auth popups code)</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">dashboard.html</span>
+                                <span class="file-description"># Dashboard (7 sections + logout)</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">user-profile.html</span>
+                                <span class="file-description"># Profile (5 tabs + logout + AI Chat)</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">payment.html</span>
+                                <span class="file-description"># Payment Page</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">blog.html</span>
+                                <span class="file-description"># Blog (posts from JS)</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">portfolio.html</span>
+                                <span class="file-description"># Portfolio</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">contact-faq.html</span>
+                                <span class="file-description"># Contact & FAQ</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">privacy-policy.html</span>
+                                <span class="file-description"># Privacy Policy</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">├</span>
+                                <span class="file">terms.html</span>
+                                <span class="file-description"># Terms of Service</span>
+                            </div>
+                            <div class="file-tree-item">
+                                <span class="file-tree-indent"></span>
+                                <span class="file-tree-icon">└</span>
+                                <span class="file">404.html</span>
+                                <span class="file-description"># 404 Error Page</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info" style="margin-top: 30px;">
+                <strong>Architecture Notes:</strong>
+                <ul>
+                    <li><code>style.css</code> provides global styles for ALL 10 pages</li>
+                    <li><code>customize.js</code> runs on ALL pages (theme toggle, mobile menu)</li>
+                    <li><code>console-fix.js</code> manages console output for production performance</li>
+                    <li><code>user-data-manager.js</code> is the central hub connecting all modules</li>
+                    <li>Template uses localStorage for demo data persistence</li>
+                </ul>
+            </div>
+
+            <div class="success" style="margin-top: 20px;">
+                <strong>🏆 Why This Architecture Matters:</strong>
+                <p>Unlike basic templates that duplicate code across pages, EmiralAI uses a professional
+                    <strong>Central Data Hub</strong> pattern commonly found in enterprise applications.
+                    This means:
+                </p>
+                <ul>
+                    <li>✅ <strong>50% less code</strong> to maintain</li>
+                    <li>✅ <strong>Zero data conflicts</strong> between pages</li>
+                    <li>✅ <strong>Instant updates</strong> without page refresh</li>
+                    <li>✅ <strong>Backend-ready</strong> - just replace localStorage calls</li>
+                    <li>✅ <strong>Enterprise-grade</strong> architecture in an HTML template</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Key Features Section -->
+        <div class="section" id="key-features">
+            <h2>✨ Key Features</h2>
+
+            <h3 id="dark-light-mode">1. Dark/Light Mode Toggle</h3>
+            <p>All pages include a theme toggle button located at the <strong>bottom-right corner</strong>.</p>
+            <div class="info">
+                <strong>Location:</strong> Bottom-right corner (floating button)<br>
+                <strong>Icon:</strong> Sun/Moon icon that changes based on current theme<br>
+                <strong>Persistence:</strong> Saves preference in localStorage
+            </div>
+
+            <h3 id="ai-assistant">2. AI Chat Assistant (In User Profile)</h3>
+            <p>The user profile page includes a working AI chat that can connect to real AI APIs.</p>
+            <div class="success">
+                <strong>Supported AI Providers:</strong>
+                <ul>
+                    <p>--have been tested--</p>
+                    <li>Together AI - Free $5 credit for new users</li>
+                    <li>OpenRouter - Access to multiple models</li>
+                    <p>--NOT have been tested--</p>
+                    <li>DeepSeek - Affordable pricing</li>
+                    <li>OpenAI - Premium quality</li>
+                </ul>
+            </div>
+
+            <h3 id="auth-system">3. User Authentication System</h3>
+            <ul class="feature-list">
+                <li>Login/Signup popups embedded in main.html</li>
+                <li>Beautiful animations with glassmorphism design</li>
+                <li>Header shows user name and avatar after login</li>
+                <li>Demo data stored in localStorage</li>
+                <li>Ready for real API integration</li>
+                <li>Session management with expiry</li>
+                <li>Auto-generated user avatars</li>
+            </ul>
+
+            <h3 id="blog-system">4. Blog System</h3>
+            <p>Blog posts are generated dynamically by JavaScript. To add new posts:</p>
+            <pre>
+// In blog.js, find the blogPosts array and add:
+{
+    id: 14,
+    title: "Your New Post Title",
+    excerpt: "Post summary...",
+    content:"Full post content...",
+    category: "Machine Learning, AI ...etc",
+    image: "images/YOUR-IMAGE",
+    author: {
+        name: "NAME OF AUTHOR",
+        avatar: "images/AUTHOR'S AVATAR",
+        role: "ROLE OF AUTHOR"
+    },
+    date: "THE DATE OF CREATING POST (e.g., April 9, 2024)",
+    readTime: "TIME TO READ THE POST (6 min read)"
+}</pre>
+        </div>
+
+        <!-- Advanced Features Section -->
+        <div class="section" id="advanced-features">
+            <h2>🚀 Advanced Features</h2>
+
+            <div class="feature-grid">
+                <div class="feature-card" id="offline-support">
+                    <h4><i class="fas fa-cloud-download-alt"></i> Offline Support</h4>
+                    <ul>
+                        <li>Works without internet connection</li>
+                        <li>Queues operations when offline</li>
+                        <li>Syncs automatically when online</li>
+                        <li>Shows notification on connectivity change</li>
+                    </ul>
+                    <p><strong>Location:</strong> <code>user-data-manager.js</code></p>
+                </div>
+
+                <div class="feature-card" id="activity-tracking">
+                    <h4><i class="fas fa-chart-line"></i> Activity Tracking System</h4>
+                    <ul>
+                        <li>Tracks user actions automatically</li>
+                        <li>Stores last 100 activities</li>
+                        <li>Analytics-ready format</li>
+                        <li>Google Analytics integration</li>
+                    </ul>
+                    <p><strong>Usage:</strong></p>
+                    <pre>EmiralUserData.trackActivity('feature_used', {
+    feature: 'ai_chat'
+});</pre>
+                </div>
+
+                <div class="feature-card" id="data-encryption">
+                    <h4><i class="fas fa-lock"></i> Data Encryption Ready</h4>
+                    <ul>
+                        <li>AES encryption support built-in</li>
+                        <li>Currently disabled by default</li>
+                        <li>Easy to enable for sensitive data</li>
+                    </ul>
+                    <p><strong>Enable:</strong></p>
+                    <pre>EmiralUserData.config.storage.enableEncryption = true;
+EmiralUserData.config.storage.encryptionKey = 'your-key';</pre>
+                </div>
+
+                <div class="feature-card" id="import-export">
+                    <h4><i class="fas fa-file-export"></i> Import/Export Data</h4>
+                    <ul>
+                        <li>Export all user data (from localStorage) to JSON</li>
+                        <li>Import data from previous backups</li>
+                        <li>Includes version control & activity log (local only)</li>
+                        <li>Version control included</li>
+                        <li>Activity log export</li>
+                    </ul>
+                    <p><strong>Export:</strong></p>
+                    <pre>const backup = EmiralUserData.exportUserData();
+// Download as JSON file</pre>
+                </div>
+
+                <div class="feature-card" id="payment-validation">
+                    <h4><i class="fas fa-credit-card"></i> Advanced Payment Validation</h4>
+                    <ul>
+                        <li>Luhn algorithm for card validation</li>
+                        <li>Auto-detect card type (Visa, MC, etc)</li>
+                        <li>Real-time formatting</li>
+                        <li>CVV and expiry validation</li>
+                    </ul>
+                    <p><strong>Features:</strong> Auto card type detection, real-time validation</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4><i class="fas fa-broadcast-tower"></i> Cross-Tab Sync</h4>
+                    <ul>
+                        <li>BroadcastChannel API support</li>
+                        <li>Storage event fallback</li>
+                        <li>Real-time data sync</li>
+                        <li>Login/logout sync across tabs</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h4><i class="fas fa-chart-pie"></i> Analytics Charts</h4>
+                    <ul>
+                        <li>Model trends visualization</li>
+                        <li>Response time charts</li>
+                        <li>Usage distribution</li>
+                        <li>Performance metrics</li>
+                    </ul>
+                    <p><strong>Location:</strong> User Profile - My Dashboard Tab</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4><i class="fas fa-file-invoice"></i> Billing Management</h4>
+                    <ul>
+                        <li>Invoice history</li>
+                        <li>Payment method management</li>
+                        <li>Subscription control</li>
+                        <li>Plan comparison</li>
+                    </ul>
+                    <p><strong>Location:</strong> User Profile - Billing & Plans Tab (Frontend Only)</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4><i class="fas fa-user-cog"></i> Account Settings</h4>
+                    <ul>
+                        <li>Profile management</li>
+                        <li>Security settings</li>
+                        <li>Notification preferences</li>
+                        <li>Data export/delete</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h4><i class="fas fa-calendar"></i> Date Range Picker</h4>
+                    <ul>
+                        <li>Quick date selections</li>
+                        <li>Custom date range</li>
+                        <li>Preset ranges</li>
+                        <li>Mobile-friendly</li>
+                    </ul>
+                    <p><strong>Location:</strong> Dashboard page</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4><i class="fas fa-palette"></i> Dynamic Theme System</h4>
+                    <ul>
+                        <li>CSS variables based</li>
+                        <li>Smooth transitions</li>
+                        <li>Chart color adaptation</li>
+                        <li>Persistent preference</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h4><i class="fas fa-bell"></i> Notification System</h4>
+                    <ul>
+                        <li>Toast notifications</li>
+                        <li>Multiple types (success, error, etc)</li>
+                        <li>Auto-dismiss</li>
+                        <li>Custom positioning</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info" style="margin-top: 20px;">
+                <strong>💡 Pro Tip:</strong> These advanced features make EmiralAI a truly professional template. Most
+                templates don't include offline support, activity tracking, or data encryption capabilities!
+            </div>
+        </div>
+
+        <!-- Data Flow Section -->
+        <div class="section" id="data-flow">
+            <h2>⚡ How Data Flows - Central Hub Architecture</h2>
+            <div class="info">
+                <strong>Smart Data Management with user-data-manager.js:</strong>
+                <p>The template uses a professional <strong>Central Data Hub</strong> pattern where
+                    <code>user-data-manager.js</code>
+                    acts as the single source of truth for all user data. This eliminates data duplication and ensures
+                    consistency
+                    across all pages.
+                </p>
+            </div>
+
+            <div class="flow-diagram" style="text-align: center; padding: 20px;">
+                <pre style="display: inline-block; text-align: left;">
+                    ┌─────────────────────┐
+                    │ user-data-manager.js│ ← Central Data Hub
+                    └──────────┬──────────┘
+                               │
+                ┌──────────────┴───────────────┐
+                │                              │
+          ┌─────┴─────┐              ┌────────┴────────┐
+          │           │              │                 │
+     auth-popups.js   │         user-profile.js   payment.js
+     (Login/Signup)   │         (Profile + AI)    (Payments)
+                      │
+                 dashboard.js
+                 (Statistics)
+                </pre>
+            </div>
+
+            <h3>🔄 Real-Time Data Synchronization</h3>
+            <ul>
+                <li><strong>Login State:</strong> When user logs in → Updates everywhere instantly</li>
+                <li><strong>Profile Updates:</strong> Change name → Reflects in header immediately</li>
+                <li><strong>Plan Selection:</strong> Buy a plan → Buttons update across all pages</li>
+                <li><strong>Logout:</strong> One click → Cleans all user data securely</li>
+            </ul>
+
+            <h3>📝 Example: How Login Flow Works</h3>
+            <pre>
+1. User logs in → auth-popups.js → validates credentials
+2. Success → sends data to → user-data-manager.js
+3. user-data-manager.js → saves to localStorage
+4. Broadcasts update → all pages refresh their UI
+5. Header shows → user avatar + name
+6. "Get Started Button in Hero" → changes to "See your Dashboard"
+7. Pricing buttons → update based on user's plan</pre>
+
+            <div class="success">
+                <strong>✅ Benefits of This Architecture:</strong>
+                <ul>
+                    <li>No data conflicts between pages</li>
+                    <li>Easy to add new features</li>
+                    <li>Simple debugging (check one file)</li>
+                    <li>Professional enterprise pattern</li>
+                    <li>Ready for backend integration</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Interconnected Pages Section -->
+        <div class="section" id="interconnected-pages">
+            <h2>🔗 Interconnected Pages & Dynamic Behavior</h2>
+
+            <p>The template features an intelligent interconnected system where five core HTML pages communicate
+                through
+                JavaScript and localStorage to create a seamless user experience.</p>
+
+            <h3>Pages Involved in the System</h3>
+            <div class="flow-diagram">
+                <div style="text-align: center; margin: 20px 0;">
+                    <strong>Visual Data Flow Architecture</strong>
+                </div>
+                <pre style="text-align: center; font-family: monospace; line-height: 1.4;">
+                           ┌─────────────────────┐
+                           │ user-data-manager.js│
+                           │   (Central Hub)     │
+                           └──────────┬──────────┘
+                                      │
+            ┌─────────────────────────┼─────────────────────────┐
+            │                         │                         │
+    ┌───────┴────────┐       ┌────────┴────────┐      ┌────────┴────────┐
+    │ auth-popups.js │       │ user-profile.js │      │   payment.js    │
+    │                │       │                 │      │                 │
+    │ • User Login   │       │ • Show Profile  │      │ • Process Pay   │
+    │ • Create Avatar│       │ • AI Chat       │      │ • Update Plan   │
+    │ • Update Header│       │ • Edit Info     │      │ • Button States │
+    └────────────────┘       └─────────────────┘      └─────────────────┘
+                                      │
+                           ┌──────────┴──────────┐
+                           │   dashboard.js      │
+                           │                     │
+                           │ • Display Stats     │
+                           │ • Show User Data    │
+                           │ • Real-time Updates │
+                           └─────────────────────┘
+                </pre>
+            </div>
+
+            <h3>Dynamic Behaviors After User Authentication</h3>
+
+            <!-- Login Flow Screenshots -->
+            <div class="screenshot-gallery">
+                <div class="screenshot-gallery-item">
+                    <img src="doc-images/before-signup.jpg" alt="Before Sign Up">
+                    <div class="screenshot-caption">1. Before Sign Up</div>
+                </div>
+                <div class="screenshot-gallery-item">
+                    <img src="doc-images/sign-up-popup.jpg" alt="Sign Up Popup">
+                    <div class="screenshot-caption">2. Sign Up Popup</div>
+                </div>
+                <div class="screenshot-gallery-item">
+                    <img src="doc-images/after-signup.jpg" alt="After Login">
+                    <div class="screenshot-caption">3. After Login</div>
+                </div>
+                <div class="screenshot-gallery-item">
+                    <img src="doc-images/dashboard.jpg" alt="Dashboard">
+                    <div class="screenshot-caption">4. User Dashboard</div>
+                </div>
+            </div>
+
+            <div class="interconnected-example">
+                <h5>1. Homepage Transformation (main.html)</h5>
+                <ul>
+                    <li><strong>Before Login:</strong> Header shows "Login" button</li>
+                    <li><strong>After Login:</strong> Button transforms to show user's profile picture and name</li>
+                    <li><strong>CTA Change:</strong> "Get Started" button automatically changes to "See your
+                        Dashboard"
+                    </li>
+                </ul>
+            </div>
+
+            <div class="interconnected-example">
+                <h5>2. User Signup Flow</h5>
+                <p>When a user signs up through the popup (powered by auth-popups.html):</p>
+                <ol>
+                    <li>User data is validated and stored in localStorage</li>
+                    <li>The popup closes automatically</li>
+                    <li>The page refreshes to show personalized content</li>
+                    <li>User is now "logged in" across all pages</li>
+                </ol>
+            </div>
+
+            <div class="interconnected-example">
+                <h5>3. Pricing Section Intelligence</h5>
+                <p>The pricing section adapts based on user's subscription status:</p>
+                <ul>
+                    <li><strong>Selected Plan:</strong> Button shows "Current Plan" (disabled)</li>
+                    <li><strong>Other Plans:</strong> Buttons show "Change Plan" or "Upgrade" (clickable)</li>
+                    <li><strong>No Plan:</strong> All buttons show "Get Started"</li>
+                    <li><strong>Plan Expiry:</strong> Shows renewal date for current plan</li>
+                </ul>
+            </div>
+
+            <div class="interconnected-example">
+                <h5>4. Smart User Avatar System</h5>
+                <p>When a user signs up without a profile picture:</p>
+                <ul>
+                    <li>System generates avatar from name initials</li>
+                    <li>15 gradient colors available</li>
+                    <li>Color based on email hash (consistent)</li>
+                    <li>Updates immediately if user uploads photo and also support GIF</li>
+                </ul>
+            </div>
+
+            <div class="interconnected-example">
+                <h5>5. Intelligent Button States</h5>
+                <p>All buttons adapt based on user context:</p>
+                <div class="table-wrapper">
+                    <table style="width: 100%; margin-top: 10px;">
+                        <tr>
+                            <th>Button Location</th>
+                            <th>Logged Out</th>
+                            <th>Logged In</th>
+                        </tr>
+                        <tr>
+                            <td>Hero Section</td>
+                            <td>"Get Started"</td>
+                            <td>"See your Dashboard"</td>
+                        </tr>
+                        <tr>
+                            <td>Pricing - User's Plan</td>
+                            <td>"Select Plan"</td>
+                            <td>"Current Plan" ✓</td>
+                        </tr>
+                        <tr>
+                            <td>Pricing - Higher Plan</td>
+                            <td>"Select Plan"</td>
+                            <td>"Upgrade"</td>
+                        </tr>
+                        <tr>
+                            <td>Header</td>
+                            <td>"Login"</td>
+                            <td>[Avatar] + Name</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <h3>JavaScript Files Orchestrating the Magic</h3>
+
+            <div class="table-wrapper">
+                <table>
+                    <tr>
+                        <th>JavaScript File</th>
+                        <th>Primary Role</th>
+                        <th>Key Functions</th>
+                    </tr>
+                    <tr>
+                        <td><code>user-data-manager.js</code></td>
+                        <td><strong>Central Data Hub</strong></td>
+                        <td>
+                            • Single source of truth for all user data<br>
+                            • Manages localStorage operations<br>
+                            • Provides data to all other modules<br>
+                            • Handles data persistence<br>
+                            • Ensures data consistency across pages<br>
+                            • <strong>NEW:</strong> Offline queue system<br>
+                            • <strong>NEW:</strong> Activity tracking<br>
+                            • <strong>NEW:</strong> Import/Export functionality
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>auth-popups.js</code></td>
+                        <td>Authentication UI</td>
+                        <td>
+                            • Handles login/signup forms<br>
+                            • Validates user input<br>
+                            • Creates user avatar from initials<br>
+                            • Sends data to user-data-manager<br>
+                            • Updates header UI after login<br>
+                            • Mobile menu user section
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>user-profile.js</code></td>
+                        <td>Profile Management</td>
+                        <td>
+                            • Displays user information<br>
+                            • Manages profile tabs<br>
+                            • Handles AI chat functionality<br>
+                            • Reads from user-data-manager<br>
+                            • Updates user preferences<br>
+                            • <strong>NEW:</strong> Analytics charts<br>
+                            • <strong>NEW:</strong> Billing management<br>
+                            • <strong>NEW:</strong> Account settings
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>payment.js</code></td>
+                        <td>Payment Processing</td>
+                        <td>
+                            • Manages plan selection<br>
+                            • Handles payment forms<br>
+                            • Updates subscription status<br>
+                            • Changes buttons (Select → Current)<br>
+                            • Syncs with user-data-manager<br>
+                            • <strong>NEW:</strong> Luhn algorithm validation<br>
+                            • <strong>NEW:</strong> Card type detection<br>
+                            • <strong>NEW:</strong> Tax calculation
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>dashboard.js</code></td>
+                        <td>Dashboard Display</td>
+                        <td>
+                            • Shows user statistics<br>
+                            • Displays usage data<br>
+                            • Manages dashboard sections<br>
+                            • Pulls data from user-data-manager<br>
+                            • Real-time updates<br>
+                            • Date range picker<br>
+                            • Project management
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="info">
+                <strong>🎯 Architecture Highlight:</strong> The <code>user-data-manager.js</code> pattern
+                ensures that when a user performs any action (login, plan purchase, profile update),
+                the change is immediately reflected. This creates
+                a seamless, app-like experience in a simple HTML template!
+            </div>
+
+            <h3>How to Customize the Interconnected Logic</h3>
+
+            <div class="info">
+                <strong>Working with the Central Hub Pattern:</strong>
+                <p>All data operations go through <code>user-data-manager.js</code>. This makes customization
+                    clean and predictable:</p>
+            </div>
+
+            <pre class="api-example">
+// Example: Getting user data from any page
+const userData = EmiralUserData.getUserData();
+if (userData) {
+    console.log('User:', userData.name);
+    console.log('Plan:', userData.plan);
+}
+
+// Example: Updating user data from any page
+EmiralUserData.updateUserData({
+    plan: 'pro',
+    planExpiry: '2025-12-31'
+});
+
+// Example: Listening for data changes
+window.addEventListener('emiralUserDataUpdated', (event) => {
+    // Update UI when data changes
+    updateHeaderUI();
+    updatePricingButtons();
+});
+
+// Example: Track user activity
+EmiralUserData.trackActivity('feature_used', {
+    feature: 'ai_chat',
+    timestamp: new Date()
+});
+
+// Example: Export user data
+const backup = EmiralUserData.exportUserData();
+console.log('User backup created:', backup);</pre>
+
+            <div class="success">
+                <strong>✅ Developer Benefits:</strong>
+                <ul>
+                    <li><strong>Single API:</strong> One consistent interface for all data operations</li>
+                    <li><strong>Event-Driven:</strong> Components update automatically on data change</li>
+                    <li><strong>Backend-Ready:</strong> Replace localStorage with API calls in one place</li>
+                    <li><strong>Debugging:</strong> All data flows through one file - easy to trace</li>
+                    <li><strong>Professional:</strong> Enterprise patterns in an HTML template</li>
+                </ul>
+            </div>
+
+            <h3>Adding Your Own API Integration</h3>
+            <p>Each JavaScript file contains commented sections where you can add your API calls:</p>
+
+            <pre class="api-example">
+// Example from auth-popups.js
+const apiConfig = {
+    useRealAPI: true,  // Set to true to enable real API
+    baseURL: 'https://your-api-domain.com/api',
+    endpoints: {
+        login: '/auth/login',
+        signup: '/auth/signup',
+        forgotPassword: '/auth/forgot-password'
+    },
+    headers: {
+        'Content-Type': 'application/json'
+    }
+};
+
+// Real API implementation example
+async function authenticateUser(credentials) {
+    const response = await fetch(apiConfig.baseURL + apiConfig.endpoints.login, {
+        method: 'POST',
+        headers: apiConfig.headers,
+        body: JSON.stringify(credentials)
+    });
+    
+    const data = await response.json();
+    
+    if (data.success) {
+        // Save to centralized manager
+        EmiralUserData.saveUserData(data.user);
+    }
+    
+    return data;
+}</pre>
+
+            <h3>Data Persistence Architecture</h3>
+
+            <div class="warning">
+                <strong>Important:</strong> The template uses localStorage for demo purposes. In production:
+                <ul>
+                    <li>Replace localStorage with secure session management</li>
+                    <li>Use HTTP-only cookies for authentication tokens</li>
+                    <li>Implement proper server-side validation</li>
+                    <li>Never store sensitive data in localStorage</li>
+                    <li>Enable encryption for sensitive data:
+                        <code>EmiralUserData.config.storage.enableEncryption = true</code>
+                    </li>
+                </ul>
+            </div>
+
+            <h3>Testing the Interconnected Features</h3>
+
+            <ol>
+                <li><strong>Open main.html</strong> - Notice the "Login or Get Started" button</li>
+                <li><strong>Click "Login"</strong> - The popup appears</li>
+                <li><strong>Sign up with any email</strong> - Form validates and saves</li>
+                <li><strong>Page refreshes</strong> - Header now shows your name</li>
+                <li><strong>Scroll to pricing</strong> - See the Plans, select a plan and pay it</li>
+                <li><strong>Navigate between pages "Homepage, User Profile and Dashboard"</strong> - User stays logged
+                    in</li>
+                <li><strong>Click "Logout"</strong> - Returns to default state</li>
+            </ol>
+        </div>
+
+        <!-- Customization Guide Section -->
+        <div class="section" id="customization">
+            <h2>🎨 Customization Guide</h2>
+
+            <h3>Recommended Tools (Optional)</h3>
+            <p>For easier customization, we recommend:</p>
+            <ul>
+                <li><strong>Code Editor</strong>: <a href="https://code.visualstudio.com/" target="_blank">VS Code</a>
+                    (free) or any text editor</li>
+                <li><strong>Local Server</strong>: VS Code Live Server extension</li>
+                <li><strong>Browser</strong>: Chrome/Firefox with DevTools</li>
+            </ul>
+            <div class="info">
+                <strong>Note:</strong> You can edit files with any text editor, even Notepad. These tools just make
+                development easier.
+            </div>
+
+            <h3>Change Brand/Logo</h3>
+            <p>Search and replace "EmiralAI" in all HTML files with your brand name.</p>
+
+            <h3>Change Colors</h3>
+            <p>Main colors are defined in <code>style.css</code>:</p>
+            <pre>
+:root {
+    --primary-blue: #00a2ff;
+    --primary-purple: #9000ff;
+    --primary-red: #ff0058;
+    /* Edit these values */
+}</pre>
+
+            <h3>Add New Pages</h3>
+            <ol>
+                <li>Copy any existing HTML file as a template</li>
+                <li>Create corresponding CSS file in /css/</li>
+                <li>Create JS file in /js/ if needed</li>
+                <li>Link CSS and JS files in your new HTML</li>
+            </ol>
+
+            <h3>Customize Plans</h3>
+            <p>Edit plan definitions in <code>user-data-manager.js</code>:</p>
+            <pre>
+plans: {
+    basic: {
+        name: 'Basic Plan',
+        price: 29,  // Change price
+        apiLimit: 10000,  // Change limits
+        features: [
+            'Your custom feature 1',
+            'Your custom feature 2'
+        ]
+    }
+}</pre>
+
+            <h3>Development Tips</h3>
+            <details>
+                <summary style="cursor: pointer; font-weight: bold;">For Beginners (click to expand)</summary>
+                <div style="margin-top: 10px; padding: 15px; background: #f8f9fa; border-radius: 5px;">
+                    <h4>Setting Up Your Development Environment:</h4>
+                    <ol>
+                        <li><strong>Install a Code Editor:</strong>
+                            <ul>
+                                <li><a href="https://code.visualstudio.com/">VS Code</a> (recommended - free)</li>
+                                <li><a href="https://www.sublimetext.com/">Sublime Text</a></li>
+                                <li><a href="https://notepad-plus-plus.org/">Notepad++</a> (Windows)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Use a Local Server (for API testing):</strong>
+                            <ul>
+                                <li>VS Code: Install "Live Server" extension</li>
+                                <li>Python: Run <code>python -m http.server 8000</code></li>
+                                <li>Node.js: Use <code>npx http-server</code></li>
+                            </ul>
+                        </li>
+                        <li><strong>Browser Developer Tools:</strong>
+                            <ul>
+                                <li>Press F12 in Chrome/Firefox</li>
+                                <li>Use Console tab for debugging</li>
+                                <li>Use Network tab for API calls</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p><strong>Quick Edit Workflow:</strong></p>
+                    <ol>
+                        <li>Open project folder in VS Code</li>
+                        <li>Right-click main.html → "Open with Live Server"</li>
+                        <li>Edit files and save (Ctrl+S)</li>
+                        <li>Browser auto-refreshes to show changes</li>
+                    </ol>
+                </div>
+            </details>
+        </div>
+
+        <!-- Browser Compatibility Section -->
+        <div class="section" id="browser-compatibility">
+            <h2>🌐 Browser Compatibility</h2>
+            <ul>
+                <li>✅ Chrome (latest)</li>
+                <li>✅ Firefox (latest)</li>
+                <li>✅ Safari (latest)</li>
+                <li>✅ Edge (latest)</li>
+                <li>⚠️ IE11 (limited support)</li>
+            </ul>
+        </div>
+
+        <!-- Getting Started Section -->
+        <div class="section" id="getting-started">
+            <h2>🚀 Getting Started</h2>
+            <ol>
+                <li><strong>Extract Files:</strong> Unzip the downloaded package</li>
+                <li><strong>Open in Browser:</strong> Start with <code>main.html</code></li>
+                <li><strong>Test Features:</strong> Try login, explore dashboard, test theme toggle</li>
+                <li><strong>Customize:</strong> Edit HTML/CSS files as needed </li>
+                <li><strong>Deploy:</strong> Upload to any web hosting</li>
+            </ol>
+
+            <div class="info">
+                <strong>💡 Tip:</strong> The template works immediately without any tools or setup.
+                You only need a code editor if you want to customize the template.
+            </div>
+        </div>
+
+        <!-- Console Management Section -->
+        <div class="section" id="console-management">
+            <h2>🖥️ Console & Debug Management</h2>
+            <p>This template includes intelligent console management for optimal performance:</p>
+
+            <div class="success">
+                <strong>✅ Already Configured:</strong> The template comes with <code>console-fix.js</code>
+                pre-installed and loaded in most HTML pages. No additional setup required!
+            </div>
+
+            <div class="info">
+                <strong>How it works:</strong><br>
+                • Console output is automatically disabled in production for better performance<br>
+                • Controlled by <code>console-fix.js</code><br>
+                • Prevents debug information from appearing in live sites<br>
+                • Improves performance by eliminating console overhead<br>
+                • <strong>Industry best practice</strong> for production deployment
+            </div>
+
+            <h3>Enable Console for Debugging</h3>
+            <p>You have three options to enable console output:</p>
+
+            <ol>
+                <li>
+                    <strong>Method 1 - Browser Console:</strong><br>
+                    Open browser DevTools and type: <code>enableConsole()</code>
+                </li>
+                <li>
+                    <strong>Method 2 - Remove Script:</strong><br>
+                    Remove or comment this line from your HTML files:<br>
+                    <code>&lt;script src="js/console-fix.js"&gt;&lt;/script&gt;</code>
+                </li>
+                <li>
+                    <strong>Method 3 - Development Mode (Recommended):</strong><br>
+                    If using the improved version, console stays active on localhost automatically
+                </li>
+            </ol>
+
+            <div class="warning">
+                <strong>⚠️ Production Deployment:</strong><br>
+                • Keep console-fix.js active in production for better performance<br>
+                • Console statements can impact performance and expose debug info<br>
+                • Only enable console when actively debugging issues
+            </div>
+
+            <div class="success">
+                <strong>✅ Best Practice:</strong> The template is configured to work optimally out-of-the-box.
+                Console management ensures your production site runs efficiently while maintaining
+                developer-friendly debugging capabilities.
+            </div>
+
+            <details style="margin-top: 20px;">
+                <summary style="cursor: pointer; font-weight: bold;">View console-fix.js Implementation</summary>
+                <pre class="api-example" style="margin-top: 10px;">
+// Disables console in production while preserving debugging capabilities
+(function () {
+    'use strict';
+    
+    // Store original methods
+    window._originalConsole = {
+        log: console.log,
+        warn: console.warn,
+        error: console.error,
+        info: console.info,
+        debug: console.debug
+    };
+    
+    // Override with empty functions
+    console.log = function () { };
+    console.warn = function () { };
+    // ... other methods
+    
+    // Provide restore method
+    window.enableConsole = function () {
+        // Restores all console methods
+    };
+})();</pre>
+            </details>
+        </div>
+
+        <!-- Troubleshooting Section -->
+        <div class="section" id="troubleshooting">
+            <h2>🔧 Troubleshooting</h2>
+
+            <h4>AI Chat not working?</h4>
+            <ul>
+                <li>Check browser DevTools Network tab for API calls</li>
+                <li>Verify API key is correct</li>
+                <li>Ensure code is in user-profile.html only</li>
+                <li>Wait at least 1 second after page load</li>
+                <li>Try sending a test message in the AI Assistant tab</li>
+                <li>Enable console for debugging: type <code>enableConsole()</code> in DevTools</li>
+            </ul>
+
+            <h4>Login not persisting?</h4>
+            <ul>
+                <li>Check if localStorage is enabled</li>
+                <li>Clear browser cache</li>
+                <li>Check for JavaScript errors (use <code>enableConsole()</code> first)</li>
+                <li>Verify apiConfig settings if using real API</li>
+            </ul>
+
+            <h4>Theme toggle not working?</h4>
+            <ul>
+                <li>Ensure customize.js is loaded</li>
+                <li>Check for console errors (type <code>enableConsole()</code> if needed)</li>
+                <li>Verify CSS variables are defined</li>
+                <li>Clear localStorage and refresh</li>
+            </ul>
+
+            <h4>Payment validation errors?</h4>
+            <ul>
+                <li>Use test card: 4242 4242 4242 4242</li>
+                <li>Any future expiry date</li>
+                <li>Any 3-digit CVV</li>
+                <li>Check browser console for specific errors</li>
+            </ul>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="section" id="faq">
+            <h2>❓ Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: Do I need coding knowledge to use this template?</div>
+                <p>Basic HTML/CSS knowledge is recommended for customization. The template works out-of-the-box for
+                    demo purposes. No special tools required - you can edit with any text editor.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: What tools do I need to edit the template?</div>
+                <p>You can edit the files with:</p>
+                <ul>
+                    <li><strong>Basic:</strong> Any text editor (even Notepad)</li>
+                    <li><strong>Recommended:</strong> VS Code (free) with Live Server extension</li>
+                    <li><strong>Required:</strong> Just a web browser to view changes</li>
+                </ul>
+                <p>See the <a href="#customization">Customization Guide</a> for detailed setup instructions.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: Is a backend included?</div>
+                <p>No, this is a frontend template. It uses localStorage for demo data. You can connect any backend
+                    (Node.js, PHP, Python, etc.) using the provided API integration points.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: Which AI services work with the chat?</div>
+                <p>The following AI providers have been tested and work perfectly:</p>
+                <ul>
+                    <li><strong>Together AI</strong> (Mistral models - $5 free credit) <span
+                            class="badge badge-hot">BEST</span></li>
+                    <li><strong>OpenRouter</strong> - Multiple models available</li>
+                    <p>--Not have been tested--</p>
+                    <li><strong>DeepSeek</strong> - Very affordable pricing</li>
+                    <li><strong>OpenAI</strong> (ChatGPT) - Premium quality</li>
+                    <li><strong>Anthropic</strong> (Claude) - Advanced reasoning</li>
+                </ul>
+                <div class="success">
+                    <strong>✅ Best Options for Testing:</strong>
+                    <ol>
+                        <li><strong>Together AI</strong> - $5 free credit for Mistral models</li>
+                        <li><strong>OpenRouter</strong> - $1 free credit + free models</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: Can I use this with WordPress?</div>
+                <p>Yes, but it requires custom integration. The template is designed as standalone HTML pages. You would
+                    need to:</p>
+                <ul>
+                    <li>Convert HTML to WordPress theme structure</li>
+                    <li>Replace localStorage with WordPress database</li>
+                    <li>Integrate with WordPress user system</li>
+                </ul>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: How do I process real payments?</div>
+                <p>You need a backend server with Stripe/PayPal integration. The template provides the UI and can
+                    send
+                    data to your payment API. Never process payments directly in frontend code.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: Is the template mobile-friendly?</div>
+                <p>Yes! Fully responsive design that works on all devices (mobile, tablet, desktop).</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: What's included in the advanced features?</div>
+                <p>Many advanced features are included but not immediately visible:</p>
+                <ul>
+                    <li>Offline support with queue system</li>
+                    <li>Activity tracking for analytics</li>
+                    <li>Data encryption capability</li>
+                    <li>Import/Export user data</li>
+                    <li>Cross-tab synchronization</li>
+                    <li>Advanced payment validation</li>
+                    <li>And more! See <a href="#advanced-features">Advanced Features</a> section</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Important Notes Section -->
+        <div class="section" id="important-notes">
+            <h2>⚠️ Important Notes</h2>
+
+            <div class="warning">
+                <strong>Frontend Template Only</strong><br>
+                This template does NOT include backend functionality. Features work with demo data in the browser.
+                <ul>
+                    <li>✅ Perfect for: Developers who have their own backend</li>
+                    <li>✅ Ready for: API integration with any backend</li>
+                    <li>❌ Not included: Database, server-side code, hosting</li>
+                </ul>
+            </div>
+
+            <div class="info">
+                <strong>Security Considerations</strong><br>
+                <ul>
+                    <li>Never put API keys directly in production frontend code</li>
+                    <li>Use environment variables or proxy through your backend</li>
+                    <li>Payment processing must be done server-side</li>
+                    <li>Implement proper authentication on your backend</li>
+                    <li>Console output automatically managed by console-fix.js</li>
+                    <li>Enable data encryption for sensitive data</li>
+                </ul>
+            </div>
+
+            <div class="success">
+                <strong>Best Practices Included</strong><br>
+                <ul>
+                    <li>Central data management pattern</li>
+                    <li>Event-driven architecture</li>
+                    <li>Modular file structure</li>
+                    <li>Performance optimizations</li>
+                    <li>Security considerations</li>
+                    <li>Professional code organization</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- License Section -->
+        <div class="section" id="license">
+            <h2>📜 License Information</h2>
+            <div class="table-wrapper">
+                <table>
+                    <tr>
+                        <th>License Type</th>
+                        <th>What's Allowed</th>
+                        <th>What's NOT Allowed</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Regular License</strong></td>
+                        <td>
+                            ✓ One end product<br>
+                            ✓ Personal or client project<br>
+                            ✓ Modify as needed<br>
+                            ✓ Use advanced features
+                        </td>
+                        <td>
+                            ✗ Resell the template<br>
+                            ✗ Use in SaaS products<br>
+                            ✗ Redistribute source files<br>
+                            ✗ Remove attribution
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Extended License</strong></td>
+                        <td>
+                            ✓ All Regular License rights<br>
+                            ✓ Use in SaaS/paid products<br>
+                            ✓ Products for sale<br>
+                            ✓ Unlimited projects
+                        </td>
+                        <td>
+                            ✗ Resell as template<br>
+                            ✗ Redistribute source files<br>
+                            ✗ Compete with original<br>
+                            ✗ Remove attribution
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Support Section -->
+        <div class="section" id="support">
+            <h2>🤝 Support</h2>
+
+            <div class="success">
+                <strong>What's Covered in Support:</strong>
+                <ul>
+                    <li>Answering questions about existing features</li>
+                    <li>Explaining how to connect APIs</li>
+                    <li>Fixing bugs in the original template</li>
+                    <li>Basic customization guidance</li>
+                    <li>Help with advanced features</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <strong>What's NOT Covered:</strong>
+                <ul>
+                    <li>Custom development or new features</li>
+                    <li>Backend development or integration</li>
+                    <li>Installing on your server</li>
+                    <li>Third-party plugin integration</li>
+                    <li>Converting to other platforms (WordPress, etc)</li>
+                </ul>
+            </div>
+
+            <p><strong>Response Time:</strong> Usually within 24-48 hours via ThemeForest comments.</p>
+        </div>
+
+        <!-- Updates Section -->
+        <div class="section" id="updates">
+            <h2>🔄 Updates & Changelog</h2>
+            <div class="info">
+                <strong>Version 1.0.0</strong> (Current)
+                <ul>
+                    <li>Initial release</li>
+                    <li>10 HTML pages + Auth popup</li>
+                    <li>AI Chat integration ready</li>
+                    <li>Payment UI ready</li>
+                    <li>Dark/Light theme</li>
+                    <li>Contact form integration</li>
+                    <li>Offline support</li>
+                    <li>Activity tracking</li>
+                    <li>Data encryption ready</li>
+                    <li>Import/Export functionality</li>
+                    <li>Advanced payment validation</li>
+                    <li>Analytics charts</li>
+                    <li>Billing management</li>
+                    <li>Account settings</li>
+                </ul>
+            </div>
+            <p>Future updates will be available for free to all buyers through ThemeForest.</p>
+        </div>
+
+        <div class="footer">
+            <p><strong>Thank you for choosing EmiralAI!</strong></p>
+            <p>We hope you create amazing projects with this template.</p>
+            <p>Don't forget to rate us ⭐⭐⭐⭐⭐ on ThemeForest!</p>
+            <p>Version 1.0.0 | © 2025 EmiralAI</p>
+        </div>
+    </div>
+
+    <!-- Simple Lightbox Script -->
+    <script>
+        // Simple lightbox for screenshots
+        document.querySelectorAll('.screenshot-gallery-item img, .screenshot-image img, .screenshot-container > img').forEach(img => {
+            img.addEventListener('click', function () {
+                const overlay = document.createElement('div');
+                overlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.9);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 9999;
+                cursor: pointer;
+            `;
+
+                const bigImg = document.createElement('img');
+                bigImg.src = this.src;
+                bigImg.style.cssText = 'max-width: 90%; max-height: 90%; border-radius: 10px; box-shadow: 0 0 30px rgba(0,0,0,0.5);';
+
+                overlay.appendChild(bigImg);
+                document.body.appendChild(overlay);
+
+                overlay.addEventListener('click', () => overlay.remove());
+
+                // ESC key to close
+                document.addEventListener('keydown', function closeOnEsc(e) {
+                    if (e.key === 'Escape') {
+                        overlay.remove();
+                        document.removeEventListener('keydown', closeOnEsc);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

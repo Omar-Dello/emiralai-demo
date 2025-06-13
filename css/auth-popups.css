@@ -1,0 +1,1129 @@
+/**
+ * =============================================================================
+ * AUTH POPUP STYLES
+ * =============================================================================
+ * Version: 1.0.0
+ * Author: Omar Dello
+ * Description: Professional styles for Authentication Popup with modern design and animations
+ * Uses global variables from style.css
+ * 
+ * Table of Contents:
+ * 1. Popup Overlay and Container
+ * 2. Close Button Styles
+ * 3. Logo and Branding
+ * 4. Form Elements and Inputs
+ * 5. Floating Labels
+ * 6. Checkboxes and Form Controls
+ * 7. Authentication Buttons
+ * 8. Social Authentication
+ * 9. Links and Navigation
+ * 10. AI Graphic Elements
+ * 11. Password Reset Animation
+ * 12. Success Checkmark Animation
+ * 13. Loading Animations
+ * 14. Form Validation
+ * 15. Responsive Design
+ * =============================================================================
+ */
+
+/* ========================================
+  HEADER USER PROFILE STYLES
+   ======================================== */
+
+/* Main User Profile Container */
+.header-user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 5px 15px 5px 5px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    margin-left: 20px;
+}
+
+.header-user-profile:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 162, 255, 0.3);
+}
+
+/* User Avatar */
+.header-user-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--primary-blue);
+    box-shadow: 0 0 10px rgba(0, 162, 255, 0.5);
+}
+
+.header-user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* User Name */
+.header-user-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #ffffff !important;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ========================================
+   DROPDOWN MENU STYLES
+   ======================================== */
+
+/* Dropdown Container */
+.header-user-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 10px;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+/* Active State for Dropdown */
+.header-user-profile.active .header-user-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Dropdown Items */
+.header-user-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.header-user-dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--primary-blue);
+    transform: translateX(5px);
+}
+
+.header-user-dropdown-item i {
+    width: 20px;
+    text-align: center;
+    color: var(--primary-blue);
+}
+
+/* ========================================
+   RESPONSIVE STYLES
+   ======================================== */
+
+/* Mobile Devices */
+@media screen and (max-width: 768px) {
+    .header-user-profile {
+        display: none;
+    }
+}
+
+/* =============================================================================
+   1. POPUP OVERLAY AND CONTAINER
+   ============================================================================= */
+
+.auth-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+[data-theme="light"] .auth-popup-overlay {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.auth-popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.auth-popup {
+    position: relative;
+    width: 450px;
+    max-width: 95%;
+    max-height: 95vh;
+    overflow-y: auto;
+    background: var(--glass-bg-2);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 50px var(--shadow-dark);
+    border: 1px solid var(--border-color);
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.auth-popup-overlay.active .auth-popup {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+
+/* =============================================================================
+   2. CLOSE BUTTON STYLES
+   ============================================================================= */
+
+.auth-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    z-index: 10;
+}
+
+.auth-close:hover {
+    transform: rotate(90deg);
+    background: var(--primary-red);
+}
+
+.auth-close::before,
+.auth-close::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 2px;
+    background: var(--text-color);
+    border-radius: 1px;
+}
+
+.auth-close::before {
+    transform: rotate(45deg);
+}
+
+.auth-close::after {
+    transform: rotate(-45deg);
+}
+
+
+/* =============================================================================
+   3. LOGO AND BRANDING
+   ============================================================================= */
+
+.auth-logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-logo-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    box-shadow: 0 0 20px var(--shadow-primary);
+    position: relative;
+    z-index: 1;
+    animation: pulseLogo 2s infinite alternate;
+}
+
+.auth-logo-icon i {
+    font-size: 32px;
+    color: white;
+}
+
+.auth-logo-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)) border-box;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: rotateBorder 3s linear infinite;
+    pointer-events: none;
+}
+
+.auth-logo h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.auth-logo p {
+    opacity: 0.8;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+
+/* =============================================================================
+   4. FORM ELEMENTS AND INPUTS
+   ============================================================================= */
+
+.auth-form {
+    position: relative;
+    z-index: 1;
+}
+
+.form-floating {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.form-floating input {
+    width: 100%;
+    padding: 15px;
+    background: var(--glass-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    color: var(--text-color);
+    font-size: 16px;
+    height: 60px;
+    transition: all 0.3s ease;
+}
+
+.form-floating input:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 15px var(--shadow-secondary);
+    outline: none;
+}
+
+/* Fix autofill background and caret for Chrome – keeps consistent styling */
+.form-floating input:-webkit-autofill {
+    background: var(--glass-bg) !important;
+    -webkit-box-shadow: 0 0 0 1000px var(--glass-bg) inset !important;
+    -webkit-text-fill-color: var(--text-color) !important;
+    border: 1px solid var(--border-color) !important;
+    caret-color: var(--text-color);
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+
+/* =============================================================================
+   5. FLOATING LABELS
+   ============================================================================= */
+
+.form-floating label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    color: var(--text-secondary);
+    background: transparent;
+    padding: 0 5px;
+    pointer-events: none;
+}
+
+.form-floating input:focus~label,
+.form-floating input:not(:placeholder-shown)~label {
+    top: 0;
+    font-size: 12px;
+    background: var(--glass-bg-2);
+    z-index: 10;
+}
+
+
+/* =============================================================================
+   6. CHECKBOXES AND FORM CONTROLS
+   ============================================================================= */
+
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.form-check-input {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: var(--glass-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.form-check-input:checked {
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+    border-color: transparent;
+}
+
+.form-check-input:checked::after {
+    content: '\f00c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+}
+
+.form-check-label {
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+/* =============================================================================
+   7. AUTHENTICATION BUTTONS
+   ============================================================================= */
+
+.auth-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--gradient-90deg-btn);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px var(--shadow-primary);
+}
+
+.auth-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform-origin: 0 0;
+    animation: authBtnEffect 6s linear infinite;
+    z-index: 1;
+}
+
+.auth-btn span {
+    position: relative;
+    z-index: 10;
+}
+
+
+/* =============================================================================
+   8. SOCIAL AUTHENTICATION
+   ============================================================================= */
+
+.auth-divider {
+    display: flex;
+    align-items: center;
+    margin: 25px 0;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-color);
+}
+
+.auth-divider span {
+    padding: 0 15px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.social-auth {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-auth-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    background: var(--glass-bg);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: var(--text-color);
+}
+
+.social-auth-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--shadow-secondary);
+}
+
+.social-auth-btn.google:hover {
+    color: #ea4335;
+}
+
+.social-auth-btn.facebook:hover {
+    color: #3b5998;
+}
+
+.social-auth-btn.apple:hover {
+    color: #A2AAAD;
+}
+
+
+/* =============================================================================
+   9. LINKS AND NAVIGATION
+   ============================================================================= */
+
+.auth-links {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.auth-link {
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    font-size: 14px;
+}
+
+.auth-link:hover {
+    color: var(--primary-purple);
+}
+
+.auth-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gradient-primary);
+    transition: width 0.3s ease;
+}
+
+.auth-link:hover::after {
+    width: 100%;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.auth-footer a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.auth-footer a:hover {
+    color: var(--primary-purple);
+}
+
+
+/* =============================================================================
+   10. AI GRAPHIC ELEMENTS
+   ============================================================================= */
+
+.ai-graphic {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.circuit-path {
+    position: absolute;
+    background: var(--gradient-primary);
+    opacity: 0.1;
+    transform-origin: center;
+}
+
+.circuit-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary-blue);
+    box-shadow: 0 0 10px var(--primary-blue);
+    animation: pulseDot 2s infinite;
+}
+
+.circuit-line-h {
+    height: 2px;
+}
+
+.circuit-line-v {
+    width: 2px;
+}
+
+.pulse-effect {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 162, 255, 0.3) 0%, rgba(144, 0, 255, 0.1) 40%, transparent 70%);
+    animation: eff-pulse 4s infinite;
+}
+
+
+/* =============================================================================
+   11. PASSWORD RESET ANIMATION
+   ============================================================================= */
+
+.reset-animation {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+}
+
+.reset-circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: var(--primary-blue);
+    border-bottom-color: var(--primary-purple);
+    animation: resetSpin 3s linear infinite;
+}
+
+.reset-circle:nth-child(2) {
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    animation-duration: 4s;
+    animation-direction: reverse;
+}
+
+.reset-circle:nth-child(3) {
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+    animation-duration: 2s;
+}
+
+.reset-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    color: var(--primary-blue);
+    animation: resetPulse 2s infinite alternate;
+}
+
+
+/* =============================================================================
+   12. SUCCESS CHECKMARK ANIMATION
+   ============================================================================= */
+
+.success-checkmark {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 30px;
+    position: relative;
+    display: none;
+    z-index: 5;
+}
+
+.success-message-container {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.success-message-container h3 {
+    margin-bottom: 15px;
+    color: var(--primary-blue);
+    font-size: 24px;
+    position: relative;
+    z-index: 10;
+}
+
+.success-message-container p {
+    margin-bottom: 20px;
+    color: var(--text-color);
+    position: relative;
+    z-index: 10;
+}
+
+.success-message-container .auth-btn {
+    margin-top: 20px;
+}
+
+.check-icon {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    border-radius: 50%;
+    box-sizing: content-box;
+    border: 4px solid var(--primary-blue);
+    z-index: 5;
+}
+
+.check-icon::before {
+    top: 3px;
+    left: -2px;
+    width: 30px;
+    transform-origin: 100% 50%;
+    border-radius: 100px 0 0 100px;
+}
+
+.check-icon::after {
+    top: 0;
+    left: 30px;
+    width: 60px;
+    transform-origin: 0 50%;
+    border-radius: 0 100px 100px 0;
+    animation: rotate-circle 4.25s ease-in;
+}
+
+.check-icon::before,
+.check-icon::after {
+    content: '';
+    height: 100px;
+    position: absolute;
+    background: var(--dark-bg);
+    transform: rotate(-45deg);
+}
+
+.icon-line {
+    height: 5px;
+    background-color: var(--primary-blue);
+    display: block;
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+}
+
+.icon-line.line-tip {
+    top: 46px;
+    left: 14px;
+    width: 25px;
+    transform: rotate(45deg);
+    animation: icon-line-tip 0.75s;
+}
+
+.icon-line.line-long {
+    top: 38px;
+    right: 8px;
+    width: 47px;
+    transform: rotate(-45deg);
+    animation: icon-line-long 0.75s;
+}
+
+.icon-circle {
+    top: -4px;
+    left: -4px;
+    z-index: 10;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    box-sizing: content-box;
+    border: 4px solid var(--primary-purple);
+    animation: icon-circle-animation 0.9s;
+}
+
+.icon-fix {
+    top: 8px;
+    width: 5px;
+    left: 26px;
+    z-index: 1;
+    height: 85px;
+    position: absolute;
+    transform: rotate(-45deg);
+    background-color: var(--dark-bg);
+}
+
+
+/* =============================================================================
+   13. LOADING ANIMATIONS
+   ============================================================================= */
+
+.loading-dots {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    height: 16px;
+}
+
+.loading-dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: white;
+    display: inline-block;
+    animation: loadingDot 1.4s infinite ease-in-out both;
+}
+
+.loading-dots span:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.loading-dots span:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+
+/* =============================================================================
+   14. FORM VALIDATION
+   ============================================================================= */
+
+.form-floating input.is-invalid {
+    border-color: var(--primary-red);
+    box-shadow: 0 0 5px rgba(255, 0, 88, 0.3);
+}
+
+.error-message {
+    display: block;
+    margin-top: 5px;
+    color: var(--primary-red);
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+
+/* =============================================================================
+   KEYFRAME ANIMATIONS
+   ============================================================================= */
+
+@keyframes pulseLogo {
+    0% {
+        box-shadow: 0 0 20px var(--shadow-primary);
+    }
+
+    100% {
+        box-shadow: 0 0 30px var(--shadow-primary), 0 0 60px var(--primary-blue);
+    }
+}
+
+@keyframes rotateBorder {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes authBtnEffect {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes eff-pulse {
+
+    0%,
+    100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.2;
+    }
+}
+
+@keyframes resetSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes resetPulse {
+    0% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+@keyframes popupEnter {
+    0% {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes popupExit {
+    0% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+}
+
+@keyframes rotate-circle {
+    0% {
+        transform: rotate(-45deg);
+    }
+
+    5% {
+        transform: rotate(-45deg);
+    }
+
+    12% {
+        transform: rotate(-405deg);
+    }
+
+    100% {
+        transform: rotate(-405deg);
+    }
+}
+
+@keyframes icon-line-tip {
+    0% {
+        width: 0;
+        left: 1px;
+        top: 19px;
+    }
+
+    54% {
+        width: 0;
+        left: 1px;
+        top: 19px;
+    }
+
+    70% {
+        width: 50px;
+        left: -8px;
+        top: 37px;
+    }
+
+    84% {
+        width: 17px;
+        left: 21px;
+        top: 48px;
+    }
+
+    100% {
+        width: 25px;
+        left: 14px;
+        top: 45px;
+    }
+}
+
+@keyframes icon-line-long {
+    0% {
+        width: 0;
+        right: 46px;
+        top: 54px;
+    }
+
+    65% {
+        width: 0;
+        right: 46px;
+        top: 54px;
+    }
+
+    84% {
+        width: 55px;
+        right: 0px;
+        top: 35px;
+    }
+
+    100% {
+        width: 47px;
+        right: 8px;
+        top: 38px;
+    }
+}
+
+@keyframes icon-circle-animation {
+    0% {
+        transform: scale(0.6);
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+}
+
+@keyframes loadingDot {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulseDot {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* =============================================================================
+   ENHANCED ANIMATIONS
+   ============================================================================= */
+
+.popup-enter {
+    animation: popupEnter 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.popup-exit {
+    animation: popupExit 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
+}
+
+
+/* =============================================================================
+   15. RESPONSIVE DESIGN
+   ============================================================================= */
+
+/* Mobile Screens (767px and below) */
+@media (max-width: 767px) {
+    .auth-popup {
+        padding: 25px 15px;
+    }
+
+    .auth-logo-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .auth-logo-icon i {
+        font-size: 24px;
+    }
+
+    .auth-logo h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-floating {
+        margin-bottom: 15px;
+    }
+
+    .form-floating input {
+        height: 50px;
+        padding: 12px;
+    }
+
+    .auth-btn {
+        padding: 12px;
+        height: 45px;
+    }
+}
+
+/* input:-webkit-autofill {
+    background-color: transparent !important;
+    -webkit-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0) inset !important;
+    -webkit-text-fill-color: inherit !important;
+    transition: background-color 5000s ease-in-out 0s;
+} */
+
+/* =============================================================================
+   END OF AUTH POPUP STYLES
+   ============================================================================= */

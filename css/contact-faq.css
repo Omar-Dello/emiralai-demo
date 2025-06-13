@@ -1,0 +1,172 @@
+/**
+ * Contact FAQ Page Styles
+ * Version: 1.0.0
+ * Author: Omar Dello
+ * Description: Styles for Contact FAQ Page with modern design and animations
+ * Uses global variables from style.css
+ */
+
+/* =========Table of contents============
+1. FAQ Section
+2. Contact Section
+*/
+/* 1. FAQ SECTION */
+.section-header {
+    margin-top: 20px;
+}
+
+.faq {
+    position: relative;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.faq-question {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: var(--faq-bg);
+    border-left: 4px solid var(--primary-blue);
+    box-shadow: 0 5px 15px var(--shadow-faq);
+}
+
+.faq-question h3 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.faq-question i {
+    transition: all 0.3s ease;
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    padding: 20px;
+    max-height: 500px;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+/* 2. CONTACT SECTION */
+.contact {
+    position: relative;
+}
+
+.contact-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 15px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 15px var(--shadow-secondary);
+    ;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.message-btn {
+    right: 5px;
+    top: 5px;
+    background: var(--gradient-90deg-btn);
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.message-btn:hover {
+    box-shadow: 0 0 40px var(--shadow-primary);
+}
+
+/*SUCCESS-ERROR STYLE AFTER SENDING MESSAGE */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message {
+    padding: 14px 22px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: rgba(255, 255, 255, 0.05);
+    margin: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    display: none;
+}
+
+.message.show {
+    display: block;
+    animation: fadeInUp 0.4s ease forwards;
+}
+
+.message.success {
+    color: var(--primary-blue);
+}
+
+.message.error {
+    color: var(--primary-red);
+}

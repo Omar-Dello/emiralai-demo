@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <!-- META INFORMATION -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - EmiralAI</title>
+
+    <!-- EXTERNAL STYLESHEETS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- LOCAL STYLESHEETS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/user-profile.css">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- SEO META TAGS -->
+    <meta name="description" content="Manage your EmiralAI profile, settings, and AI usage statistics.">
+    <meta name="keywords" content="user profile, AI dashboard, account settings, EmiralAI, AI analytics">
+    <meta name="author" content="EmiralAI">
+
+    <!-- FAVICON AND APP ICONS -->
+    <link rel="icon" href="favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg">
+    <link rel="shortcut icon" href="favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="manifest" href="favicons/site.webmanifest">
+</head>
+
+<body>
+    <!-- ==================== HEADER & NAVIGATION ==================== -->
+    <header>
+        <div class="container">
+            <nav aria-label="Main navigation">
+                <!-- Logo Section -->
+                <div class="logo" aria-label="Emiral AI logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-brain" aria-hidden="true"></i>
+                    </div>
+                    <span>Emiral</span>AI
+                </div>
+
+                <!-- Navigation Links -->
+                <ul class="nav-links">
+                    <li>
+                        <a href="main.html" aria-label="Go to home section">
+                            <i class="fas fa-home" aria-hidden="true"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="main.html#about" aria-label="Go to about section">
+                            <i class="fas fa-info-circle" aria-hidden="true"></i> About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="main.html#services" aria-label="Go to services section">
+                            <i class="fas fa-cogs" aria-hidden="true"></i> Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="main.html#pricing" aria-label="Go to pricing section">
+                            <i class="fas fa-tag" aria-hidden="true"></i> Pricing
+                        </a>
+                    </li>
+                    <li>
+                        <a href="main.html#partners" aria-label="Go to partners section">
+                            <i class="fas fa-handshake" aria-hidden="true"></i> Partners
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Menu Toggle -->
+                <div class="hamburger" role="button" aria-label="Toggle navigation menu" tabindex="0">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== PROFILE HERO SECTION ==================== -->
+    <section class="profile-hero">
+        <div class="container">
+            <div class="profile-header">
+                <!-- User Information -->
+                <div class="profile-user-info">
+                    <!-- Avatar -->
+                    <div class="profile-avatar">
+                        <img src="" alt="User Avatar" class="profile-avatar-img">
+                        <div class="profile-avatar-edit">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                    </div>
+
+                    <!-- User Details -->
+                    <div class="profile-details">
+                        <h1 class="profile-user-name">Loading...</h1>
+                        <p class="profile-role">
+                            Pro Member
+                            <span class="verified-badge">
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </p>
+
+                        <!-- Statistics -->
+                        <div class="profile-stats">
+                            <div class="profile-stat">
+                                <span class="stat-value">256</span>
+                                <span class="stat-label">AI Projects</span>
+                            </div>
+                            <div class="profile-stat">
+                                <span class="stat-value">84%</span>
+                                <span class="stat-label">Efficiency</span>
+                            </div>
+                            <div class="profile-stat">
+                                <span class="stat-value">13</span>
+                                <span class="stat-label">Models</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="profile-actions">
+                    <a href="main.html#pricing" class="btn profile-btn">
+                        <i class="fas fa-crown"></i> Upgrade to Pro
+                    </a>
+                    <a href="#" class="btn secondary-btn profile-btn">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Background Effects -->
+        <div class="floating-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="circuit-bg"></div>
+    </section>
+
+    <!-- ==================== PROFILE TABS SECTION ==================== -->
+    <section class="profile-tabs-section">
+        <div class="container">
+            <!-- Tab Navigation -->
+            <div class="profile-tabs">
+                <button class="profile-tab active" data-tab="my-dashboard">
+                    <i class="fas fa-chart-line"></i> My Dashboard
+                </button>
+                <button class="profile-tab" data-tab="activity-history">
+                    <i class="fas fa-history"></i> Activity History
+                </button>
+                <button class="profile-tab" data-tab="personal-analytics">
+                    <i class="fas fa-chart-bar"></i> Personal Analytics
+                </button>
+                <button class="profile-tab" data-tab="account-settings">
+                    <i class="fas fa-user-cog"></i> Account Settings
+                </button>
+                <button class="profile-tab" data-tab="billing-plans">
+                    <i class="fas fa-credit-card"></i> Billing & Plans
+                </button>
+            </div>
+
+            <!-- ========== DASHBOARD TAB CONTENT ========== -->
+            <div class="profile-tab-content active" id="my-dashboard">
+                <!-- Welcome Section -->
+                <div class="dashboard-welcome">
+                    <div class="welcome-text">
+                        <h2>Welcome back, <span class="glow-text profile-first-name">Guest</span></h2>
+                        <p>Here's an overview of your AI usage and latest projects.</p>
+                    </div>
+
+                    <!-- AI Assistant Status -->
+                    <div class="ai-assistant-status">
+                        <div class="ai-status-indicator active"></div>
+                        <div class="ai-status-text">
+                            <h4>EmiralAI Assistant</h4>
+                            <p>Online & Ready</p>
+                        </div>
+                        <button class="btn small-btn">
+                            <i class="fas fa-comment"></i> Chat
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dashboard Grid Layout -->
+                <div class="dashboard-grid">
+
+                    <!-- AI Usage Metrics Card -->
+                    <div class="dashboard-card usage-metrics glass-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-tachometer-alt"></i> AI Usage Metrics</h3>
+                        </div>
+
+                        <!-- Circular Progress Charts -->
+                        <div class="usage-charts">
+                            <!-- Monthly Usage Chart -->
+                            <div class="usage-chart">
+                                <div class="chart-container">
+                                    <div class="chart-percentage">
+                                        <span class="percentage-value">76%</span>
+                                    </div>
+                                    <svg viewBox="0 0 36 36" class="circular-chart">
+                                        <path class="circle-bg"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path class="circle" stroke-dasharray="76, 100"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    </svg>
+                                </div>
+                                <div class="chart-label">Monthly Usage</div>
+                            </div>
+
+                            <!-- API Credits Chart -->
+                            <div class="usage-chart">
+                                <div class="chart-container">
+                                    <div class="chart-percentage">
+                                        <span class="percentage-value">42%</span>
+                                    </div>
+                                    <svg viewBox="0 0 36 36" class="circular-chart">
+                                        <path class="circle-bg"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path class="circle secondary" stroke-dasharray="42, 100"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    </svg>
+                                </div>
+                                <div class="chart-label">API Credits</div>
+                            </div>
+
+                            <!-- Model Accuracy Chart -->
+                            <div class="usage-chart">
+                                <div class="chart-container">
+                                    <div class="chart-percentage">
+                                        <span class="percentage-value">93%</span>
+                                    </div>
+                                    <svg viewBox="0 0 36 36" class="circular-chart">
+                                        <path class="circle-bg"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path class="circle tertiary" stroke-dasharray="93, 100"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    </svg>
+                                </div>
+                                <div class="chart-label">Model Accuracy</div>
+                            </div>
+                        </div>
+
+                        <!-- Plan Information -->
+                        <div class="plan-info">
+                            <div class="plan-details">
+                                <span class="plan-name">Pro Plan</span>
+                                <span class="plan-expiry">Renews in 18 days</span>
+                            </div>
+                            <a href="#" class="btn small-btn">Manage Plan</a>
+                        </div>
+                    </div>
+
+                    <!-- ========== AI CHAT WINDOW COMPONENT ========== -->
+                    <div class="ai-chat-window" id="aiChatWindow">
+                        <!-- Chat Header -->
+                        <div class="chat-header">
+                            <div class="chat-header-info">
+                                <div class="chat-status-indicator active"></div>
+                                <div class="chat-header-text">
+                                    <h4>EmiralAI Assistant</h4>
+                                    <span class="chat-status">Online</span>
+                                </div>
+                            </div>
+                            <div class="chat-header-actions">
+                                <button class="chat-minimize-btn" title="Minimize">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <button class="chat-close-btn" title="Close">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Chat Body -->
+                        <div class="chat-body">
+                            <div class="chat-messages" id="chatMessages">
+                                <!-- Welcome Message -->
+                                <div class="chat-message ai-message">
+                                    <div class="message-avatar">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <div class="message-content">
+                                        <div class="message-bubble">
+                                            <p>Hello! I'm your EmiralAI Assistant. How can I help you today?</p>
+                                        </div>
+                                        <span class="message-time">Just now</span>
+                                    </div>
+                                </div>
+
+                                <!-- Typing Indicator -->
+                                <div class="chat-message ai-message typing-message" id="typingIndicator">
+                                    <div class="message-avatar">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <div class="message-content">
+                                        <div class="message-bubble">
+                                            <div class="typing-indicator">
+                                                <span class="typing-dot"></span>
+                                                <span class="typing-dot"></span>
+                                                <span class="typing-dot"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Quick Suggestions -->
+                            <div class="chat-suggestions">
+                                <button class="suggestion-chip">How do I create a new project?</button>
+                                <button class="suggestion-chip">Show my API usage</button>
+                                <button class="suggestion-chip">Help with model training</button>
+                            </div>
+                        </div>
+
+                        <!-- Chat Footer -->
+                        <div class="chat-footer">
+                            <form class="chat-input-form" id="chatForm">
+                                <div class="chat-input-group">
+                                    <input type="text" class="chat-input" id="chatInput"
+                                        placeholder="Type your message..." autocomplete="off">
+                                    <button type="submit" class="chat-send-btn" title="Send message">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="chat-actions">
+                                <button class="chat-action-btn" title="Attach file">
+                                    <i class="fas fa-paperclip"></i>
+                                </button>
+                                <button class="chat-action-btn" title="Voice input">
+                                    <i class="fas fa-microphone"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Minimized Chat Button -->
+                    <div class="chat-minimized-btn" id="chatMinimizedBtn">
+                        <div class="chat-notification-badge">
+                            <span>1</span>
+                        </div>
+                        <i class="fas fa-comment-alt"></i>
+                    </div>
+
+                    <!-- Recent Projects Card -->
+                    <div class="dashboard-card recent-projects glass-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-rocket"></i> My Active Projects</h3>
+                            <a href="dashboard.html#ai-projects-section" class="view-all">View All</a>
+                        </div>
+
+                        <div class="projects-list">
+                            <!-- Project Item 1 -->
+                            <div class="project-item">
+                                <div class="project-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="project-details">
+                                    <h4>Sentiment Analysis Model</h4>
+                                    <div class="project-meta">
+                                        <span class="project-type">NLP</span>
+                                        <span class="project-progress">78% Complete</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 78%"></div>
+                                    </div>
+                                </div>
+                                <div class="project-action">
+                                    <a href="dashboard.html#ai-projects-section" class="btn action-btn">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Project Item 2 -->
+                            <div class="project-item">
+                                <div class="project-icon">
+                                    <i class="fas fa-chart-pie"></i>
+                                </div>
+                                <div class="project-details">
+                                    <h4>Market Prediction Algorithm</h4>
+                                    <div class="project-meta">
+                                        <span class="project-type">Predictive Analytics</span>
+                                        <span class="project-progress">45% Complete</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 45%"></div>
+                                    </div>
+                                </div>
+                                <div class="project-action">
+                                    <a href="dashboard.html#ai-projects-section" class="btn action-btn">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Project Item 3 -->
+                            <div class="project-item">
+                                <div class="project-icon">
+                                    <i class="fas fa-image"></i>
+                                </div>
+                                <div class="project-details">
+                                    <h4>Computer Vision Classifier</h4>
+                                    <div class="project-meta">
+                                        <span class="project-type">Computer Vision</span>
+                                        <span class="project-progress">92% Complete</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 92%"></div>
+                                    </div>
+                                </div>
+                                <div class="project-action">
+                                    <a href="dashboard.html#ai-projects-section" class="btn action-btn">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- API Integration Card -->
+                    <div class="dashboard-card api-integration glass-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-code"></i> API Integration</h3>
+                        </div>
+
+                        <!-- API Key Section -->
+                        <div class="api-key-section">
+                            <div class="api-key-label">
+                                <span>Your API Key</span>
+                                <button class="btn small-btn regenerate-btn">Regenerate</button>
+                            </div>
+                            <div class="api-key-display">
+                                <input type="password" value="Emiral_ai_fk29x7zq1p3m5v8y0c4t" readonly>
+                                <button class="copy-btn" title="Copy API Key">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                                <button class="toggle-visibility-btn" title="Show/Hide API Key">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="api-usage-tips">
+                                <p>Use this key to authenticate your API requests. Never share your API key publicly.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- API Endpoints -->
+                        <div class="api-endpoints">
+                            <h4>Quick Integration</h4>
+                            <div class="code-snippet">
+                                <pre><code>curl -X POST https://api.Emiralai.com/v1/predict \
+-H "Authorization: Bearer ${API_KEY}" \
+-H "Content-Type: application/json" \
+-d '{"model": "text-analysis", "prompt": "Your text here"}'</code></pre>
+                                <button class="copy-code-btn" title="Copy Code">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <a href="dashboard.html#api-section" class="btn small-btn docs-btn">View Documentation</a>
+                        </div>
+                    </div>
+
+                    <!-- Model Performance Card -->
+                    <div class="dashboard-card performance-card glass-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-chart-line"></i> My Model Performance</h3>
+                        </div>
+
+                        <!-- Performance Metrics -->
+                        <div class="performance-metrics">
+                            <div class="performance-metric">
+                                <div class="metric-name">Accuracy</div>
+                                <div class="metric-value">95.7%</div>
+                                <div class="metric-trend positive">
+                                    <i class="fas fa-arrow-up"></i> 2.3%
+                                </div>
+                            </div>
+                            <div class="performance-metric">
+                                <div class="metric-name">Response Time</div>
+                                <div class="metric-value">124ms</div>
+                                <div class="metric-trend positive">
+                                    <i class="fas fa-arrow-down"></i> 15ms
+                                </div>
+                            </div>
+                            <div class="performance-metric">
+                                <div class="metric-name">Error Rate</div>
+                                <div class="metric-value">0.8%</div>
+                                <div class="metric-trend positive">
+                                    <i class="fas fa-arrow-down"></i> 0.3%
+                                </div>
+                            </div>
+                            <div class="performance-metric">
+                                <div class="metric-name">Uptime</div>
+                                <div class="metric-value">99.99%</div>
+                                <div class="metric-trend neutral">
+                                    <i class="fas fa-minus"></i> 0.0%
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Performance Chart -->
+                        <div class="performance-chart">
+                            <canvas id="performanceChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Resource Consumption Card -->
+                    <div class="dashboard-card resource-card glass-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-microchip"></i> My Resource Usage</h3>
+                        </div>
+
+                        <!-- Resource Gauges -->
+                        <div class="resource-gauges">
+                            <!-- CPU Gauge -->
+                            <div class="resource-gauge">
+                                <div class="gauge-title">CPU Usage</div>
+                                <div class="gauge-chart">
+                                    <svg viewBox="0 0 120 120" class="gauge">
+                                        <circle class="gauge-bg" cx="60" cy="60" r="54" />
+                                        <circle class="gauge-value" cx="60" cy="60" r="54"
+                                            stroke-dasharray="237.6 339.3" />
+                                        <text class="gauge-text" x="60" y="60" text-anchor="middle"
+                                            alignment-baseline="middle">70%</text>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Memory Gauge -->
+                            <div class="resource-gauge">
+                                <div class="gauge-title">Memory</div>
+                                <div class="gauge-chart">
+                                    <svg viewBox="0 0 120 120" class="gauge">
+                                        <circle class="gauge-bg" cx="60" cy="60" r="54" />
+                                        <circle class="gauge-value secondary" cx="60" cy="60" r="54"
+                                            stroke-dasharray="186.7 339.3" />
+                                        <text class="gauge-text" x="60" y="60" text-anchor="middle"
+                                            alignment-baseline="middle">55%</text>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Storage Gauge -->
+                            <div class="resource-gauge">
+                                <div class="gauge-title">Storage</div>
+                                <div class="gauge-chart">
+                                    <svg viewBox="0 0 120 120" class="gauge">
+                                        <circle class="gauge-bg" cx="60" cy="60" r="54" />
+                                        <circle class="gauge-value tertiary" cx="60" cy="60" r="54"
+                                            stroke-dasharray="118.8 339.3" />
+                                        <text class="gauge-text" x="60" y="60" text-anchor="middle"
+                                            alignment-baseline="middle">35%</text>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Resource Details -->
+                        <div class="resource-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Total Compute Hours</span>
+                                <span class="detail-value">284.5 hrs</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Storage Used</span>
+                                <span class="detail-value">156.8 GB / 500 GB</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Models Deployed</span>
+                                <span class="detail-value">7 / 10</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== ACTIVITY HISTORY TAB CONTENT ========== -->
+            <div class="profile-tab-content" id="activity-history">
+                <div class="activity-history-header">
+                    <h2><i class="fas fa-history"></i> Your Activity History</h2>
+
+                    <!-- Activity Filters -->
+                    <div class="activity-filters">
+                        <button class="filter-btn active">All Activities</button>
+                        <button class="filter-btn">Projects</button>
+                        <button class="filter-btn">API Calls</button>
+                        <button class="filter-btn">Settings</button>
+                    </div>
+                </div>
+
+                <!-- Activity Timeline -->
+                <div class="activity-timeline glass-card">
+                    <div class="timeline-container">
+
+                        <!-- Today's Activities -->
+                        <div class="timeline-section">
+                            <div class="timeline-date">
+                                <span>Today</span>
+                            </div>
+                            <div class="timeline-items">
+                                <!-- Success Activity -->
+                                <div class="timeline-item">
+                                    <div class="timeline-icon success">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h4>Model Training Completed</h4>
+                                        <p>Your sentiment analysis model has completed training with 95.7% accuracy</p>
+                                        <span class="timeline-time">2 hours ago</span>
+                                    </div>
+                                </div>
+
+                                <!-- Info Activity -->
+                                <div class="timeline-item">
+                                    <div class="timeline-icon info">
+                                        <i class="fas fa-sync"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h4>API Key Regenerated</h4>
+                                        <p>Security refresh - new API key generated successfully</p>
+                                        <span class="timeline-time">5 hours ago</span>
+                                    </div>
+                                </div>
+
+                                <!-- Warning Activity -->
+                                <div class="timeline-item">
+                                    <div class="timeline-icon warning">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h4>High API Usage Alert</h4>
+                                        <p>You've used 75% of your monthly API quota</p>
+                                        <span class="timeline-time">8 hours ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Yesterday's Activities -->
+                        <div class="timeline-section">
+                            <div class="timeline-date">
+                                <span>Yesterday</span>
+                            </div>
+                            <div class="timeline-items">
+                                <div class="timeline-item">
+                                    <div class="timeline-icon primary">
+                                        <i class="fas fa-plus-circle"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h4>New Project Created</h4>
+                                        <p>Computer Vision Classifier project initialized</p>
+                                        <span class="timeline-time">Yesterday, 10:23 AM</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-icon success">
+                                        <i class="fas fa-upload"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h4>Dataset Uploaded</h4>
+                                        <p>Uploaded 50,000 images for training dataset</p>
+                                        <span class="timeline-time">Yesterday, 2:45 PM</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Last Week's Activities -->
+                        <div class="timeline-section">
+                            <div class="timeline-date">
+                                <span>Last Week</span>
+                            </div>
+                            <div class="timeline-items">
+                                <div class="timeline-item">
+                                    <div class="timeline-icon danger">
+                                        <i class="fas fa-trash"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h4>Project Deleted</h4>
+                                        <p>Old test project removed from workspace</p>
+                                        <span class="timeline-time">May 15, 2025</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-icon info">
+                                        <i class="fas fa-user-edit"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h4>Profile Updated</h4>
+                                        <p>Changed email preferences and notification settings</p>
+                                        <span class="timeline-time">May 14, 2025</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Load More Button -->
+                    <div class="load-more-container">
+                        <button class="btn small-btn">Load More Activities</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== PERSONAL ANALYTICS TAB CONTENT ========== -->
+            <div class="profile-tab-content" id="personal-analytics">
+                <div class="analytics-header">
+                    <h2><i class="fas fa-chart-bar"></i> Your Personal Analytics</h2>
+
+                    <!-- Date Range Selector -->
+                    <div class="date-range-selector">
+                        <button class="date-btn active">Last 7 Days</button>
+                        <button class="date-btn">Last 30 Days</button>
+                        <button class="date-btn">Last 3 Months</button>
+                        <button class="date-btn">All Time</button>
+                    </div>
+                </div>
+
+                <div class="analytics-grid">
+                    <!-- Usage Overview Card -->
+                    <div class="analytics-card glass-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-chart-area"></i> Usage Overview</h3>
+                        </div>
+
+                        <!-- Statistics Boxes -->
+                        <div class="usage-stats">
+                            <div class="stat-box">
+                                <div class="stat-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h4>Total API Calls</h4>
+                                    <p class="stat-number">15,432</p>
+                                    <span class="stat-change positive">+23% from last month</span>
+                                </div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h4>Compute Hours</h4>
+                                    <p class="stat-number">284.5</p>
+                                    <span class="stat-change positive">+12% from last month</span>
+                                </div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h4>Data Processed</h4>
+                                    <p class="stat-number">2.3 TB</p>
+                                    <span class="stat-change negative">-5% from last month</span>
+                                </div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h4>Cost Savings</h4>
+                                    <p class="stat-number">$1,245</p>
+                                    <span class="stat-change positive">+34% efficiency gain</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Model Performance Trends Card -->
+                    <div class="analytics-card glass-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-trending-up"></i> Model Performance Trends</h3>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="modelTrendsChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Usage by Project Card -->
+                    <div class="analytics-card glass-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-project-diagram"></i> Usage by Project</h3>
+                        </div>
+                        <div class="project-usage-list">
+                            <div class="project-usage-item">
+                                <div class="project-info">
+                                    <h4>Sentiment Analysis Model</h4>
+                                    <span>45% of total usage</span>
+                                </div>
+                                <div class="usage-bar">
+                                    <div class="usage-fill" style="width: 45%"></div>
+                                </div>
+                            </div>
+                            <div class="project-usage-item">
+                                <div class="project-info">
+                                    <h4>Computer Vision Classifier</h4>
+                                    <span>30% of total usage</span>
+                                </div>
+                                <div class="usage-bar">
+                                    <div class="usage-fill" style="width: 30%"></div>
+                                </div>
+                            </div>
+                            <div class="project-usage-item">
+                                <div class="project-info">
+                                    <h4>Market Prediction Algorithm</h4>
+                                    <span>25% of total usage</span>
+                                </div>
+                                <div class="usage-bar">
+                                    <div class="usage-fill" style="width: 25%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- API Response Times Card -->
+                    <div class="analytics-card glass-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-tachometer-alt"></i> API Response Times</h3>
+                        </div>
+                        <div class="response-time-stats">
+                            <div class="response-metric">
+                                <span class="metric-label">Average</span>
+                                <span class="metric-value">124ms</span>
+                            </div>
+                            <div class="response-metric">
+                                <span class="metric-label">P95</span>
+                                <span class="metric-value">215ms</span>
+                            </div>
+                            <div class="response-metric">
+                                <span class="metric-label">P99</span>
+                                <span class="metric-value">342ms</span>
+                            </div>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="responseTimeChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== ACCOUNT SETTINGS TAB CONTENT ========== -->
+            <div class="profile-tab-content" id="account-settings">
+                <div class="settings-container">
+                    <h2><i class="fas fa-user-cog"></i> Account Settings</h2>
+
+                    <div class="settings-grid">
+                        <!-- Profile Information Section -->
+                        <div class="settings-section glass-card">
+                            <h3><i class="fas fa-user"></i> Profile Information</h3>
+                            <form class="settings-form">
+                                <div class="form-group">
+                                    <label for="fullName">Full Name</label>
+                                    <input type="text" id="fullName" class="form-control" value="John Doe">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" class="form-control" value="john.doe@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="company">Company</label>
+                                    <input type="text" id="company" class="form-control" value="Tech Innovations Inc.">
+                                </div>
+                                <div class="form-group">
+                                    <label for="role">Role</label>
+                                    <input type="text" id="role" class="form-control" value="AI Engineer">
+                                </div>
+                                <button type="submit" class="btn primary-btn">Save Changes</button>
+                            </form>
+                        </div>
+
+                        <!-- Security Settings Section -->
+                        <div class="settings-section glass-card">
+                            <h3><i class="fas fa-shield-alt"></i> Security</h3>
+                            <form class="settings-form">
+                                <div class="form-group">
+                                    <label for="currentPassword">Current Password</label>
+                                    <input type="password" id="currentPassword" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="newPassword">New Password</label>
+                                    <input type="password" id="newPassword" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmPassword">Confirm Password</label>
+                                    <input type="password" id="confirmPassword" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label class="toggle-label">
+                                        <input type="checkbox" class="toggle-input" checked>
+                                        <span class="toggle-slider"></span>
+                                        Two-Factor Authentication
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn primary-btn">Update Security</button>
+                            </form>
+                        </div>
+
+                        <!-- Notification Preferences Section -->
+                        <div class="settings-section glass-card">
+                            <h3><i class="fas fa-bell"></i> Notifications</h3>
+                            <div class="notification-settings">
+                                <div class="notification-item">
+                                    <label class="toggle-label">
+                                        <input type="checkbox" class="toggle-input" checked>
+                                        <span class="toggle-slider"></span>
+                                        Email notifications for project updates
+                                    </label>
+                                </div>
+                                <div class="notification-item">
+                                    <label class="toggle-label">
+                                        <input type="checkbox" class="toggle-input" checked>
+                                        <span class="toggle-slider"></span>
+                                        Weekly usage reports
+                                    </label>
+                                </div>
+                                <div class="notification-item">
+                                    <label class="toggle-label">
+                                        <input type="checkbox" class="toggle-input">
+                                        <span class="toggle-slider"></span>
+                                        Marketing and promotional emails
+                                    </label>
+                                </div>
+                                <div class="notification-item">
+                                    <label class="toggle-label">
+                                        <input type="checkbox" class="toggle-input" checked>
+                                        <span class="toggle-slider"></span>
+                                        Security alerts
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Danger Zone Section -->
+                        <div class="settings-section glass-card danger-zone">
+                            <h3><i class="fas fa-exclamation-triangle"></i> Danger Zone</h3>
+                            <div class="danger-actions">
+                                <div class="danger-item">
+                                    <div>
+                                        <h4>Export Account Data</h4>
+                                        <p>Download all your data in JSON format</p>
+                                    </div>
+                                    <button class="btn secondary-btn">Export Data</button>
+                                </div>
+                                <div class="danger-item">
+                                    <div>
+                                        <h4>Delete Account</h4>
+                                        <p>Permanently delete your account and all data</p>
+                                    </div>
+                                    <button class="btn danger-btn">Delete Account</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== BILLING & PLANS TAB CONTENT ========== -->
+            <div class="profile-tab-content" id="billing-plans">
+                <div class="billing-container">
+                    <h2><i class="fas fa-credit-card"></i> Billing & Plans</h2>
+
+                    <!-- Current Plan Section -->
+                    <div class="current-plan-section glass-card">
+                        <div class="plan-header">
+                            <div class="plan-info-billing">
+                                <h3>Current Plan: <span class="plan-name">Loading...</span></h3>
+                                <p>Your plan renews on <strong>June 24, 2025</strong></p>
+                            </div>
+                            <div class="plan-actions">
+                                <button class="btn secondary-btn">Change Plan</button>
+                                <button class="btn danger-btn">Cancel Subscription</button>
+                            </div>
+                        </div>
+
+                        <!-- Plan Features -->
+                        <div class="plan-features">
+                            <h4>What's included:</h4>
+                            <div class="features-grid">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>100,000 API calls/month</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>10 concurrent projects</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>500 GB storage</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Priority support</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Advanced analytics</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Custom integrations</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Method Section -->
+                    <div class="payment-method-section glass-card">
+                        <h3><i class="fas fa-wallet"></i> Payment Method</h3>
+                        <div class="payment-cards">
+                            <div class="payment-card active">
+                                <div class="card-icon">
+                                    <i class="fab fa-cc-visa"></i>
+                                </div>
+                                <div class="card-details">
+                                    <h4>Visa ending in 4242</h4>
+                                    <p>Expires 12/2025</p>
+                                </div>
+                                <div class="card-actions">
+                                    <button class="btn small-btn">Edit</button>
+                                    <button class="btn small-btn danger-btn">Remove</button>
+                                </div>
+                            </div>
+                            <button class="add-payment-btn">
+                                <i class="fas fa-plus"></i>
+                                <span>Add Payment Method</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Billing History Section -->
+                    <div class="billing-history-section glass-card">
+                        <h3><i class="fas fa-history"></i> Billing History</h3>
+                        <div class="billing-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Description</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Invoice</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>May 24, 2025</td>
+                                        <td>Pro Plan - Monthly</td>
+                                        <td>$99.00</td>
+                                        <td><span class="status-badge paid">Paid</span></td>
+                                        <td>
+                                            <a href="#" class="download-link">
+                                                <i class="fas fa-download"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Apr 24, 2025</td>
+                                        <td>Pro Plan - Monthly</td>
+                                        <td>$99.00</td>
+                                        <td><span class="status-badge paid">Paid</span></td>
+                                        <td>
+                                            <a href="#" class="download-link">
+                                                <i class="fas fa-download"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mar 24, 2025</td>
+                                        <td>Pro Plan - Monthly</td>
+                                        <td>$99.00</td>
+                                        <td><span class="status-badge paid">Paid</span></td>
+                                        <td>
+                                            <a href="#" class="download-link">
+                                                <i class="fas fa-download"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER SECTION ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Footer Logo and Description -->
+                <div class="footer-logo">
+                    <h3><i class="fas fa-brain"></i>Emiral<span class="glow-text"> AI</span></h3>
+                    <p>Transforming businesses through innovative AI solutions. We help organizations harness the power
+                        of artificial intelligence to optimize operations, enhance customer experiences, and drive
+                        growth.</p>
+
+                    <!-- Social Media Icons -->
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="contact-faq.html"><i class="fas fa-chevron-right"></i>Contact us</a></li>
+                        <li><a href="privacy-policy.html"><i class="fas fa-chevron-right"></i>Privacy Policy</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#portfolio"><i class="fas fa-chevron-right"></i> Case Studies</a></li>
+                        <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="terms.html"><i class="fas fa-chevron-right"></i> Terms of use</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services Links -->
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Machine Learning</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Natural Language Processing</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Computer Vision</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Predictive Analytics</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> AI Consulting</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Custom AI Solutions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter Subscription -->
+                <div class="footer-newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <p>Stay updated with the latest AI trends, insights, and news from our experts.</p>
+                    <div class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email">
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="copyright">
+                <p>&copy; 2025 EmiralAI. All Rights Reserved.</p>
+            </div>
+        </div>
+
+        <!-- Background Animated Particles -->
+        <div class="particles-container">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Button -->
+    <div id="theme-toggle" class="theme-toggle" aria-label="dark&light">
+        <i class="fas fa-sun"></i>
+    </div>
+
+
+
+    <!-- ==================== JAVASCRIPT FILES ==================== -->
+    <!-- Console Fix Script -->
+    <script src="js/console-fix.js"></script>
+
+    <!-- User Data Manager Script -->
+    <script src="js/user-data-manager.js"></script>
+
+    <!-- User Profile Script -->
+    <script src="js/user-profile.js"></script>
+
+    <!-- Customize Script -->
+    <script src="js/customize.js"></script>
+
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+
+</html>

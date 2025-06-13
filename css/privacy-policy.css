@@ -1,0 +1,114 @@
+/**
+ * Privacy Policy Page Styles
+ * Version: 1.0.0
+ * Author: Omar Dello
+ * Description: Styles for Privacy Policy page with modern design and animations
+ * Uses global variables from style.css
+ */
+
+/* ========================================================================== */
+/* privacy-policy.html STYLE */
+/* Privacy Policy specific CSS */
+.policy-header {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+    margin-top: 100px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    border: 1px solid var(--border-color);
+}
+
+.policy-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.policy-content {
+    max-width: 900px;
+    margin: 0 auto 80px;
+    padding: 40px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.policy-content h2 {
+    font-size: 1.8rem;
+    margin: 30px 0 20px;
+    color: var(--primary-blue);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.policy-content h2:first-child {
+    margin-top: 0;
+}
+
+.policy-content h3 {
+    font-size: 1.4rem;
+    margin: 25px 0 15px;
+    color: var(--primary-purple);
+}
+
+.policy-content p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.policy-content ul,
+.policy-content ol {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.policy-content li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+.policy-content a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.policy-content a:hover {
+    color: var(--primary-purple);
+    text-decoration: underline;
+}
+
+.policy-content .highlight {
+    background: rgba(0, 162, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 3px solid var(--primary-blue);
+    margin: 20px 0;
+}
+
+.policy-content .highlight p:last-child {
+    margin-bottom: 0;
+}
+
+.policy-meta {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .policy-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .policy-content {
+        padding: 30px 20px;
+    }
+}

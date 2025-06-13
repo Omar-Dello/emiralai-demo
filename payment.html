@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmiralAI - Payment</title>
+    
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+     
+    <!-- Local Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/payment.css">
+    
+    <!-- Font Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Complete your purchase of EmiralAI services. Secure and easy payment options available.">
+    <meta name="keywords" content="payment, checkout, AI services, EmiralAI, secure payment">
+    <meta name="author" content="EmiralAI">
+
+    <!-- Favicon and App Icons -->
+    <link rel="icon" href="favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg">
+    <link rel="shortcut icon" href="favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="manifest" href="favicons/site.webmanifest">
+</head>
+
+<body>
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="container">
+            <nav aria-label="Main navigation">
+                <div class="logo" aria-label="Emiral AI logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-brain" aria-hidden="true"></i>
+                    </div>
+                    <span>Emiral</span>AI
+                </div>
+                <ul class="nav-links">
+                    <li>
+                        <a href="main.html" aria-label="Go to home section">
+                            <i class="fas fa-home" aria-hidden="true"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="main.html#about" aria-label="Go to about section">
+                            <i class="fas fa-info-circle" aria-hidden="true"></i> About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="main.html#services" aria-label="Go to services section">
+                            <i class="fas fa-cogs" aria-hidden="true"></i> Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="main.html#pricing" aria-label="Go to pricing section">
+                            <i class="fas fa-tag" aria-hidden="true"></i> Pricing
+                        </a>
+                    </li>
+                    <li>
+                        <a href="main.html#partners" aria-label="Go to partners section">
+                            <i class="fas fa-handshake" aria-hidden="true"></i> Partners
+                        </a>
+                    </li>
+                </ul>
+                <div class="hamburger" role="button" aria-label="Toggle navigation menu" tabindex="0">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAYMENT SECTION -->
+    <section class="payment-page">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="glow-border">Secure <span class="glow-text">Checkout</span></h2>
+                <p>Complete your purchase securely to start leveraging our advanced AI solutions.</p>
+            </div>
+
+            <div class="payment-container">
+                <div class="payment-section payment-form-container">
+                    <!-- Payment Security Banner -->
+                    <div class="payment-security-banner">
+                        <div class="security-icons">
+                            <div class="security-icon">
+                                <i class="fas fa-lock"></i>
+                                <span>Secure Checkout</span>
+                            </div>
+                            <div class="security-icon">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Data Protection</span>
+                            </div>
+                            <div class="security-icon">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Encrypted Payment</span>
+                            </div>
+                        </div>
+                        <div class="security-message">
+                            <p>Your payment information is protected with industry-standard encryption</p>
+                            <div class="security-badges">
+                                <span class="badge"><i class="fab fa-cc-visa"></i></span>
+                                <span class="badge"><i class="fab fa-cc-mastercard"></i></span>
+                                <span class="badge"><i class="fab fa-cc-paypal"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="payment-title">Payment Information</h3>
+
+                    <div class="payment-methods">
+                        <div class="payment-method active" data-method="credit-card">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Credit Card</span>
+                        </div>
+                        <div class="payment-method" data-method="paypal">
+                            <i class="fab fa-paypal"></i>
+                            <span>PayPal</span>
+                        </div>
+                        <div class="payment-method" data-method="bank-transfer">
+                            <i class="fas fa-university"></i>
+                            <span>Bank Transfer</span>
+                        </div>
+                    </div>
+
+                    <!-- Credit Card Payment Form -->
+                    <div class="payment-form-wrapper" id="credit-card-form">
+                        <form id="payment-form" class="payment-form">
+                            <div class="payment-form-group">
+                                <label for="card-name">Cardholder Name</label>
+                                <input type="text" id="card-name" class="payment-input"
+                                    placeholder="As it appears on your card" required>
+                            </div>
+
+                            <div class="payment-form-group">
+                                <label for="card-number">Card Number</label>
+                                <input type="text" id="card-number" class="payment-input"
+                                    placeholder="**** **** **** ****" maxlength="19" required>
+                            </div>
+
+                            <div class="payment-form-row">
+                                <div class="payment-form-col">
+                                    <div class="payment-form-group">
+                                        <label for="card-expiry">Expiration Date</label>
+                                        <input type="text" id="card-expiry" class="payment-input" placeholder="MM/YY"
+                                            maxlength="5" required>
+                                    </div>
+                                </div>
+                                <div class="payment-form-col">
+                                    <div class="payment-form-group">
+                                        <label for="card-cvv">Security Code (CVV)</label>
+                                        <input type="text" id="card-cvv" class="payment-input" placeholder="***"
+                                            maxlength="3" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="billing-info-section">
+                                <h3 class="payment-title">Billing Information</h3>
+
+                                <div class="payment-form-row">
+                                    <div class="payment-form-col">
+                                        <div class="payment-form-group">
+                                            <label for="first-name">First Name</label>
+                                            <input type="text" id="first-name" class="payment-input" required>
+                                        </div>
+                                    </div>
+                                    <div class="payment-form-col">
+                                        <div class="payment-form-group">
+                                            <label for="last-name">Last Name</label>
+                                            <input type="text" id="last-name" class="payment-input" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="payment-form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" class="payment-input" required>
+                                </div>
+
+                                <div class="payment-form-group">
+                                    <label for="address">Billing Address</label>
+                                    <input type="text" id="address" class="payment-input" required>
+                                </div>
+
+                                <div class="payment-form-row">
+                                    <div class="payment-form-col">
+                                        <div class="payment-form-group">
+                                            <label for="city">City</label>
+                                            <input type="text" id="city" class="payment-input" required>
+                                        </div>
+                                    </div>
+                                    <div class="payment-form-col">
+                                        <div class="payment-form-group">
+                                            <label for="zip">Postal/Zip Code</label>
+                                            <input type="text" id="zip" class="payment-input" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="payment-form-group">
+                                    <label for="country">Country</label>
+                                    <input type="text" id="country" class="payment-input" required>
+                                </div>
+                            </div>
+
+                            <div class="terms-container">
+                                <input type="checkbox" id="terms-checkbox" class="terms-checkbox" required>
+                                <div class="terms-text">
+                                    I agree to the <a href="terms.html">Terms of Service</a>, <a
+                                        href="privacy-policy.html">Privacy Policy</a>, and authorize EmiralAI to charge
+                                    my selected payment method for the amount above, including applicable taxes.
+                                </div>
+                            </div>
+
+                            <button type="submit" class="payment-btn">
+                                <i class="fas fa-lock"></i> Complete Payment
+                            </button>
+
+                            <div class="secure-badge">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Your payment information is encrypted and secure</span>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- PayPal Payment Form -->
+                    <div class="payment-form-wrapper" id="paypal-form">
+                        <div class="paypal-container">
+                            <div class="paypal-logo">
+                                <i class="fab fa-paypal"></i>
+                            </div>
+                            <h4>Pay with PayPal</h4>
+                            <p>You will be redirected to PayPal to complete your payment securely.</p>
+
+                            <form id="paypal-payment-form" class="payment-form">
+                                <div class="payment-form-group">
+                                    <label for="paypal-email">PayPal Email Address</label>
+                                    <input type="email" id="paypal-email" class="payment-input"
+                                        placeholder="Your PayPal email address" required>
+                                </div>
+
+                                <div class="billing-info-section">
+                                    <h3 class="payment-title">Billing Information</h3>
+
+                                    <div class="payment-form-row">
+                                        <div class="payment-form-col">
+                                            <div class="payment-form-group">
+                                                <label for="paypal-first-name">First Name</label>
+                                                <input type="text" id="paypal-first-name" class="payment-input"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <div class="payment-form-col">
+                                            <div class="payment-form-group">
+                                                <label for="paypal-last-name">Last Name</label>
+                                                <input type="text" id="paypal-last-name" class="payment-input" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="payment-form-group">
+                                        <label for="paypal-address">Billing Address</label>
+                                        <input type="text" id="paypal-address" class="payment-input" required>
+                                    </div>
+
+                                    <div class="payment-form-row">
+                                        <div class="payment-form-col">
+                                            <div class="payment-form-group">
+                                                <label for="paypal-city">City</label>
+                                                <input type="text" id="paypal-city" class="payment-input" required>
+                                            </div>
+                                        </div>
+                                        <div class="payment-form-col">
+                                            <div class="payment-form-group">
+                                                <label for="paypal-zip">Postal/Zip Code</label>
+                                                <input type="text" id="paypal-zip" class="payment-input" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="payment-form-group">
+                                        <label for="paypal-country">Country</label>
+                                        <input type="text" id="paypal-country" class="payment-input" required>
+                                    </div>
+                                </div>
+
+                                <div class="terms-container">
+                                    <input type="checkbox" id="paypal-terms-checkbox" class="terms-checkbox" required>
+                                    <div class="terms-text">
+                                        I agree to the <a href="terms.html">Terms of Service</a> and <a
+                                            href="privacy-policy.html">Privacy Policy</a>.
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="payment-btn paypal-btn">
+                                    <i class="fab fa-paypal"></i> Proceed to PayPal
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Bank Transfer Payment Form -->
+                    <div class="payment-form-wrapper" id="bank-transfer-form">
+                        <div class="bank-transfer-container">
+                            <div class="bank-transfer-logo">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <h4>Pay with Bank Transfer</h4>
+                            <p>Make your payment directly into our bank account. Please use your Order ID as the payment
+                                reference.</p>
+
+                            <div class="bank-details">
+                                <div class="bank-detail-item">
+                                    <span class="bank-detail-label">Bank:</span>
+                                    <span class="bank-detail-value">EmiralBank International</span>
+                                </div>
+                                <div class="bank-detail-item">
+                                    <span class="bank-detail-label">Account Number:</span>
+                                    <span class="bank-detail-value">7458932115</span>
+                                </div>
+                                <div class="bank-detail-item">
+                                    <span class="bank-detail-label">SWIFT Code:</span>
+                                    <span class="bank-detail-value">NXBNK7458INT</span>
+                                </div>
+                                <div class="bank-detail-item">
+                                    <span class="bank-detail-label">IBAN:</span>
+                                    <span class="bank-detail-value">NX75 9321 7458 9321 1578 9514</span>
+                                </div>
+                            </div>
+
+                            <form id="bank-transfer-form-element" class="payment-form">
+                                <div class="payment-form-group">
+                                    <label for="bank-transfer-email">Email Address (for receipt)</label>
+                                    <input type="email" id="bank-transfer-email" class="payment-input"
+                                        placeholder="Your email address" required>
+                                </div>
+
+                                <div class="payment-form-row">
+                                    <div class="payment-form-col">
+                                        <div class="payment-form-group">
+                                            <label for="bank-transfer-first-name">First Name</label>
+                                            <input type="text" id="bank-transfer-first-name" class="payment-input"
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="payment-form-col">
+                                        <div class="payment-form-group">
+                                            <label for="bank-transfer-last-name">Last Name</label>
+                                            <input type="text" id="bank-transfer-last-name" class="payment-input"
+                                                required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="payment-form-group">
+                                    <label for="bank-transfer-company">Company Name (optional)</label>
+                                    <input type="text" id="bank-transfer-company" class="payment-input">
+                                </div>
+
+                                <div class="terms-container">
+                                    <input type="checkbox" id="bank-transfer-terms-checkbox" class="terms-checkbox"
+                                        required>
+                                    <div class="terms-text">
+                                        I agree to the <a href="terms.html">Terms of Service</a> and <a
+                                            href="privacy-policy.html">Privacy Policy</a>. I understand my order will be
+                                        processed after the payment is confirmed.
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="payment-btn bank-transfer-btn">
+                                    <i class="fas fa-check-circle"></i> Complete Order
+                                </button>
+
+                                <div class="bank-transfer-note">
+                                    <i class="fas fa-info-circle"></i>
+                                    <p>Your order will be on hold until we confirm the payment has been received in our
+                                        bank account. Please allow 1-3 business days for the transaction to be
+                                        processed.</p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment-section order-summary-container">
+                    <div class="order-summary glass-card">
+                        <h3>Order Summary</h3>
+
+                        <div id="plan-details">
+                            <!-- This will be populated dynamically based on the selected plan -->
+                        </div>
+
+                        <div class="order-features" id="plan-features">
+                            <!-- This will be populated dynamically based on the selected plan -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="floating-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="circuit-bg"></div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3><i class="fas fa-brain"></i>Emiral<span class="glow-text"> AI</span></h3>
+                    <p>Transforming businesses through innovative AI solutions. We help organizations harness the power
+                        of artificial intelligence to optimize operations, enhance customer experiences, and drive
+                        growth.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="contact-faq.html"><i class="fas fa-chevron-right"></i>Contact us</a></li>
+                        <li><a href="privacy-policy.html"><i class="fas fa-chevron-right"></i>Privacy Policy</a></li>
+                        <li><a href="main.html#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="main.html#portfolio"><i class="fas fa-chevron-right"></i> Case Studies</a></li>
+                        <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="terms.html"><i class="fas fa-chevron-right"></i> Terms of use</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Machine Learning</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Natural Language Processing</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Computer Vision</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Predictive Analytics</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> AI Consulting</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Custom AI Solutions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <p>Stay updated with the latest AI trends, insights, and news from our experts.</p>
+                    <div class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email">
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 EmiralAI. All Rights Reserved.</p>
+            </div>
+        </div>
+
+        <!-- Animated particles in the background -->
+        <div class="particles-container">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </footer>
+
+    <div id="theme-toggle" class="theme-toggle" aria-label="dark&light">
+        <i class="fas fa-sun"></i>
+    </div>
+
+
+    <!-- scripts -->
+    <script src="js/console-fix.js"></script>
+    <script src="js/user-data-manager.js"></script>
+    <script src="js/payment.js"></script>
+    <script src="js/customize.js"></script>
+</body>
+
+</html>

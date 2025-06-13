@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - EmiralAI Advanced AI Solutions</title>
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Local Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <!-- Font Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Access your EmiralAI dashboard to manage your AI projects, view analytics, and control your AI-powered solutions.">
+    <meta name="keywords" content="AI dashboard, machine learning control panel, EmiralAI dashboard, AI analytics">
+    <meta name="author" content="EmiralAI">
+
+    <!-- Favicon and App Icons -->
+    <link rel="icon" href="favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg">
+    <link rel="shortcut icon" href="favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="manifest" href="favicons/site.webmanifest">
+
+    <!-- Chart.js Library for Analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body class="container">
+
+    <!-- ========== DASHBOARD SIDEBAR ========== -->
+    <aside class="dashboard-sidebar" role="navigation" aria-label="Main navigation">
+
+        <!-- Sidebar Header with Logo -->
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <span>Emiral</span>AI
+            </div>
+        </div>
+
+        <!-- User Profile Section -->
+        <div class="sidebar-user">
+            <div class="user-avatar">
+                <img src="" alt="User Avatar" class="sidebar-avatar-img">
+            </div>
+            <div class="user-info">
+                <h3 class="sidebar-user-name">Loading...</h3>
+                <span class="user-plan">Pro Plan</span>
+            </div>
+        </div>
+
+        <!-- Main Navigation Menu -->
+        <nav class="sidebar-nav">
+            <ul role="menu">
+                <li role="menuitem" class="active">
+                    <a href="#overview-section" data-section="overview-section" tabindex="0">
+                        <i class="fas fa-tachometer-alt" aria-hidden="true"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li role="menuitem">
+                    <a href="#ai-projects-section" data-section="ai-projects-section" tabindex="0">
+                        <i class="fas fa-project-diagram" aria-hidden="true"></i>
+                        <span>AI Projects</span>
+                    </a>
+                </li>
+                <li role="menuitem">
+                    <a href="#analytics-section" data-section="analytics-section" tabindex="0">
+                        <i class="fas fa-chart-line" aria-hidden="true"></i>
+                        <span>Analytics</span>
+                    </a>
+                </li>
+                <li role="menuitem">
+                    <a href="#models-section" data-section="models-section" tabindex="0">
+                        <i class="fas fa-brain" aria-hidden="true"></i>
+                        <span>AI Models</span>
+                    </a>
+                </li>
+                <li role="menuitem">
+                    <a href="#api-section" data-section="api-section" tabindex="0">
+                        <i class="fas fa-plug" aria-hidden="true"></i>
+                        <span>API Integration</span>
+                    </a>
+                </li>
+                <li role="menuitem">
+                    <a href="#datasets-section" data-section="datasets-section" tabindex="0">
+                        <i class="fas fa-database" aria-hidden="true"></i>
+                        <span>Datasets</span>
+                    </a>
+                </li>
+                <li role="menuitem">
+                    <a href="#settings-section" data-section="settings-section" tabindex="0">
+                        <i class="fas fa-cog" aria-hidden="true"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Sidebar Footer with Profile & Logout -->
+        <div class="sidebar-footer">
+            <a href="user-profile.html" class="profile-link">
+                <i class="fas fa-user-circle"></i>
+                <span>Profile</span>
+            </a>
+            <a href="#" class="logout-link">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- ========== MAIN DASHBOARD CONTENT ========== -->
+    <main class="dashboard-main">
+
+        <!-- Top Navigation Bar -->
+        <header class="dashboard-header">
+
+            <!-- Search Bar -->
+            <div class="header-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search..." aria-label="Search dashboard">
+            </div>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+
+                <!-- Notifications Dropdown -->
+                <div class="notifications">
+                    <button class="notification-btn" aria-label="Notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <div class="notification-dropdown">
+                        <div class="notification-header">
+                            <h3>Notifications</h3>
+                            <a href="#">Mark all as read</a>
+                        </div>
+                        <ul class="notification-list">
+                            <li class="unread">
+                                <div class="notification-icon">
+                                    <i class="fas fa-chart-pie"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <p>Your monthly usage report is ready</p>
+                                    <span class="notification-time">2 hours ago</span>
+                                </div>
+                            </li>
+                            <li class="unread">
+                                <div class="notification-icon">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <p>API usage approaching 80% of your limit</p>
+                                    <span class="notification-time">Yesterday</span>
+                                </div>
+                            </li>
+                            <li class="unread">
+                                <div class="notification-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <p>New AI model version available for deployment</p>
+                                    <span class="notification-time">2 days ago</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="notification-icon">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <p>Scheduled maintenance this weekend</p>
+                                    <span class="notification-time">3 days ago</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="notification-footer">
+                            <a href="#">View all notifications</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Help & Support Dropdown -->
+                <div class="help-support">
+                    <button class="help-btn" aria-label="Help and support">
+                        <i class="fas fa-question-circle"></i>
+                    </button>
+                    <div class="help-dropdown">
+                        <ul>
+                            <li><a href="#"><i class="fas fa-book"></i> Documentation</a></li>
+                            <li><a href="#"><i class="fas fa-video"></i> Tutorials</a></li>
+                            <li><a href="#"><i class="fas fa-comments"></i> Live Chat Support</a></li>
+                            <li><a href="#"><i class="fas fa-envelope"></i> Contact Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- User Menu Dropdown -->
+                <div class="user-menu">
+                    <button class="user-menu-btn" aria-label="User menu">
+                        <div class="user-avatar-small">
+                            <img src="" alt="User Avatar" class="header-avatar-img">
+                        </div>
+                        <span class="user-name">Loading...</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="user-dropdown">
+                        <ul>
+                            <li><a href="user-profile.html"><i class="fas fa-user"></i> My Profile</a></li>
+                            <li><a href="user-profile.html#billing-plans"><i class="fas fa-credit-card"></i>
+                                    Subscription</a></li>
+                            <li><a href="user-profile.html#account-settings"><i class="fas fa-cog"></i> Settings</a>
+                            </li>
+                            <li><a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content Sections -->
+        <div class="dashboard-content">
+
+            <!-- ========== OVERVIEW SECTION ========== -->
+            <section id="overview-section" class="dashboard-section active">
+
+                <!-- Section Header with Date Range Picker -->
+                <div class="section-header">
+                    <h1>Dashboard Overview</h1>
+
+                    <!-- Date Range Picker Component -->
+                    <div class="date-range-picker">
+                        <button class="date-range-btn" aria-label="Select date range" aria-expanded="false">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span class="date-range-text">Last 30 Days</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+
+                        <!-- Date Range Dropdown Menu -->
+                        <div class="date-range-dropdown" aria-hidden="true">
+
+                            <!-- Quick Selection Options -->
+                            <div class="date-quick-select">
+                                <button class="date-option" data-range="today">
+                                    <i class="fas fa-calendar-day"></i>
+                                    <span>Today</span>
+                                </button>
+                                <button class="date-option" data-range="yesterday">
+                                    <i class="fas fa-history"></i>
+                                    <span>Yesterday</span>
+                                </button>
+                                <button class="date-option" data-range="last7days" class="active">
+                                    <i class="fas fa-calendar-week"></i>
+                                    <span>Last 7 Days</span>
+                                </button>
+                                <button class="date-option" data-range="last30days">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Last 30 Days</span>
+                                </button>
+                                <button class="date-option" data-range="thismonth">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>This Month</span>
+                                </button>
+                                <button class="date-option" data-range="lastmonth">
+                                    <i class="fas fa-calendar-minus"></i>
+                                    <span>Last Month</span>
+                                </button>
+                                <button class="date-option" data-range="last3months">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Last 3 Months</span>
+                                </button>
+                                <button class="date-option" data-range="custom">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Custom Range</span>
+                                </button>
+                            </div>
+
+                            <!-- Custom Date Selection -->
+                            <div class="date-custom-select" style="display: none;">
+                                <div class="date-inputs">
+                                    <div class="date-input-group">
+                                        <label for="date-from">From</label>
+                                        <input type="date" id="date-from" class="date-input" />
+                                    </div>
+                                    <div class="date-input-group">
+                                        <label for="date-to">To</label>
+                                        <input type="date" id="date-to" class="date-input" />
+                                    </div>
+                                </div>
+                                <div class="date-actions">
+                                    <button class="date-cancel-btn">Cancel</button>
+                                    <button class="date-apply-btn">Apply</button>
+                                </div>
+                            </div>
+
+                            <!-- Current Selection Display -->
+                            <div class="date-selection-info">
+                                <i class="fas fa-info-circle"></i>
+                                <span class="date-selection-text">
+                                    Showing data from <strong>Nov 29, 2024</strong> to <strong>Dec 29, 2024</strong>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics Cards Grid -->
+                <div class="stats-cards">
+
+                    <!-- API Usage Card -->
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>API Usage</h3>
+                            <div class="stat-value">
+                                75,425 / 100,000
+                                <span class="stat-percentage">75%</span>
+                            </div>
+                            <div class="stat-progress">
+                                <div class="progress-bar" style="width: 75%;"></div>
+                            </div>
+                            <p class="stat-comparison">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>12% more than last month</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Active Projects Card -->
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Active Projects</h3>
+                            <div class="stat-value">
+                                8
+                                <span class="stat-subtext">of 10 allowed</span>
+                            </div>
+                            <div class="stat-progress">
+                                <div class="progress-bar" style="width: 80%;"></div>
+                            </div>
+                            <p class="stat-comparison">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>2 new projects this month</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Storage Used Card -->
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Storage Used</h3>
+                            <div class="stat-value">
+                                4.2 GB / 10 GB
+                                <span class="stat-percentage">42%</span>
+                            </div>
+                            <div class="stat-progress">
+                                <div class="progress-bar" style="width: 42%;"></div>
+                            </div>
+                            <p class="stat-comparison">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>0.8 GB more than last month</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- AI Models Card -->
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>AI Models</h3>
+                            <div class="stat-value">
+                                12 / 15
+                                <span class="stat-percentage">80%</span>
+                            </div>
+                            <div class="stat-progress">
+                                <div class="progress-bar" style="width: 80%;"></div>
+                            </div>
+                            <p class="stat-comparison">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>3 new models deployed</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- API Usage Chart -->
+                <div class="chart-container glass-card">
+                    <div class="chart-header">
+                        <h2>API Usage Trends</h2>
+                        <div class="chart-controls">
+                            <button class="chart-period-btn active" data-period="daily">Daily</button>
+                            <button class="chart-period-btn" data-period="weekly">Weekly</button>
+                            <button class="chart-period-btn" data-period="monthly">Monthly</button>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="apiUsageChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Recent Projects Table -->
+                <div class="recent-projects glass-card">
+                    <div class="table-header">
+                        <h2>Recent Projects</h2>
+                        <a href="#ai-projects-section" class="view-all-link">
+                            View All Projects <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="dashboard-table">
+                            <thead>
+                                <tr>
+                                    <th>Project Name</th>
+                                    <th>Type</th>
+                                    <th>Status</th>
+                                    <th>Last Activity</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="project-name">
+                                            <div class="project-icon ml">
+                                                <i class="fas fa-laptop-code"></i>
+                                            </div>
+                                            <span>Customer Churn Prediction</span>
+                                        </div>
+                                    </td>
+                                    <td>Machine Learning</td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td>Today, 10:45 AM</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn" aria-label="View project">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-btn" aria-label="Configure project">
+                                                <i class="fas fa-cog"></i>
+                                            </button>
+                                            <button class="action-btn" aria-label="View analytics">
+                                                <i class="fas fa-chart-line"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="project-name">
+                                            <div class="project-icon nlp">
+                                                <i class="fas fa-comments"></i>
+                                            </div>
+                                            <span>Customer Support Chatbot</span>
+                                        </div>
+                                    </td>
+                                    <td>Natural Language Processing</td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td>Yesterday, 4:30 PM</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn" aria-label="View project">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-btn" aria-label="Configure project">
+                                                <i class="fas fa-cog"></i>
+                                            </button>
+                                            <button class="action-btn" aria-label="View analytics">
+                                                <i class="fas fa-chart-line"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="project-name">
+                                            <div class="project-icon cv">
+                                                <i class="fas fa-camera"></i>
+                                            </div>
+                                            <span>Product Defect Detection</span>
+                                        </div>
+                                    </td>
+                                    <td>Computer Vision</td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td>May 15, 2025</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn" aria-label="View project">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-btn" aria-label="Configure project">
+                                                <i class="fas fa-cog"></i>
+                                            </button>
+                                            <button class="action-btn" aria-label="View analytics">
+                                                <i class="fas fa-chart-line"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="project-name">
+                                            <div class="project-icon pa">
+                                                <i class="fas fa-chart-line"></i>
+                                            </div>
+                                            <span>Financial Market Predictor</span>
+                                        </div>
+                                    </td>
+                                    <td>Predictive Analytics</td>
+                                    <td><span class="status-badge pending">In Development</span></td>
+                                    <td>May 10, 2025</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn" aria-label="View project">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-btn" aria-label="Configure project">
+                                                <i class="fas fa-cog"></i>
+                                            </button>
+                                            <button class="action-btn" aria-label="View analytics">
+                                                <i class="fas fa-chart-line"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Quick Actions and System Health Row -->
+                <div class="overview-bottom-row">
+
+                    <!-- Quick Actions Panel -->
+                    <div class="quick-actions glass-card">
+                        <h2>Quick Actions</h2>
+                        <div class="action-buttons-grid">
+                            <button class="action-button" aria-label="Create new project">
+                                <i class="fas fa-plus-circle"></i>
+                                <span>New Project</span>
+                            </button>
+                            <button class="action-button" aria-label="Upload data">
+                                <i class="fas fa-upload"></i>
+                                <span>Upload Data</span>
+                            </button>
+                            <button class="action-button" aria-label="Train model">
+                                <i class="fas fa-wrench"></i>
+                                <span>Train Model</span>
+                            </button>
+                            <button class="action-button" aria-label="Generate report">
+                                <i class="fas fa-file-alt"></i>
+                                <span>Generate Report</span>
+                            </button>
+                            <button class="action-button" aria-label="Manage API keys">
+                                <i class="fas fa-key"></i>
+                                <span>API Keys</span>
+                            </button>
+                            <button class="action-button" aria-label="Get help">
+                                <i class="fas fa-question-circle"></i>
+                                <span>Help</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- System Health Panel -->
+                    <div class="system-health glass-card">
+                        <h2>System Health</h2>
+                        <div class="health-metrics">
+                            <div class="health-metric">
+                                <div class="metric-info">
+                                    <h3>API Response Time</h3>
+                                    <p>Average: 120ms</p>
+                                </div>
+                                <div class="metric-indicator excellent">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Excellent</span>
+                                </div>
+                            </div>
+                            <div class="health-metric">
+                                <div class="metric-info">
+                                    <h3>AI Model Performance</h3>
+                                    <p>Average accuracy: 97.5%</p>
+                                </div>
+                                <div class="metric-indicator good">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Good</span>
+                                </div>
+                            </div>
+                            <div class="health-metric">
+                                <div class="metric-info">
+                                    <h3>System Uptime</h3>
+                                    <p>Last 30 days: 99.98%</p>
+                                </div>
+                                <div class="metric-indicator excellent">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Excellent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="view-all-link">
+                            View detailed health report <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== AI PROJECTS SECTION ========== -->
+            <section id="ai-projects-section" class="dashboard-section">
+
+                <!-- Section Header -->
+                <div class="section-header">
+                    <h1>AI Projects</h1>
+                    <button class="primary-btn">
+                        <i class="fas fa-plus"></i> New Project
+                    </button>
+                </div>
+
+                <!-- Projects Filter Bar -->
+                <div class="projects-filter glass-card">
+                    <div class="filter-group">
+                        <label>Status</label>
+                        <div class="filter-options">
+                            <button class="filter-btn active">All</button>
+                            <button class="filter-btn">Active</button>
+                            <button class="filter-btn">Development</button>
+                            <button class="filter-btn">Archived</button>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label>Type</label>
+                        <div class="filter-options">
+                            <button class="filter-btn active">All</button>
+                            <button class="filter-btn">Machine Learning</button>
+                            <button class="filter-btn">NLP</button>
+                            <button class="filter-btn">Computer Vision</button>
+                            <button class="filter-btn">Predictive Analytics</button>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label>Search</label>
+                        <div class="search-filter">
+                            <input type="text" placeholder="Search projects..." aria-label="Search projects">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="projects-grid">
+
+                    <!-- Project Card 1 -->
+                    <div class="project-card glass-card">
+                        <div class="project-header">
+                            <div class="project-icon ml">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="project-status">
+                                <span class="status-badge active">Active</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Customer Churn Prediction</h3>
+                        <p class="project-description">
+                            Machine learning model to predict customer churn rates and identify at-risk customers.
+                        </p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Accuracy</span>
+                                <span class="metric-value">92.8%</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">API Calls</span>
+                                <span class="metric-value">15.2K</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Last trained</span>
+                                <span class="metric-value">2 days ago</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <button class="action-btn" aria-label="View project">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button class="action-btn" aria-label="Configure project">
+                                <i class="fas fa-cog"></i> Configure
+                            </button>
+                            <button class="action-btn" aria-label="View analytics">
+                                <i class="fas fa-chart-line"></i> Analytics
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="project-card glass-card">
+                        <div class="project-header">
+                            <div class="project-icon nlp">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="project-status">
+                                <span class="status-badge active">Active</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Customer Support Chatbot</h3>
+                        <p class="project-description">
+                            NLP-powered chatbot for handling customer inquiries and support tickets automatically.
+                        </p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Success Rate</span>
+                                <span class="metric-value">87.5%</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Conversations</span>
+                                <span class="metric-value">3.4K</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Last trained</span>
+                                <span class="metric-value">5 days ago</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <button class="action-btn" aria-label="View project">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button class="action-btn" aria-label="Configure project">
+                                <i class="fas fa-cog"></i> Configure
+                            </button>
+                            <button class="action-btn" aria-label="View analytics">
+                                <i class="fas fa-chart-line"></i> Analytics
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Add New Project Card -->
+                    <div class="add-project-card glass-card">
+                        <div class="add-project-icon">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <h3>Create New Project</h3>
+                        <p>Start building a new AI solution for your business challenges.</p>
+                        <button class="btn">Get Started</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== ANALYTICS SECTION ========== -->
+            <section id="analytics-section" class="dashboard-section">
+
+                <!-- Section Header -->
+                <div class="section-header">
+                    <h1>Analytics</h1>
+                    <div class="date-range-picker">
+                        <button class="date-range-btn" aria-label="Select date range">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span class="date-range-text">Last 30 Days</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Performance Overview Cards -->
+                <div class="stats-cards">
+
+                    <!-- Model Accuracy Card -->
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Model Accuracy</h3>
+                            <div class="stat-value">
+                                97.8%
+                                <span class="stat-percentage">+2.3%</span>
+                            </div>
+                            <div class="stat-progress">
+                                <div class="progress-bar" style="width: 97.8%;"></div>
+                            </div>
+                            <p class="stat-comparison">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>Improved from last month</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Response Time Card -->
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Response Time</h3>
+                            <div class="stat-value">
+                                124ms
+                                <span class="stat-subtext">average</span>
+                            </div>
+                            <div class="stat-progress">
+                                <div class="progress-bar" style="width: 85%;"></div>
+                            </div>
+                            <p class="stat-comparison">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>15ms faster than baseline</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Active Users Card -->
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Active Users</h3>
+                            <div class="stat-value">
+                                2,847
+                                <span class="stat-percentage">+18.5%</span>
+                            </div>
+                            <div class="stat-progress">
+                                <div class="progress-bar" style="width: 71%;"></div>
+                            </div>
+                            <p class="stat-comparison">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>432 new users this week</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Server Load Card -->
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Server Load</h3>
+                            <div class="stat-value">
+                                68%
+                                <span class="stat-subtext">utilization</span>
+                            </div>
+                            <div class="stat-progress">
+                                <div class="progress-bar" style="width: 68%;"></div>
+                            </div>
+                            <p class="stat-comparison">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Optimal performance range</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics Charts Row -->
+                <div class="overview-bottom-row">
+
+                    <!-- Performance Metrics Chart -->
+                    <div class="chart-container glass-card">
+                        <div class="chart-header">
+                            <h2>Model Performance Metrics</h2>
+                            <div class="chart-controls">
+                                <button class="chart-period-btn active">Accuracy</button>
+                                <button class="chart-period-btn">Precision</button>
+                                <button class="chart-period-btn">Recall</button>
+                            </div>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="performanceChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Usage Distribution Chart -->
+                    <div class="chart-container glass-card">
+                        <div class="chart-header">
+                            <h2>Usage Distribution</h2>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="usageDistributionChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Model Performance Details Table -->
+                <div class="recent-projects glass-card">
+                    <div class="table-header">
+                        <h2>Model Performance Details</h2>
+                        <button class="primary-btn">
+                            <i class="fas fa-download"></i> Export Report
+                        </button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="dashboard-table">
+                            <thead>
+                                <tr>
+                                    <th>Model Name</th>
+                                    <th>Type</th>
+                                    <th>Accuracy</th>
+                                    <th>Precision</th>
+                                    <th>Recall</th>
+                                    <th>F1 Score</th>
+                                    <th>Last Updated</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="project-name">
+                                            <div class="project-icon ml">
+                                                <i class="fas fa-brain"></i>
+                                            </div>
+                                            <span>Customer Churn v2.1</span>
+                                        </div>
+                                    </td>
+                                    <td>Classification</td>
+                                    <td><span class="metric-value">97.8%</span></td>
+                                    <td><span class="metric-value">96.5%</span></td>
+                                    <td><span class="metric-value">98.2%</span></td>
+                                    <td><span class="metric-value">97.3%</span></td>
+                                    <td>2 hours ago</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="project-name">
+                                            <div class="project-icon nlp">
+                                                <i class="fas fa-comments"></i>
+                                            </div>
+                                            <span>Sentiment Analysis Pro</span>
+                                        </div>
+                                    </td>
+                                    <td>NLP</td>
+                                    <td><span class="metric-value">94.2%</span></td>
+                                    <td><span class="metric-value">93.8%</span></td>
+                                    <td><span class="metric-value">94.7%</span></td>
+                                    <td><span class="metric-value">94.2%</span></td>
+                                    <td>Yesterday</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="project-name">
+                                            <div class="project-icon cv">
+                                                <i class="fas fa-camera"></i>
+                                            </div>
+                                            <span>Object Detection v3</span>
+                                        </div>
+                                    </td>
+                                    <td>Computer Vision</td>
+                                    <td><span class="metric-value">95.6%</span></td>
+                                    <td><span class="metric-value">94.9%</span></td>
+                                    <td><span class="metric-value">96.1%</span></td>
+                                    <td><span class="metric-value">95.5%</span></td>
+                                    <td>3 days ago</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="project-name">
+                                            <div class="project-icon pa">
+                                                <i class="fas fa-chart-line"></i>
+                                            </div>
+                                            <span>Sales Forecast Model</span>
+                                        </div>
+                                    </td>
+                                    <td>Regression</td>
+                                    <td><span class="metric-value">91.3%</span></td>
+                                    <td><span class="metric-value">90.7%</span></td>
+                                    <td><span class="metric-value">92.1%</span></td>
+                                    <td><span class="metric-value">91.4%</span></td>
+                                    <td>5 days ago</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== AI MODELS SECTION ========== -->
+            <section id="models-section" class="dashboard-section">
+
+                <!-- Section Header -->
+                <div class="section-header">
+                    <h1>AI Models</h1>
+                    <div class="header-actions">
+                        <button class="primary-btn">
+                            <i class="fas fa-upload"></i> Upload Model
+                        </button>
+                        <button class="primary-btn">
+                            <i class="fas fa-plus"></i> Train New Model
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Models Grid -->
+                <div class="projects-grid">
+
+                    <!-- Model Card 1 -->
+                    <div class="project-card glass-card">
+                        <div class="project-header">
+                            <div class="project-icon ml">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="project-status">
+                                <span class="status-badge active">Deployed</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Customer Churn Prediction</h3>
+                        <p class="project-description">
+                            Deep learning model for predicting customer churn with 97.8% accuracy.
+                        </p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Version</span>
+                                <span class="metric-value">v2.1.3</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Size</span>
+                                <span class="metric-value">124MB</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">API Calls</span>
+                                <span class="metric-value">45.2K</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <button class="action-btn"><i class="fas fa-play"></i> Test</button>
+                            <button class="action-btn"><i class="fas fa-cog"></i> Configure</button>
+                            <button class="action-btn"><i class="fas fa-download"></i> Export</button>
+                        </div>
+                    </div>
+
+                    <!-- Model Card 2 -->
+                    <div class="project-card glass-card">
+                        <div class="project-header">
+                            <div class="project-icon nlp">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <div class="project-status">
+                                <span class="status-badge active">Deployed</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Sentiment Analysis Pro</h3>
+                        <p class="project-description">
+                            Advanced NLP model for multi-language sentiment analysis with context understanding.
+                        </p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Version</span>
+                                <span class="metric-value">v1.4.2</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Size</span>
+                                <span class="metric-value">256MB</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Languages</span>
+                                <span class="metric-value">12</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <button class="action-btn"><i class="fas fa-play"></i> Test</button>
+                            <button class="action-btn"><i class="fas fa-cog"></i> Configure</button>
+                            <button class="action-btn"><i class="fas fa-download"></i> Export</button>
+                        </div>
+                    </div>
+
+                    <!-- Model Card 3 -->
+                    <div class="project-card glass-card">
+                        <div class="project-header">
+                            <div class="project-icon cv">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="project-status">
+                                <span class="status-badge pending">Training</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Object Detection v3</h3>
+                        <p class="project-description">
+                            Real-time object detection with support for 80+ object classes.
+                        </p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Progress</span>
+                                <span class="metric-value">67%</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">ETA</span>
+                                <span class="metric-value">2h 15m</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Epochs</span>
+                                <span class="metric-value">134/200</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <button class="action-btn"><i class="fas fa-pause"></i> Pause</button>
+                            <button class="action-btn"><i class="fas fa-chart-line"></i> Monitor</button>
+                            <button class="action-btn"><i class="fas fa-stop"></i> Stop</button>
+                        </div>
+                    </div>
+
+                    <!-- Model Card 4 -->
+                    <div class="project-card glass-card">
+                        <div class="project-header">
+                            <div class="project-icon pa">
+                                <i class="fas fa-chart-area"></i>
+                            </div>
+                            <div class="project-status">
+                                <span class="status-badge inactive">Draft</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Time Series Forecaster</h3>
+                        <p class="project-description">
+                            LSTM-based model for accurate time series prediction and anomaly detection.
+                        </p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Version</span>
+                                <span class="metric-value">v0.9.1</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Size</span>
+                                <span class="metric-value">89MB</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Status</span>
+                                <span class="metric-value">Ready</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <button class="action-btn"><i class="fas fa-rocket"></i> Deploy</button>
+                            <button class="action-btn"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="action-btn"><i class="fas fa-trash"></i> Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Model Training Queue -->
+                <div class="recent-projects glass-card">
+                    <div class="table-header">
+                        <h2>Training Queue</h2>
+                        <a href="#" class="view-all-link">
+                            View Training History <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="dashboard-table">
+                            <thead>
+                                <tr>
+                                    <th>Model</th>
+                                    <th>Dataset</th>
+                                    <th>Progress</th>
+                                    <th>Started</th>
+                                    <th>ETA</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Object Detection v3</td>
+                                    <td>COCO Dataset (50K images)</td>
+                                    <td>
+                                        <div class="stat-progress">
+                                            <div class="progress-bar" style="width: 67%;"></div>
+                                        </div>
+                                    </td>
+                                    <td>3 hours ago</td>
+                                    <td>2h 15m</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn"><i class="fas fa-pause"></i></button>
+                                            <button class="action-btn"><i class="fas fa-chart-line"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>NER Model v2</td>
+                                    <td>Custom Text Dataset</td>
+                                    <td>
+                                        <div class="stat-progress">
+                                            <div class="progress-bar" style="width: 12%;"></div>
+                                        </div>
+                                    </td>
+                                    <td>30 minutes ago</td>
+                                    <td>5h 45m</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn"><i class="fas fa-pause"></i></button>
+                                            <button class="action-btn"><i class="fas fa-chart-line"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== API INTEGRATION SECTION ========== -->
+            <section id="api-section" class="dashboard-section">
+
+                <!-- Section Header -->
+                <div class="section-header">
+                    <h1>API Integration</h1>
+                    <button class="primary-btn">
+                        <i class="fas fa-key"></i> Generate New Key
+                    </button>
+                </div>
+
+                <!-- API Keys Management -->
+                <div class="glass-card">
+                    <h2>API Keys</h2>
+                    <div class="table-responsive">
+                        <table class="dashboard-table">
+                            <thead>
+                                <tr>
+                                    <th>Key Name</th>
+                                    <th>API Key</th>
+                                    <th>Created</th>
+                                    <th>Last Used</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Production API</td>
+                                    <td>
+                                        <code>sk_live_4eC3...</code>
+                                        <button class="action-btn" aria-label="Copy key">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </td>
+                                    <td>Jan 15, 2025</td>
+                                    <td>2 minutes ago</td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                            <button class="action-btn"><i class="fas fa-edit"></i></button>
+                                            <button class="action-btn"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Development API</td>
+                                    <td>
+                                        <code>sk_test_26PH...</code>
+                                        <button class="action-btn" aria-label="Copy key">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </td>
+                                    <td>Jan 10, 2025</td>
+                                    <td>1 hour ago</td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                            <button class="action-btn"><i class="fas fa-edit"></i></button>
+                                            <button class="action-btn"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Mobile App Key</td>
+                                    <td>
+                                        <code>sk_mobile_9F7hG2kL4mN6pQ8rS...</code>
+                                        <button class="action-btn" aria-label="Copy key">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </td>
+                                    <td>Dec 28, 2024</td>
+                                    <td>3 days ago</td>
+                                    <td><span class="status-badge inactive">Inactive</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                            <button class="action-btn"><i class="fas fa-edit"></i></button>
+                                            <button class="action-btn"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- API Endpoints -->
+                <div class="glass-card">
+                    <h2>Available Endpoints</h2>
+                    <div class="api-endpoints">
+                        <div class="api-endpoint">
+                            <div class="endpoint-header">
+                                <span class="method-badge get">GET</span>
+                                <code>/api/v1/models</code>
+                            </div>
+                            <p>List all available AI models</p>
+                        </div>
+                        <div class="api-endpoint">
+                            <div class="endpoint-header">
+                                <span class="method-badge post">POST</span>
+                                <code>/api/v1/predict</code>
+                            </div>
+                            <p>Make a prediction using specified model</p>
+                        </div>
+                        <div class="api-endpoint">
+                            <div class="endpoint-header">
+                                <span class="method-badge get">GET</span>
+                                <code>/api/v1/analytics</code>
+                            </div>
+                            <p>Retrieve analytics and performance metrics</p>
+                        </div>
+                        <div class="api-endpoint">
+                            <div class="endpoint-header">
+                                <span class="method-badge post">POST</span>
+                                <code>/api/v1/train</code>
+                            </div>
+                            <p>Start training a new model</p>
+                        </div>
+                        <div class="api-endpoint">
+                            <div class="endpoint-header">
+                                <span class="method-badge delete">DELETE</span>
+                                <code>/api/v1/models/{id}</code>
+                            </div>
+                            <p>Delete a specific model</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Code Examples -->
+                <div class="glass-card">
+                    <h2>Quick Start</h2>
+                    <div class="code-tabs">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active">Python</button>
+                            <button class="tab-btn">JavaScript</button>
+                            <button class="tab-btn">cURL</button>
+                        </div>
+                        <div class="code-example">
+                            <pre><code># Install the EmiralAI Python SDK
+pip install emiralai
+
+# Initialize the client
+from emiralai import EmiralClient
+
+client = EmiralClient(api_key='sk_live_4eC3...')
+
+# Make a prediction
+result = client.predict(
+    model='customer-churn-v2',
+    data={
+        'customer_age': 35,
+        'account_balance': 5000,
+        'months_active': 24
+    }
+)
+
+print(result)</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== DATASETS SECTION ========== -->
+            <section id="datasets-section" class="dashboard-section">
+
+                <!-- Section Header -->
+                <div class="section-header">
+                    <h1>Datasets</h1>
+                    <button class="primary-btn">
+                        <i class="fas fa-upload"></i> Upload Dataset
+                    </button>
+                </div>
+
+                <!-- Dataset Statistics -->
+                <div class="stats-cards">
+
+                    <!-- Total Datasets Card -->
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Total Datasets</h3>
+                            <div class="stat-value">24</div>
+                            <p class="stat-comparison">
+                                <i class="fas fa-plus"></i>
+                                <span>3 added this week</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Storage Used Card -->
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-hdd"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Storage Used</h3>
+                            <div class="stat-value">
+                                4.2 GB
+                                <span class="stat-percentage">42%</span>
+                            </div>
+                            <div class="stat-progress">
+                                <div class="progress-bar" style="width: 42%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Total Records Card -->
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-file-csv"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Total Records</h3>
+                            <div class="stat-value">2.4M</div>
+                            <p class="stat-comparison">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>450K new records</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Validated Card -->
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Validated</h3>
+                            <div class="stat-value">
+                                21 / 24
+                                <span class="stat-percentage">87.5%</span>
+                            </div>
+                            <div class="stat-progress">
+                                <div class="progress-bar" style="width: 87.5%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dataset List -->
+                <div class="glass-card">
+                    <div class="table-header">
+                        <h2>My Datasets</h2>
+                        <div class="search-filter" style="width: 300px;">
+                            <input type="text" placeholder="Search datasets..." aria-label="Search datasets">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="dashboard-table">
+                            <thead>
+                                <tr>
+                                    <th>Dataset Name</th>
+                                    <th>Type</th>
+                                    <th>Records</th>
+                                    <th>Size</th>
+                                    <th>Created</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="project-name">
+                                            <div class="project-icon ml">
+                                                <i class="fas fa-table"></i>
+                                            </div>
+                                            <span>Customer Behavior Dataset</span>
+                                        </div>
+                                    </td>
+                                    <td>CSV</td>
+                                    <td>125,430</td>
+                                    <td>245 MB</td>
+                                    <td>Jan 20, 2025</td>
+                                    <td><span class="status-badge active">Validated</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                            <button class="action-btn"><i class="fas fa-download"></i></button>
+                                            <button class="action-btn"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="project-name">
+                                            <div class="project-icon cv">
+                                                <i class="fas fa-images"></i>
+                                            </div>
+                                            <span>Product Images Collection</span>
+                                        </div>
+                                    </td>
+                                    <td>Images</td>
+                                    <td>50,000</td>
+                                    <td>1.8 GB</td>
+                                    <td>Jan 18, 2025</td>
+                                    <td><span class="status-badge active">Validated</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                            <button class="action-btn"><i class="fas fa-download"></i></button>
+                                            <button class="action-btn"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="project-name">
+                                            <div class="project-icon nlp">
+                                                <i class="fas fa-file-alt"></i>
+                                            </div>
+                                            <span>Support Tickets Text Data</span>
+                                        </div>
+                                    </td>
+                                    <td>JSON</td>
+                                    <td>89,750</td>
+                                    <td>156 MB</td>
+                                    <td>Jan 15, 2025</td>
+                                    <td><span class="status-badge pending">Processing</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                            <button class="action-btn"><i class="fas fa-pause"></i></button>
+                                            <button class="action-btn"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== SETTINGS SECTION ========== -->
+            <section id="settings-section" class="dashboard-section">
+
+                <!-- Section Header -->
+                <div class="section-header">
+                    <h1>Settings</h1>
+                </div>
+
+                <div class="overview-bottom-row">
+
+                    <!-- General Settings -->
+                    <div class="glass-card">
+                        <h2>General Settings</h2>
+                        <form class="settings-form">
+                            <div class="form-group">
+                                <label>Dashboard Name</label>
+                                <input type="text" value="My AI Dashboard" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Default Language</label>
+                                <select class="form-control">
+                                    <option>English</option>
+                                    <option>Spanish</option>
+                                    <option>French</option>
+                                    <option>German</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Time Zone</label>
+                                <select class="form-control">
+                                    <option>UTC</option>
+                                    <option>EST</option>
+                                    <option>PST</option>
+                                    <option>CET</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" checked> Enable email notifications
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" checked> Enable browser notifications
+                                </label>
+                            </div>
+                            <button type="submit" class="primary-btn">Save Changes</button>
+                        </form>
+                    </div>
+
+                    <!-- API Settings -->
+                    <div class="glass-card">
+                        <h2>API Settings</h2>
+                        <form class="settings-form">
+                            <div class="form-group">
+                                <label>Rate Limit (requests/minute)</label>
+                                <input type="number" value="60" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Timeout (seconds)</label>
+                                <input type="number" value="30" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Allowed Origins</label>
+                                <textarea class="form-control" rows="3">https://example.com
+https://app.example.com</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" checked> Enable CORS
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" checked> Require API Key
+                                </label>
+                            </div>
+                            <button type="submit" class="primary-btn">Update API Settings</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Advanced Settings -->
+                <div class="glass-card">
+                    <h2>Advanced Settings</h2>
+                    <div class="settings-grid">
+                        <div class="setting-item">
+                            <h3>Data Retention</h3>
+                            <p>Automatically delete old data after specified period</p>
+                            <select class="form-control">
+                                <option>30 days</option>
+                                <option>60 days</option>
+                                <option>90 days</option>
+                                <option>Never</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <h3>Export Format</h3>
+                            <p>Default format for data exports</p>
+                            <select class="form-control">
+                                <option>CSV</option>
+                                <option>JSON</option>
+                                <option>Excel</option>
+                                <option>XML</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <h3>Model Auto-Update</h3>
+                            <p>Automatically update models when new versions are available</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <h3>Debug Mode</h3>
+                            <p>Enable detailed logging for troubleshooting</p>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Theme Toggle Button -->
+    <div id="theme-toggle" class="theme-toggle" aria-label="dark&light">
+        <i class="fas fa-sun"></i>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/console-fix.js"></script>
+    <script src="js/user-data-manager.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/customize.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+
+</body>
+
+</html>

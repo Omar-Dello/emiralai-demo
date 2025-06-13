@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - EmiralAI</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore the latest insights in AI, machine learning, and technology on our blog">
+    <meta name="keywords" content="AI blog, machine learning, artificial intelligence, tech insights, EmiralAI">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+
+
+    <!-- Favicon and App Icons -->
+    <link rel="icon" href="favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg">
+    <link rel="shortcut icon" href="favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="manifest" href="favicons/site.webmanifest">
+</head>
+
+<body>
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="container">
+            <nav aria-label="Main navigation">
+                <div class="logo" aria-label="Emiral AI logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-brain" aria-hidden="true"></i>
+                    </div>
+                    <span>Emiral</span>AI
+                </div>
+                <ul class="nav-links">
+                    <li><a href="main.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="main.html#about"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="main.html#services"><i class="fas fa-cogs"></i> Services</a></li>
+                    <li><a href="main.html#pricing"><i class="fas fa-tag"></i> Pricing</a></li>
+                    <li><a href="main.html#partners"><i class="fas fa-handshake"></i> Partners</a></li>
+                    <li><a href="user-profile.html" class="nav-btn active"><i class="fas fa-user"></i>Profile</a></li>
+                </ul>
+                <div class="hamburger" role="button" aria-label="Toggle navigation menu" tabindex="0">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BLOG HERO SECTION -->
+    <section class="blog-hero">
+        <div class="container">
+            <div class="blog-hero-content">
+                <h1 class="glow-text">AI Insights & Technology Blog</h1>
+                <p>Explore the latest developments in artificial intelligence, machine learning, and technology</p>
+                <div class="blog-search">
+                    <input type="text" placeholder="Search articles..." aria-label="Search articles">
+                    <button class="btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="circuit-bg"></div>
+        <div class="floating-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="blog-main">
+        <div class="container">
+
+
+            <!-- Featured Post Container -->
+            <div class="featured-post glass-card">
+                <!-- Content will be dynamically loaded via JavaScript -->
+            </div>
+
+            <!-- Blog Categories -->
+            <div class="blog-categories">
+                <button class="category-btn active" data-category="all">
+                    <i class="fas fa-th-large"></i> All Posts
+                </button>
+                <button class="category-btn" data-category="ai">
+                    <i class="fas fa-robot"></i> Artificial Intelligence
+                </button>
+                <button class="category-btn" data-category="ml">
+                    <i class="fas fa-brain"></i> Machine Learning
+                </button>
+                <button class="category-btn" data-category="tech">
+                    <i class="fas fa-microchip"></i> Technology
+                </button>
+            </div>
+
+            <!-- Blog Posts Grid Container -->
+            <div id="blog-posts" class="blog-posts">
+                <!-- Posts will be dynamically loaded via JavaScript -->
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button id="load-more" class="btn load-more-btn">
+                    <i class="fas fa-plus"></i> Load More Posts
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- NEWSLETTER SECTION -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content glass-card">
+                <h2 class="glow-text">Stay Updated</h2>
+                <p>Get the latest AI insights delivered to your inbox</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your email address" required>
+                    </div>
+                    <button type="submit" class="btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="circuit-bg"></div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3><i class="fas fa-brain"></i>Emiral<span class="glow-text"> AI</span></h3>
+                    <p>Transforming businesses through innovative AI solutions. We help organizations harness the power
+                        of artificial intelligence to optimize operations, enhance customer experiences, and drive
+                        growth.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="contact-faq.html"><i class="fas fa-chevron-right"></i>Contact us</a></li>
+                        <li><a href="privacy-policy.html"><i class="fas fa-chevron-right"></i>Privacy Policy</a></li>
+                        <li><a href="dashboard.html"><i class="fas fa-chevron-right"></i>Dashboard</a></li>
+                        <li><a href="portfolio.html"><i class="fas fa-chevron-right"></i>Portfolio</a></li>
+                        <li><a href="blog.html"><i class="fas fa-chevron-right"></i>Blog</a></li>
+                        <li><a href="terms.html"><i class="fas fa-chevron-right"></i>Terms of use</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i>Machine Learning</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i>Natural Language Processing</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i>Computer Vision</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i>Predictive Analytics</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i>AI Consulting</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i>Custom AI Solutions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <p>Stay updated with the latest AI trends, insights, and news from our experts.</p>
+                    <div class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email">
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 EmiralAI. All Rights Reserved.</p>
+            </div>
+        </div>
+
+        <!-- Animated particles in the background -->
+        <div class="particles-container">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </footer>
+
+    <div id="theme-toggle" class="theme-toggle" aria-label="dark&light">
+        <i class="fas fa-sun"></i>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/console-fix.js"></script>
+    <script src="js/customize.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+/**
+ * Terms Page Styles
+ * Version: 1.0.0
+ * Author: Omar Dello
+ * Description: Styles for Terms page with modern design and animations
+ * Uses global variables from style.css
+ */
+
+/* ========================================================================== */
+/* START TERMS OF USE STYLE */
+/* terms.html STYLE  */
+/* Terms of Service specific CSS */
+.terms-header {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+    margin-top: 100px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    border: 1px solid var(--border-color);
+}
+
+.terms-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.terms-content {
+    max-width: 900px;
+    margin: 0 auto 80px;
+    padding: 40px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.terms-content h2 {
+    font-size: 1.8rem;
+    margin: 30px 0 20px;
+    color: var(--primary-blue);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.terms-content h2:first-child {
+    margin-top: 0;
+}
+
+.terms-content h3 {
+    font-size: 1.4rem;
+    margin: 25px 0 15px;
+    color: var(--primary-purple);
+}
+
+.terms-content p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.terms-content ul,
+.terms-content ol {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.terms-content li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+.terms-content a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.terms-content a:hover {
+    color: var(--primary-purple);
+    text-decoration: underline;
+}
+
+.terms-content .warning {
+    background: rgba(255, 0, 88, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 3px solid var(--primary-red);
+    margin: 20px 0;
+}
+
+.terms-content .warning p:last-child {
+    margin-bottom: 0;
+}
+
+.terms-content .note {
+    background: rgba(0, 162, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 3px solid var(--primary-blue);
+    margin: 20px 0;
+}
+
+.terms-content .note p:last-child {
+    margin-bottom: 0;
+}
+
+.terms-meta {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .terms-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .terms-content {
+        padding: 30px 20px;
+    }
+}
+
+/* END TERMS STYLE */
